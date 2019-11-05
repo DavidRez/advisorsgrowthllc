@@ -1,0 +1,52 @@
+.form-contact
+  form.form-contact__form(@submit.prevent='validate', method='post')
+    
+    .form-contact__group
+      input.form-contact__input(name='firstName', v-model='firstName', v-validate="'required|alpha_spaces'", :class="{ 'form-contact__input--error': errors.has('firstName') }", type='text')
+      label.form-contact__label(:class="{ 'form-contact__label--active': firstName }") First Name *
+      .form-contact__error-message(v-show="errors.has('firstName')") Your first name is required.
+      
+    .form-contact__group
+      input.form-contact__input(name='lastName', v-model='lastName', v-validate="'required|alpha_spaces'", :class="{ 'form-contact__input--error': errors.has('lastName') }", type='text')
+      label.form-contact__label(:class="{ 'form-contact__label--active': lastName }") Last Name *
+      .form-contact__error-message(v-show="errors.has('lastName')") Your last name is required.
+  
+    .form-contact__group
+      input.form-contact__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'form-contact__input--error': errors.has('clientEmail') }")
+      label.form-contact__label(:class="{ 'form-contact__label--active': clientEmail }") Your Email Address *
+      .form-contact__error-message(v-show="errors.has('clientEmail')")  Please input a valid Email
+  
+    .form-contact__group
+      input.form-contact__input(name='clientPhone', v-model='clientPhone', v-validate="'required|numeric'", :class="{ 'form-contact__input--error': errors.has('clientPhone') }")
+      label.form-contact__label(:class="{ 'form-contact__label--active': clientPhone }") Your Phone Number *
+      .form-contact__error-message(v-show="errors.has('clientPhone')")  Please input a valid number
+  
+    .form-contact__group
+      .form-contact__checkbox
+        .form-contact__checkbox-group
+          input.form-contact__checkbox-input(
+            name='isFirstTime'
+            v-model='isFirstTime'
+            value='Yes'
+            type='checkbox')
+          span.form-contact__checkbox-overlay
+          label.form-contact__checkbox-label Yes, I am a first time patient!
+  
+    .form-contact__group
+      textarea.form-contact__input.form-contact__input--textarea(name='clientMessage', v-model='clientMessage')
+      label.form-contact__label.form-contact__label--textarea(:class="{ 'form-contact__label--active': clientMessage }") Message
+      .form-contact__error-message(v-show="errors.has('clientMessage')")  Please fill out your message
+  
+    .form-contact__group.form-contact__group--button
+      button.form-contact__submit-button(:class="{ 'form-contact__submit-button--success': formSuccess }" @click='validate')
+        .form-contact__submit-overlay(:class="{ 'form-contact__submit-overlay--showing': formSubmitted  && !formSuccess }")
+        span.form-contact__submit-label(:class="{ 'form-contact__submit-label--hidden': formSuccess }") Submit
+        .form-contact__submit-success(:class="{ 'form-contact__submit-success--showing': formSuccess }")
+        span.form-contact__submit-check(:class="{ 'form-contact__submit-check--showing': formSuccess }") &#10003
+  
+  .form-contact__modal(:class="{ 'form-contact__modal--showing': modalShowing }")
+    .form-contact__modal-overlay
+    .form-contact__modal-container
+      .form-contact__modal-close(@click='closeModal()') close
+      h1.form-contact__modal-title Thank you! We will be in touch shortly!
+      slot

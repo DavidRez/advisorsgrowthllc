@@ -1,0 +1,22 @@
+// --------------------------------------------------------
+// containers
+// --------------------------------------------------------
+
+.container
+  @include desktop
+    max-width: $max-width
+  @include phone-lg
+    padding: 0 1rem
+  display: flex
+  position: relative
+  flex-wrap: wrap
+  margin: 0 auto
+  padding: 0 calc(#{$outside-gutter} / 2)
+  width: 100%
+  max-width: calc(#{$width} + #{$outside-gutter})
+
+  &--large
+    @extend .container
+    @include desktop
+      max-width: $max-width-large
+    max-width: $width-large

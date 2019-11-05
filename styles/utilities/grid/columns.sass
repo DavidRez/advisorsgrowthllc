@@ -1,0 +1,27 @@
+// --------------------------------------------------------
+// columns
+// --------------------------------------------------------
+
+@for $i from 1 through $columns
+  .col-#{$i}
+    @include tablet
+      padding: 0
+      width: 100%
+    padding: 0 calc(#{$gutter} / 2)
+    width: calc((#{$i} / #{$columns}) * 100% - .1px)
+
+@for $i from 1 through $columns
+  .col-#{$i}--tablet
+    @include tablet
+      padding: 0 calc(#{$gutter} / 2)
+      width: calc((#{$i} / #{$columns}) * 100% - .1px)
+
+    @include phone-lg
+      padding: 0
+      width: 100%
+
+@for $i from 1 through $columns
+  .col-#{$i}--offset
+    @include tablet
+      margin-left: 0
+    margin-left: calc((#{$i} / #{$columns}) * 100% - .1px)

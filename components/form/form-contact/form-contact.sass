@@ -1,0 +1,261 @@
+.form-contact
+  z-index: 5
+  padding-bottom: 2rem
+  width: 100%
+
+  &__form
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
+  &__group
+    position: relative
+    margin-top: 2rem
+    width: 100%
+
+    &--half
+      width: calc(50% - (#{$gutter} / 2))
+
+    &--button
+      display: flex
+      width: 100%
+
+  &__label
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    transition: font-size .25s ease-in, transform .25s ease-in, top .25s ease-in
+    padding-left: .75rem
+    pointer-events: none
+
+    &--textarea
+      top: 1.25rem
+
+    &--active
+      top: -.25rem
+      transform: translateY(0)
+      font-size: 11px
+
+    &--checkbox
+      display: block
+      position: static
+      transform: none
+      padding-bottom: .5rem
+
+  &__input
+    border-bottom: 1px solid $c1
+    padding: 1.25rem 1rem .75rem
+    width: 100%
+
+    &:focus,
+    &:active
+      outline: transparent
+
+    &:focus + .form-contact__label
+      top: .25rem
+      transform: translateY(0)
+      font-size: 11px
+
+    &--textarea
+      min-height: 10rem
+
+    &--error
+      border-color: $danger
+
+    &--error,
+    &--error + .form-contact__label
+      color: $danger
+
+  &__error-message
+    position: absolute
+    bottom: -1.25rem
+    left: 0
+    padding: .25rem .75rem
+    color: $danger
+    font-size: 9px
+
+    .form-contact__group-message &
+      bottom: .75rem
+
+  &__checkbox
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1rem 0
+
+    &-group
+      position: relative
+
+    &-overlay,
+    &-input
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      width: 1.5rem
+      height: 1.5rem
+
+    &-input
+      opacity: 0
+      z-index: 1
+      cursor: pointer
+
+      &:checked ~ .form-contact__checkbox-overlay,
+      &:hover ~ .form-contact__checkbox-overlay
+
+        &:after
+          transition: opacity .3s ease
+          opacity: 1
+
+      &:checked ~ .form-contact__checkbox-overlay
+        border: 1px solid $white
+
+    &-overlay
+      transition: border .25s ease
+      border: 1px solid $c1
+
+      &:after
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: opacity .2s ease
+        opacity: 0
+        color: $c1
+        font-size: 1.25rem
+        content: '\2713'
+
+    &-label
+      padding-left: 2.75rem
+      text-transform: capitalize
+
+  &__submit-overlay,
+  &__submit-success
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: opacity .25s ease .4s
+    opacity: 0
+    z-index: 3
+    background: rgba($black, .25)
+    width: 101%
+    height: 101%
+
+    &--showing
+      opacity: 1
+      z-index: 99
+
+  &__submit-success
+    transition: opacity .25s ease
+    z-index: 2
+    background: $success
+
+    &--showing
+      transition-delay: .4s
+
+  &__submit-label
+    display: block
+    position: relative
+    transition: transform .25s ease .25s
+    z-index: 9
+    padding: .5rem 1.75rem
+
+    &--hidden
+      transform: scale(0)
+      transition-delay: 0
+
+  &__submit-check
+    display: flex
+    position: absolute
+    top: 0
+    left: 0
+    align-items: center
+    justify-content: center
+    transform: translateY(.5rem) scale(0)
+    transition: transform .25s ease
+    z-index: 9
+    width: 100%
+    height: 100%
+
+    &--showing
+      transform: translateY(0) scale(1)
+      transition-delay: .4s
+
+
+  &__submit-button
+    position: relative
+    border: none
+    background: $c1
+    cursor: pointer
+    padding: 0
+    overflow: hidden
+    color: $white
+
+    &:focus,
+    &:active
+      outline: transparent
+
+    &:hover
+      .form-contact__submit-overlay
+        opacity: 1
+
+  &__modal
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: opacity .25s ease-in
+    opacity: 0
+    z-index: 99999
+    width: 100vw
+    height: 100vh
+    pointer-events: none
+
+    &--showing
+      opacity: 1
+      pointer-events: all
+
+    &-overlay
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background: rgba($black, .15)
+      width: 100%
+      height: 100%
+
+    &-container
+      display: flex
+      position: absolute
+      top: 50%
+      left: 50%
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      transform: translate(-50%, -50%)
+      background: $white
+      width: calc(100% - (#{$gutter} / 2))
+      max-width: 45rem
+      height: calc(100% - (#{$gutter} / 2))
+      max-height: 25rem
+      text-align: center
+
+    &-close
+      @include phone-lg
+        right: 1rem
+      position: absolute
+      top: 0
+      right: -3.5rem
+      cursor: pointer
+      color: $white
+
+    &-title
+      color: $c1
+
+    &-body
+      padding: 1rem 0
+
+    // &-button
