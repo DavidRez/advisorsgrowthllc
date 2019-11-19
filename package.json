@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "nuxt": "^2.0.0",
     "nuxt-sass-resources-loader": "^2.0.5",
+    "nuxt-webfontloader": "^1.1.0",
     "sass-lint": "^1.13.1",
     "svg-inline-loader": "^0.8.0",
     "vee-validate": "^2.2.13"

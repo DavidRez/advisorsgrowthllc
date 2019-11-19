@@ -12,13 +12,13 @@ export default {
       routes.push({
         path: '/',
         name: 'Home',
-        meta: ['navigation', 'footer', 'dev'],
+        meta: [ 'navigation', 'footer', 'dev', ],
         component: resolve(__dirname, 'pages/index.vue'),
       })
       routes.push({
         path: '/style-guide',
         name: 'Style Guide',
-        meta: ['navigation', 'footer', 'dev'],
+        meta: [ 'navigation', 'footer', 'dev', ],
         component: resolve(__dirname, 'pages/index.vue'),
       })
     },
@@ -64,17 +64,16 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
-    // 'nuxt-webfontloader',
+    'nuxt-webfontloader',
   ],
-  // webfontloader: {
-  //   google: {
-  //     families: [ 'Lato:400,700', ]
-  //   },
-  // },
+  webfontloader: {
+    google: {
+      families: [ 'Lato:400,700', ],
+    },
+  },
   styleResources: {
     sass: [
       '~/styles/base/*.sass',
-      '~/styles/units/*.scss',
       '~/styles/utilities/*.sass',
       '~/styles/utilities/grid/*.sass',
       '~/styles/utilities/extensions/*.sass',

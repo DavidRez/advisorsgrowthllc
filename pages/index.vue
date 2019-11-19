@@ -19,7 +19,7 @@ export default {
         }),
         {}
       )
-      return { props: data, }
+      return { props: data.home, }
     } catch (e) {
       console.error('Home Page ' + e)
     }
