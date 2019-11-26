@@ -4,9 +4,6 @@ export default {
     port: 4949,
     host: '0.0.0.0',
   },
-  /*
-  ** Headers of the page
-  */
   router: {
     extendRoutes (routes, resolve) {
       routes.push({
@@ -34,13 +31,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', },
     ],
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff', },
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     '~/resources/components',
     '~/resources/mixins',
@@ -50,49 +41,43 @@ export default {
       mode: 'client',
     },
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  devModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-  ],
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
   ],
-  webfontloader: {
-    google: {
-      families: [ 'Lato:400,700', ],
-    },
-  },
   styleResources: {
     sass: [
-      '~/styles/base/*.sass',
+      '~/styles/*.sass',
       '~/styles/utilities/*.sass',
       '~/styles/utilities/grid/*.sass',
-      '~/styles/utilities/extensions/*.sass',
       '~/styles/utilities/mixins/*.sass',
     ],
   },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
+  ],
+  stylelint: {
+    files: [
+      'styles/*.sass',
+      'styles/**/*.sass',
+      'styles/**/*.sass',
+      'components/**/*.sass',
+      'components/**/**/*.sass',
+    ],
+  },
   axios: {
   },
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        'postcss-url': {},
+        'autoprefixer': {},
+      },
+    },
     extend (config, ctx) {
       config.module.rules
         .filter(moduleRules => moduleRules.test.toString().includes('svg'))

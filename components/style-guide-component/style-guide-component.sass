@@ -1,10 +1,10 @@
 .style-guide-component
   padding: 6rem 0
   &__container
-    @extend .container
+    @include container
 
     &-lg
-      @extend .container--large
+      @include container--large
 
   &__col
     position: relative
@@ -14,45 +14,45 @@
     // font-weight: 700
 
   &__col-form
-    @extend .col-8
-    @extend .col-2--offset
+    @include col (8)
+    @include col--offset (2)
 
   &__col-1
-    @extend .col-5
-    @extend .col-8--tablet
+    @include col (5)
+    @include col--tablet (8)
     div
       background: tomato
 
   &__col-2
-    @extend .col-2
-    @extend .col-4--tablet
+    @include col (2)
+    @include col--tablet (4)
     div
       background: blue
       color: $white
 
   &__col-3
-    @extend .col-3
-    @extend .col-2--offset
+    @include col (3)
+    @include col--offset (2)
     div
       background: yellow
 
   &__col-4
-    @extend .col-4
-    @extend .col-6--tablet
+    @include col (4)
+    @include col--tablet (6)
     div
       background: green
       color: $white
 
   &__col-5
-    @extend .col-3
-    @extend .col-1--offset
-    @extend .col-6--tablet
+    @include col (3)
+    @include col--offset (1)
+    @include col--tablet (6)
     div
       background: purple
       color: $white
 
   &__col-6
-    @extend .col-4
+    @include col (4)
     div
       background: orange
 
@@ -61,7 +61,7 @@
     height: 100%
 
   &__col-images
-    @extend .col-4
+    @include col (4)
     position: relative
     min-height: 7rem
 
@@ -94,7 +94,7 @@
     min-height: 15rem
 
   &__background-image
-    @extend .image--centered
+    @include image--centered
     opacity: .24
     z-index: -1
     width: calc(100% - #{$gutter})

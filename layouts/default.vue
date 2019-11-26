@@ -15,7 +15,9 @@ export default {
 </script>
 
 <style lang='sass'>
-@import "~/styles/base/normalize.sass"
-@import "~/styles/base/fonts.sass"
-@import "~/styles/base/typography.sass"
+  @import "~/styles/extensions/normalize.sass"
+  @import "~/styles/extensions/typography.sass"
+  @import "~/styles/extensions/buttons.sass"
+  @import "~/styles/extensions/global-extensions.sass"
+  @import "~/styles/extensions/transitions.sass"
 </style>

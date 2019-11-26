@@ -1,9 +1,10 @@
 // normalize.sass v8.0.1 | MIT License | github.com/necolas/normalize.css - modified for sass
 
-// sass-lint:disable-all
 // 1. Correct the line height in all browsers.
 // 2. Prevent adjustments of font size after orientation changes in iOS.
 
+
+/* stylelint-disable */
 html
   line-height: 1.15
   -webkit-text-size-adjust: 100%
@@ -34,9 +35,9 @@ h1
 // 2. Show the overflow in Edge and IE.
 
 hr
-  overflow: visible
   box-sizing: content-box
   height: 0
+  overflow: visible
 
 // 1. Correct the inheritance and scaling of font size in all browsers.
 // 2. Correct the odd `em` font sizing in all browsers.
@@ -172,17 +173,17 @@ fieldset
 //    `fieldset` elements in all browsers.
 
 legend
-  box-sizing: border-box
-  // 1
-  color: inherit
-  // 2
   display: table
-  // 1
-  max-width: 100%
+  // 2
+  box-sizing: border-box
   // 1
   padding: 0
   // 3
+  max-width: 100%
+  // 1
   white-space: normal
+  // 1
+  color: inherit
   // 1
 
 // Add the correct vertical alignment in Chrome, Firefox, and Opera.
@@ -257,4 +258,4 @@ template
 [hidden]
   display: none
 
-// sass-lint:enable-all
+/* stylelint-enable */

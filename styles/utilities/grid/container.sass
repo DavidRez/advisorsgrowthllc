@@ -2,7 +2,7 @@
 // containers
 // --------------------------------------------------------
 
-.container
+@mixin container
   @include desktop
     max-width: $max-width
   @include phone-lg
@@ -15,8 +15,8 @@
   width: 100%
   max-width: calc(#{$width} + #{$outside-gutter})
 
-  &--large
-    @extend .container
+@mixin container--large
+    @include container
     @include desktop
       max-width: $max-width-large
     max-width: $width-large
