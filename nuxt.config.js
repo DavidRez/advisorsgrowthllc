@@ -47,6 +47,12 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
   ],
+  css: [
+    { src: '~/styles/static/buttons.sass', lang: 'sass', },
+    { src: '~/styles/static/global-styles.sass', lang: 'sass', },
+    { src: '~/styles/static/normalize.sass', lang: 'sass', },
+    { src: '~/styles/static/transitions.sass', lang: 'sass', },
+  ],
   styleResources: {
     sass: [
       '~/styles/*.sass',
@@ -56,6 +62,7 @@ export default {
     ],
   },
   buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
   ],
@@ -67,6 +74,11 @@ export default {
       'components/**/*.sass',
       'components/**/**/*.sass',
     ],
+  },
+  webfontloader: {
+    google: {
+      families: [ 'Raleway:400,500,600,700', ],
+    },
   },
   axios: {
   },

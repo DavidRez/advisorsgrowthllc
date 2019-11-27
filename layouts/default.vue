@@ -13,11 +13,3 @@ export default {
   },
 }
 </script>
-
-<style lang='sass'>
-  @import "~/styles/extensions/normalize.sass"
-  @import "~/styles/extensions/typography.sass"
-  @import "~/styles/extensions/buttons.sass"
-  @import "~/styles/extensions/global-extensions.sass"
-  @import "~/styles/extensions/transitions.sass"
-</style>

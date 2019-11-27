@@ -1,4 +1,3 @@
-import axios from 'axios'
 import {
   // GET_BLOG,
   // GET_BLOG_ARR
@@ -13,8 +12,8 @@ const stateActions = () => ({
   GET_GLOBAL ({ commit, }) {
     (async () => {
       try {
-        const response = await axios.get(`${api}/wp/v2/globalData`)
-        const data = response.data.reduce(
+        const response = await this.$axios.$get(`${api}/wp/v2/globalData`)
+        const data = response.reduce(
           (allData, data) => ({
             ...allData,
             [data.slug]: {
