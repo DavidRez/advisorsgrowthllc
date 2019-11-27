@@ -1,8 +1,0 @@
-// --------------------------------------------------------
-// Iterator Mixin
-// --------------------------------------------------------
-
-@mixin iterator($amount, $delay)
-  @for $i from 1 through $amount
-    &:nth-child(#{$i})
-      animation-delay: (($i - 1) * $delay)
