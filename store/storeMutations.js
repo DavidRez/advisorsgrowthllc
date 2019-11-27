@@ -3,7 +3,7 @@ import {
   // GET_BLOGS_ARR,
   GET_GLOBAL,
   SET_SCROLLED,
-  VIEW_MENU,
+  VIEW_MENU
 } from './mutation-types.js'
 
 const stateMutations = () => ({
@@ -22,7 +22,7 @@ const stateMutations = () => ({
   },
   [VIEW_MENU] (state, data) {
     state.menu = data
-  },
+  }
 })
 
 export default stateMutations

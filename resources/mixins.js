@@ -3,6 +3,6 @@ export const closeMenu = {
     $_closeMenu () {
       this.$store.dispatch('VIEW_MENU', false)
       document.body.classList.remove('body-stop')
-    },
-  },
+    }
+  }
 }

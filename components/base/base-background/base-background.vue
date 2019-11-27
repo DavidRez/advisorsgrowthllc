@@ -5,11 +5,11 @@ export default {
   props: {
     src: {
       type: String,
-      default: () => ``,
+      default: () => ``
     },
     bgColor: {
       type: String,
-      default: '#f8f8f8',
+      default: '#f8f8f8'
     },
     alt: {
       type: String,
@@ -17,8 +17,8 @@ export default {
         if (process.client) {
           return `${document.location.hostname} image for section`
         }
-      },
-    },
+      }
+    }
   },
   data () {
     return {
@@ -28,8 +28,8 @@ export default {
       intersectionOptions: {
         root: null,
         rootMargin: '500px 0px 0px 0px',
-        threshold: [ 0.01, ],
-      },
+        threshold: [ 0.01 ]
+      }
     }
   },
   mounted () {
@@ -39,11 +39,11 @@ export default {
     setCurrentImage () {
       if (this.currentImg !== null) {
         return {
-          backgroundImage: 'url(' + this.currentImg + ')',
+          backgroundImage: 'url(' + this.currentImg + ')'
         }
       }
     },
-    onWaypoint ({ going, direction, }) {
+    onWaypoint ({ going, direction }) {
       if (going === 'in') {
         const downloadingImage = new Image()
         this.currentImg = this.src
@@ -52,7 +52,7 @@ export default {
         }
         downloadingImage.src = this.src
       }
-    },
-  },
+    }
+  }
 }
 </script>

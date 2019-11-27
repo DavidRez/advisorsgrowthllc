@@ -6,7 +6,7 @@ import api from '~/resources/api'
 export default {
   components: {
   },
-  async asyncData ({ $axios, }) {
+  async asyncData ({ $axios }) {
     try {
       const response = await $axios.get(`${api}/wp/v2/pages`)
       const data = response.data.reduce(
@@ -14,15 +14,15 @@ export default {
           ...allData,
           [data.slug]: {
             title: data.title.rendered,
-            ...data.acf,
-          },
+            ...data.acf
+          }
         }),
         {}
       )
-      return { props: data.home, }
+      return { props: data.home }
     } catch (e) {
       console.error('Home Page ' + e)
     }
-  },
+  }
 }
 </script>

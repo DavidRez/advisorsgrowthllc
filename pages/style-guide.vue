@@ -5,7 +5,7 @@ import StyleGuide from '~/components/style-guide-component/style-guide-component
 
 export default {
   components: {
-    StyleGuide,
-  },
+    StyleGuide
+  }
 }
 </script>

@@ -5,14 +5,14 @@ import FormContact from '~/components/form/form-contact/form-contact'
 
 export default {
   components: {
-    FormContact,
+    FormContact
   },
   props: {
     content: {
-      type: [ Object, ],
-      default: () => ({}),
-    },
-  },
+      type: Object,
+      default: () => ({})
+    }
+  }
 }
 </script>
 

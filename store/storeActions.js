@@ -3,13 +3,13 @@ import {
   // GET_BLOG_ARR
   GET_GLOBAL,
   SET_SCROLLED,
-  VIEW_MENU,
+  VIEW_MENU
 } from './mutation-types'
 
 import api from '~/resources/api'
 
 const stateActions = () => ({
-  GET_GLOBAL ({ commit, }) {
+  GET_GLOBAL ({ commit }) {
     (async () => {
       try {
         const response = await this.$axios.$get(`${api}/wp/v2/globalData`)
@@ -17,8 +17,8 @@ const stateActions = () => ({
           (allData, data) => ({
             ...allData,
             [data.slug]: {
-              ...data.acf,
-            },
+              ...data.acf
+            }
           }),
           {}
         )
@@ -45,15 +45,15 @@ const stateActions = () => ({
   //     }
   //   })()
   // },
-  SET_SCROLLED ({ commit, }, data) {
+  SET_SCROLLED ({ commit }, data) {
     commit(SET_SCROLLED, data)
   },
-  VIEW_MENU ({ commit, }, data) {
+  VIEW_MENU ({ commit }, data) {
     commit(VIEW_MENU, data)
   },
-  async nuxtServerInit ({ dispatch, }) {
+  async nuxtServerInit ({ dispatch }) {
     await dispatch(GET_GLOBAL)
-  },
+  }
 })
 
 export default stateActions

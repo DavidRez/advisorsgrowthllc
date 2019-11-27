@@ -7,7 +7,7 @@ export const state = () => ({
   globalData: {},
   loading: true,
   scrolled: {},
-  menu: false,
+  menu: false
 })
 
 export const actions = storeActions()

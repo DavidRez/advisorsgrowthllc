@@ -1,6 +1,7 @@
 <template lang='pug' src='./the-navigation.pug'></template>
 
 <script>
+import router from '~/router/index'
 
 export default {
   computed: {
@@ -8,10 +9,9 @@ export default {
     //   return this.$store.state.globalData
     // },
     links () {
-      const routes = this.$router.options.routes.filter(route => route.meta)
-      return routes.filter(route => route.meta.includes('dev') && route.meta.includes('navigation'))
-    },
-  },
+      return router
+    }
+  }
 }
 </script>
 
