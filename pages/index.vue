@@ -8,8 +8,8 @@ export default {
   },
   async asyncData ({ $axios }) {
     try {
-      const response = await $axios.get(`${api}/wp/v2/pages`)
-      const data = response.data.reduce(
+      const response = await $axios.$get(`${api}/wp/v2/pages`)
+      const data = response.reduce(
         (allData, data) => ({
           ...allData,
           [data.slug]: {
