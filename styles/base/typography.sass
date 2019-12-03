@@ -6,8 +6,12 @@
     font-size: 18px
   @include phone
     font-size: 14px
+  text-rendering: optimizeLegibility
+  line-height: 1.467
   font-family: $font
   font-size: 16px
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
 %h1
   font-size: 40px
@@ -30,3 +34,10 @@
 
 %h6
   font-size: 18px
+
+%a
+  text-decoration: none
+  color: $black
+
+%no-margin
+  margin: 0
