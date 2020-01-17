@@ -2,7 +2,7 @@
   
   .style-guide-component__divider
     h1 Form
-    h3 For New Patient Forms in the modal push new content into the slot in the form as shown in the pug file below.
+    p(style='maxWidth: 720px; margin: 0 auto;') This is the standard form. The thank you modal has a slot for adding New Patient forms if a user checks they're a first time patient. Check out this pug file to see how the content is slotted in.
   .style-guide-component__container
     .style-guide-component__col.style-guide-component__col-form
       FormContact
@@ -14,7 +14,7 @@
     h3 See style-guide-component component in components for reference.
   .style-guide-component__container
     .style-guide-component__col-images
-      | This is the 'BaseBackground' component, it has no styles built in except for the background color, this is changed through the ':bgColor' props and it takes a string of whatever color you would like.
+      | This is the 'BaseBackground' component, it can be passed a prop (':bgColor') to change the background color. The prop takes a string of the hex-code of the color. Its default styling is set to bg position, center and bg size as cover.
       BaseBackground.style-guide-component__background-image(:bgColor='"#fff"', :src='"https://d3qms0w8ok8dkp.cloudfront.net/photo_1.jpg"')
     .style-guide-component__col-images
       | This is the 'BaseImage' component with the ':imageBackground' prop in it's default, 'false', it is positioned relative with a flex-shrink: 0 so it will behave more closely to an img tag.

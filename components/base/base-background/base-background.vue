@@ -56,3 +56,5 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" src="./base-background.sass"></style>

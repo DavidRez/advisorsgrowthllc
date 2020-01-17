@@ -10,7 +10,7 @@ export default {
     },
     bgColor: {
       type: String,
-      default: '#f8f8f8'
+      default: '#ffffff'
     },
     imageBackground: {
       type: Boolean,
@@ -67,3 +67,5 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" src="./base-image.sass"></style>

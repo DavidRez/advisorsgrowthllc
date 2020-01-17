@@ -15,7 +15,7 @@ export default {
       postUrl: `https://aamuwi383c.execute-api.us-west-1.amazonaws.com/prod/roostergrin-emailer`,
       formSubmitted: false,
       formSuccess: false,
-      modalShowing: false
+      modalOpen: false
     }
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
       this.formSubmitted = false
       this.isFirstTime = false
       setTimeout(() => {
-        this.modalShowing = false
+        this.modalOpen = false
       }, 150)
     },
     async onSubmit () {
@@ -124,9 +124,9 @@ export default {
 
       await this.$axios.$post(this.postUrl, null, {
         params: {
-          subject: `RG Boilerplate Contact Form`,
+          subject: `Website Contact Form`,
           from: `no-reply@rg-media.com`,
-          to: `luke.evers@roostergrin.com`,
+          to: `matt.sprague@roostergrin.com`,
           body: emailTemplate
         },
         headers: {
@@ -136,7 +136,7 @@ export default {
         .then((res) => {
           this.formSuccess = true
           setTimeout(() => {
-            this.modalShowing = true
+            this.modalOpen = true
           }, 750)
           setTimeout(() => {
             this.firstName = ''

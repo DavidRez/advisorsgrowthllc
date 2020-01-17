@@ -1,4 +1,4 @@
-<template lang='pug' src='./the-navigation.pug'></template>
+<template lang='pug' src='./navigation.pug'></template>
 
 <script>
 import router from '~/router/index'
@@ -9,10 +9,12 @@ export default {
     //   return this.$store.state.globalData
     // },
     links () {
-      return router
+      return router.filter((link) => {
+        return link.navigation
+      })
     }
   }
 }
 </script>
 
-<style lang="sass" src="./the-navigation.sass"></style>
+<style lang="sass" src="./navigation.sass"></style>

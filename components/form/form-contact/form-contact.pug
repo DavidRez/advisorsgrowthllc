@@ -1,5 +1,5 @@
 .form-contact
-  form.form-contact__form(@submit.prevent='validate', method='post')
+  form.form-contact__form
     
     .form-contact__group
       input.form-contact__input(name='firstName', v-model='firstName', v-validate="'required|alpha_spaces'", :class="{ 'form-contact__input--error': errors.has('firstName') }", type='text')
@@ -12,7 +12,7 @@
       .form-contact__error-message(v-show="errors.has('lastName')") Your last name is required.
   
     .form-contact__group
-      input.form-contact__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'form-contact__input--error': errors.has('clientEmail') }")
+      input.form-contact__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'form-contact__input--error': errors.has('clientEmail') }" type= 'email')
       label.form-contact__label(:class="{ 'form-contact__label--active': clientEmail }") Your Email Address *
       .form-contact__error-message(v-show="errors.has('clientEmail')")  Please input a valid Email
   
@@ -33,20 +33,19 @@
           label.form-contact__checkbox-label Yes, I am a first time patient!
   
     .form-contact__group
-      textarea.form-contact__input.form-contact__input--textarea(name='clientMessage', v-model='clientMessage')
+      textarea.form-contact__input.form-contact__input--textarea(name='clientMessage', v-model='clientMessage' rows='5')
       label.form-contact__label.form-contact__label--textarea(:class="{ 'form-contact__label--active': clientMessage }") Message
       .form-contact__error-message(v-show="errors.has('clientMessage')")  Please fill out your message
   
     .form-contact__group.form-contact__group--button
-      button.form-contact__submit-button(:class="{ 'form-contact__submit-button--success': formSuccess }" @click='validate')
-        .form-contact__submit-overlay(:class="{ 'form-contact__submit-overlay--showing': formSubmitted  && !formSuccess }")
+      .form-contact__submit-button(:class="{ 'form-contact__submit-button--success': formSuccess, 'form-contact__submit-button--sending': formSubmitted && !formSuccess }" @click='validate')
         span.form-contact__submit-label(:class="{ 'form-contact__submit-label--hidden': formSuccess }") Submit
-        .form-contact__submit-success(:class="{ 'form-contact__submit-success--showing': formSuccess }")
         span.form-contact__submit-check(:class="{ 'form-contact__submit-check--showing': formSuccess }") &#10003
   
-  .form-contact__modal(:class="{ 'form-contact__modal--showing': modalShowing }")
+  .form-contact__modal(:class="{ 'form-contact__modal--open': modalOpen }")
     .form-contact__modal-overlay
     .form-contact__modal-container
       .form-contact__modal-close(@click='closeModal()') close
-      h1.form-contact__modal-title Thank you! We will be in touch shortly!
+      h1.form-contact__modal-title Thank you! 
+      .form-contact__modal-text We will be in touch shortly!
       slot

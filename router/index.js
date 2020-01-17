@@ -1,12 +1,12 @@
 const router = [
   {
-    name: 'about',
-    path: '/about',
+    name: 'Home',
+    path: '/',
     navigation: true
   },
   {
-    name: 'getting started',
-    path: '/getting-started',
+    name: 'About',
+    path: '/about',
     navigation: true
   }
 ]
