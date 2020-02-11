@@ -97,7 +97,7 @@ export default {
                     </tr>
                     <tr>
                       <td style="width: 50%; font-size: 20px;">
-                        <h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">${this.firstTime}</h5></td>
+                        <h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">${this.firstTimeMessage}</h5></td>
                     </tr>
                   </table>
                   <table style="width: 100%; text-align: left">
