@@ -126,7 +126,7 @@ export default {
         params: {
           subject: `Website Contact Form`,
           from: `no-reply@rg-media.com`,
-          to: `matt.sprague@roostergrin.com`,
+          to: ['matt.sprague@roostergrin.com', 'luke.evers@roostergrin.com'],
           body: emailTemplate
         },
         headers: {
