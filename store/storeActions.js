@@ -9,41 +9,37 @@ import {
 import api from '~/resources/api'
 
 const stateActions = () => ({
-  GET_GLOBAL ({ commit }) {
-    (async () => {
-      try {
-        const response = await this.$axios.$get(`${api}/wp/v2/globalData`)
-        const data = response.reduce(
-          (allData, data) => ({
-            ...allData,
-            [data.slug]: {
-              ...data.acf
-            }
-          }),
-          {}
-        )
-        commit(GET_GLOBAL, data)
-      } catch (e) { console.log('GLOBAL DATA API: ' + e) }
-    })()
+  async GET_GLOBAL ({ commit }) {
+    try {
+      const response = await this.$axios.$get(`${api}/wp/v2/globalData`)
+      const data = response.reduce(
+        (allData, data) => ({
+          ...allData,
+          [data.slug]: {
+            ...data.acf
+          }
+        }),
+        {}
+      )
+      commit(GET_GLOBAL, data)
+    } catch (e) { console.log('GLOBAL DATA ERROR: ' + e) }
   },
-  // GET_BLOG ({ commit }) {
-  //   (async () => {
-  //     try {
-  //       var response = await axios.get(`${api}/wp/v2/blogs?per_page=100`)
-  //       const dataArr = response.data.reduce(
-  //         (acc, item) => ([ ...acc, { link: '/blogs/' + item.slug, slug: item.slug, ...item.acf } ]),
-  //         []
-  //       )
-  //       const data = response.data.reduce(
-  //         (allData, data) => ({ ...allData, [data.slug]: { link: '/blogs/' + data.slug, ...data.acf } }),
-  //         {}
-  //       )
-  //       commit(GET_BLOG_ARR, dataArr)
-  //       commit(GET_BLOG, data)
-  //     } catch (e) {
-  //       console.log('BLOGS API: ' + e)
-  //     }
-  //   })()
+  // async GET_BLOG ({ commit }) {
+  //   try {
+  //     var response = await axios.get(`${api}/wp/v2/blogs?per_page=100`)
+  //     const dataArr = response.data.reduce(
+  //       (acc, item) => ([ ...acc, { link: '/blogs/' + item.slug, slug: item.slug, ...item.acf } ]),
+  //       []
+  //     )
+  //     const data = response.data.reduce(
+  //       (allData, data) => ({ ...allData, [data.slug]: { link: '/blogs/' + data.slug, ...data.acf } }),
+  //       {}
+  //     )
+  //     commit(GET_BLOG_ARR, dataArr)
+  //     commit(GET_BLOG, data)
+  //   } catch (e) {
+  //     console.log('BLOGS API: ' + e)
+  //   }
   // },
   SET_SCROLLED ({ commit }, data) {
     commit(SET_SCROLLED, data)
