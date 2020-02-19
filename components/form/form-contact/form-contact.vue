@@ -126,6 +126,7 @@ export default {
         params: {
           subject: `Website Contact Form`,
           from: `no-reply@rg-media.com`,
+          // two email addresses are written as:'matt.sprague@roostergrin.com:second.email@example.com'
           to: `matt.sprague@roostergrin.com`,
           body: emailTemplate
         },
