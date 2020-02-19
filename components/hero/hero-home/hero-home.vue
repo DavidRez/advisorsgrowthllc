@@ -3,16 +3,11 @@
 <script>
 export default {
   props: {
-    content: {
+    props: {
       type: Object,
-      default: () => ({}),
-    },
-  },
-  data () {
-    return {
-      show: 0,
+      default: () => ({})
     }
-  },
+  }
 }
 </script>
 
