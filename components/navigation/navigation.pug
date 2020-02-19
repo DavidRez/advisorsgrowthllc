@@ -1,6 +1,2 @@
 header.navigation(v-if='links')
-  nuxt-link.navigation__links(
-    v-for='(link, i) in links'
-    :key='`link-${i}`'
-    :to='link.path'
-    v-html='link.name')
+  nuxt-link.navigation__links(v-for='(link, i) in links', :key='`link-${i}`', :to='link.path' v-html='link.name')
