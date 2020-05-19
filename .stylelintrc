@@ -152,8 +152,8 @@
         "background-color",
         "background-image",
         "background-origin",
-        "background-position",
         "background-repeat",
+        "background-position",
         "background-size",
 
         "cursor",
