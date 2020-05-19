@@ -7,9 +7,17 @@ export default {
       type: String,
       default: () => ``
     },
+    webp: {
+      type: String,
+      default: () => ``
+    },
+    jp2: {
+      type: String,
+      default: () => ``
+    },
     bgColor: {
       type: String,
-      default: '#f8f8f8'
+      default: '#ffffff'
     },
     alt: {
       type: String,
@@ -25,6 +33,7 @@ export default {
       currentImg: null,
       loading: true,
       loaded: false,
+      theBrowser: null,
       intersectionOptions: {
         root: null,
         rootMargin: '500px 0px 0px 0px',
@@ -34,19 +43,33 @@ export default {
   },
   mounted () {
     this.loaded = true
+    const browser = navigator.userAgent
+    if (browser.includes('Safari') && !browser.includes('Chrome')) {
+      this.theBrowser = 'safari'
+    }
+    if (browser.includes('Trident')) {
+      this.theBrowser = 'ie11'
+    }
   },
   methods: {
-    setCurrentImage () {
-      if (this.currentImg !== null) {
-        return {
-          backgroundImage: 'url(' + this.currentImg + ')'
-        }
-      }
-    },
     onWaypoint ({ going, direction }) {
       if (going === 'in') {
         const downloadingImage = new Image()
-        this.currentImg = this.src
+        if (this.theBrowser === 'ie11') {
+          this.currentImg = this.src
+          this.loading = false
+          return
+        } else if (this.theBrowser === 'safari') {
+          this.currentImg = this.jp2
+          if (this.src && !this.jp2) {
+            this.currentImg = this.src
+          }
+        } else {
+          this.currentImg = this.webp
+          if (this.src && !this.webp) {
+            this.currentImg = this.src
+          }
+        }
         downloadingImage.onload = () => {
           this.loading = false
         }
