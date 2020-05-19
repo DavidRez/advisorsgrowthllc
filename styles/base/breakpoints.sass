@@ -3,11 +3,15 @@
     @content
 
 @mixin laptop-lg
-  @media screen and (max-width: $screen-laptop-lg)
+  @media screen and (min-width: $screen-laptop-lg)
     @content
 
 @mixin laptop
   @media screen and (max-width: $screen-laptop)
+    @content
+
+@mixin laptop-sm
+  @media screen and (max-width: $screen-laptop-sm)
     @content
 
 @mixin ipad-pro
@@ -18,8 +22,16 @@
   @media screen and (max-width: $screen-tablet-lg)
     @content
 
+@mixin tablet-md
+  @media screen and (max-width: $screen-tablet-md)
+    @content
+
 @mixin tablet
   @media screen and (max-width: $screen-tablet)
+    @content
+
+@mixin nexus
+  @media screen and (max-width: $screen-nexus)
     @content
 
 @mixin phone-lg
