@@ -8,6 +8,14 @@ export default {
       type: String,
       default: () => ``
     },
+    webp: {
+      type: String,
+      default: () => ``
+    },
+    jp2: {
+      type: String,
+      default: () => ``
+    },
     bgColor: {
       type: String,
       default: '#ffffff'
@@ -28,6 +36,8 @@ export default {
   data () {
     return {
       currentImg: null,
+      currWebP: null,
+      currJp2: null,
       imageType: 'relative',
       loading: true,
       loaded: false,
@@ -47,21 +57,14 @@ export default {
     this.loaded = true
   },
   methods: {
-    setCurrentImage () {
-      if (this.currentImg !== null) {
-        return {
-          backgroundImage: 'url(' + this.currentImg + ')'
-        }
-      }
-    },
-    onWaypoint ({ going, direction }) {
+    onWaypoint ({ going, direction, el }) {
       if (going === 'in') {
-        const downloadingImage = new Image()
         this.currentImg = this.src
-        downloadingImage.onload = () => {
+        this.currWebP = this.webp
+        this.currJp2 = this.jp2
+        el.children[2].onload = () => {
           this.loading = false
         }
-        downloadingImage.src = this.src
       }
     }
   }

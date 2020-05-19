@@ -1,7 +1,11 @@
 $array: 177
 
 .base-image
-  background-repeat: no-repeat
+  position: relative
+
+  &__image
+    width: 100%
+    height: 100%
 
   &__overlay
     position: absolute
@@ -26,7 +30,7 @@ $array: 177
     animation: spinning 1.4s ease-in-out infinite
     transform-origin: center
     fill: transparent
-    stroke-width: 3
+    stroke-width: 2
     stroke: $black
     stroke-dasharray: $array
     stroke-dashoffset: 0
