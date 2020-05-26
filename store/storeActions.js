@@ -1,6 +1,7 @@
 import {
   // GET_BLOG,
   // GET_BLOG_ARR
+  GET_PAGES,
   GET_GLOBAL,
   SET_SCROLLED,
   VIEW_MENU
@@ -23,6 +24,16 @@ const stateActions = () => ({
       )
       commit(GET_GLOBAL, data)
     } catch (e) { console.log('GLOBAL DATA ERROR: ' + e) }
+  },
+  async GET_PAGES ({ commit }) {
+    try {
+      const response = await this.$axios.$get(`${api}/wp/v2/pages`)
+      const data = response.reduce(
+        (allData, data) => ({ ...allData, [data.slug]: {title: data.title.rendered, ...data.acf} }),
+        {}
+      )
+      commit(GET_PAGES, data)
+    } catch (e) { console.error('PAGE ERROR: ' + e) }
   },
   // async GET_BLOG ({ commit }) {
   //   try {
@@ -48,6 +59,7 @@ const stateActions = () => ({
     commit(VIEW_MENU, data)
   },
   async nuxtServerInit ({ dispatch }) {
+    await dispatch(GET_PAGES)
     await dispatch(GET_GLOBAL)
   }
 })

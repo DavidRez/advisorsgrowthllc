@@ -4,8 +4,8 @@ import storeMutations from './storeMutations'
 export const state = () => ({
   // blog: {},
   // blogArr: [],
+  pages: {},
   globalData: {},
-  loading: true,
   scrolled: {},
   menu: false
 })

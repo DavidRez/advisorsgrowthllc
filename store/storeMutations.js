@@ -1,6 +1,7 @@
 import {
   // GET_BLOGS,
   // GET_BLOGS_ARR,
+  GET_PAGES,
   GET_GLOBAL,
   SET_SCROLLED,
   VIEW_MENU
@@ -15,7 +16,9 @@ const stateMutations = () => ({
   // },
   [GET_GLOBAL] (state, data) {
     state.globalData = data
-    state.loading = false
+  },
+  [GET_PAGES] (state, data) {
+    state.pages = data
   },
   [SET_SCROLLED] (state, data) {
     state.scrolled = data

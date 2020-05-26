@@ -1,27 +1,12 @@
 <template lang='pug' src='./index.pug'></template>
 
 <script>
-import api from '~/resources/api'
-
 export default {
   components: {
   },
-  async asyncData ({ $axios }) {
-    try {
-      const response = await $axios.$get(`${api}/wp/v2/pages`)
-      const data = response.reduce(
-        (allData, data) => ({
-          ...allData,
-          [data.slug]: {
-            title: data.title.rendered,
-            ...data.acf
-          }
-        }),
-        {}
-      )
-      return { props: data.home }
-    } catch (e) {
-      console.error('Home Page ' + e)
+  computed: {
+    props () {
+      return this.$store.state.pages.home
     }
   }
 }

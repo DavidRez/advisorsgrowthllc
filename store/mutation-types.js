@@ -1,5 +1,6 @@
 // export const GET_BLOG = 'GET_BLOG'
 // export const GET_BLOG_ARR = 'GET_BLOG_ARR'
 export const GET_GLOBAL = 'GET_GLOBAL'
+export const GET_PAGES = 'GET_PAGES'
 export const SET_SCROLLED = 'SET_SCROLLED'
 export const VIEW_MENU = 'VIEW_MENU'
