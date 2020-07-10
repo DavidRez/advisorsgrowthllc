@@ -73,7 +73,7 @@ export default {
         downloadingImage.onload = () => {
           this.loading = false
         }
-        downloadingImage.src = this.src
+        downloadingImage.src = this.currentImg
       }
     }
   }
