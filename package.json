@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/robots": "^2.4.2",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "axios": "^0.19.2",
     "nuxt": "^2.0.0",
     "nuxt-sass-resources-loader": "^2.0.5",
     "nuxt-webfontloader": "^1.1.0",
