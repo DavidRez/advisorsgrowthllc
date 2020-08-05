@@ -1,9 +1,9 @@
 export const setMeta = (props) => {
   return {
-    title: props.meta_title ? props.meta_title : props.title,
+    title: props.aioseop_title ? props.aioseop_title : props.title,
     meta: [
-      props.meta_description && { hid: 'description', name: 'description', content: props.meta_description },
-      props.meta_keywords && { hid: 'keywords', name: 'keywords', content: props.meta_keywords }
+      props.aioseop_description && { hid: 'description', name: 'description', content: props.aioseop_description },
+      props.aioseop_keywords && { hid: 'keywords', name: 'keywords', content: props.aioseop_keywords }
     ]
   }
 }
