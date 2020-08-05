@@ -32,7 +32,6 @@ const stateActions = () => ({
         (allData, data) => ({ ...allData, [data.slug]: {title: data.title.rendered, meta_title: data._aioseop_title, meta_description: data._aioseop_description, meta_keywords: data._aioseop_keywords, ...data.acf} }),
         {}
       )
-      console.log(response)
       commit(GET_PAGES, data)
     } catch (e) { console.error('PAGE ERROR: ' + e) }
   },
