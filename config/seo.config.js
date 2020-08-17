@@ -4,16 +4,38 @@ import api from '../resources/api'
 const url = 'https://nuxt-api.roostertest3.com'
 
 export const siteMap = {
+  path: '/sitemap.xml',
   hostname: url,
   gzip: true,
-  routes: () =>
-    axios
-      .get(`${api}/wp/v2/posts`)
-      .then(res => res.data.map(post => `/blog/${post.slug}`))
+  gzip: true,
+  lastmod: new Date(),
+  sitemaps: [
+    {
+      path: '/sitemap-pages.xml',
+      defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date()
+      }
+    },
+    {
+      path: '/sitemap-blog.xml',
+      defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date()
+      },
+      exclude: ['/**'],
+      routes: () =>
+        axios
+          .get(`${api}/wp/v2/posts`)
+          .then(res => res.data.map(post => `/blog/${post.slug}`))
+    }
+  ]
 }
 
 export const setRobots = {
   UserAgent: '*',
   Disallow: '',
-  Sitemap: url
+  Sitemap: url + '/sitemap.xml'
 }
