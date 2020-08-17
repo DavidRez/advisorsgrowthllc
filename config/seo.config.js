@@ -19,7 +19,7 @@ export const siteMap = {
       }
     },
     {
-      path: '/sitemap-blog.xml',
+      path: '/blog/sitemap-blog.xml',
       defaults: {
         changefreq: 'daily',
         priority: 1,
