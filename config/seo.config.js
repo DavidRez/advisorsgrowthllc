@@ -7,7 +7,6 @@ export const siteMap = {
   path: '/sitemap.xml',
   hostname: url,
   gzip: true,
-  gzip: true,
   lastmod: new Date(),
   sitemaps: [
     {
