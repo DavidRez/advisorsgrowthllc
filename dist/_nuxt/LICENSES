@@ -1,33 +1,20 @@
 /*!
- * Vue.js v2.6.10
+  * vue-router v3.4.3
+  * (c) 2020 Evan You
+  * @license MIT
+  */
+
+/*!
+ * Vue.js v2.6.11
  * (c) 2014-2019 Evan You
  * Released under the MIT License.
  */
 
 /*!
-  * vue-router v3.0.7
-  * (c) 2019 Evan You
-  * @license MIT
-  */
-
-/**
- * vuex v3.1.1
- * (c) 2019 Evan You
- * @license MIT
+ * vue-client-only v2.0.0
+ * (c) 2019-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
  */
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-/**
-  * vee-validate v2.2.15
-  * (c) 2019 Abdelrahman Awad
-  * @license MIT
-  */
 
 /*!
  * vue-no-ssr v1.1.1
@@ -36,7 +23,7 @@
  */
 
 /*!
- * vue-client-only v2.0.0
- * (c) 2019-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
+ * vuex v3.5.1
+ * (c) 2020 Evan You
+ * @license MIT
  */

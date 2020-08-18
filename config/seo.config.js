@@ -13,15 +13,21 @@ export const siteMap = {
       path: '/sitemap-pages.xml',
       defaults: {
         changefreq: 'daily',
-        priority: 1,
+        priority: 0.9,
         lastmod: new Date()
-      }
+      },
+      routes: [
+        {
+          url: '/',
+          priority: 1
+        }
+      ]
     },
     {
       path: '/blog/sitemap-blog.xml',
       defaults: {
         changefreq: 'daily',
-        priority: 1,
+        priority: 0.1,
         lastmod: new Date()
       },
       exclude: ['/**'],
