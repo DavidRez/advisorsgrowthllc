@@ -125,7 +125,7 @@ export default {
       await this.$axios.$post(this.postUrl, null, {
         params: {
           subject: `Website Contact Form`,
-          from: `no-reply@rg-media.com`,
+          from: `no-reply@roostergrin.com`,
           // two email addresses are written as:'matt.sprague@roostergrin.com:second.email@example.com'
           to: `matt.sprague@roostergrin.com`,
           body: emailTemplate
