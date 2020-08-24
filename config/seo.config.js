@@ -1,7 +1,5 @@
 import axios from 'axios'
-import api from '../resources/api'
-
-const url = 'https://nuxt-api.roostertest3.com'
+import { api, url } from '../resources/api'
 
 export const siteMap = {
   path: '/sitemap.xml',

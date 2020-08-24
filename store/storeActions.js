@@ -7,7 +7,7 @@ import {
   VIEW_MENU
 } from './mutation-types'
 
-import api from '~/resources/api'
+import { api } from '~/resources/api'
 
 const stateActions = () => ({
   async GET_GLOBAL ({ commit }) {
@@ -29,7 +29,15 @@ const stateActions = () => ({
     try {
       const response = await this.$axios.$get(`${api}/wp/v2/pages`)
       const data = response.reduce(
-        (allData, data) => ({ ...allData, [data.slug]: {title: data.title.rendered, aioseop_title: data._aioseop_title, aioseop_description: data._aioseop_description, aioseop_keywords: data._aioseop_keywords, ...data.acf} }),
+        (allData, data) => ({
+          ...allData,
+          [data.slug]: {
+            title: data.title.rendered,
+            aioseop_title: data._aioseop_title,
+            aioseop_description: data._aioseop_description,
+            aioseop_keywords: data._aioseop_keywords,
+            ...data.acf
+          }}),
         {}
       )
       commit(GET_PAGES, data)
