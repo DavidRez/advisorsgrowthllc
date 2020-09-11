@@ -1,18 +1,16 @@
-<template lang='pug' src='./index.pug'></template>
+<template lang="pug" src="./index.pug"></template>
 
 <script>
-import { setMeta } from '~/resources/utils'
+import { postFetchHelper, setMeta } from '~/resources/utils'
 
 export default {
-  components: {
-  },
-  computed: {
-    props () {
-      return this.$store.state.pages.home
-    }
+  components: {},
+  async asyncData () {
+    const data = await postFetchHelper('home')
+    return { content: data }
   },
   head () {
-    return setMeta(this.props)
+    return setMeta(this.content)
   }
 }
 </script>
