@@ -10,9 +10,6 @@ export default {
     const data = await postFetchHelper(params.blogs, 'posts')
     return { content: data }
   },
-  mounted () {
-    console.log(this.content)
-  },
   head () {
     return setMeta(this.content)
   }

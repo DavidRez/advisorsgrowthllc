@@ -32,7 +32,6 @@ export default {
     }
   },
   head () {
-    console.log(this.content)
     return setMeta(this.content)
   }
 }
