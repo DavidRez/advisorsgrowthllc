@@ -24,15 +24,23 @@ export const setMeta = (content) => {
   return {
     title: content._aioseo_title ? content._aioseo_title : content.title,
     meta: [
-      content.description && {
+      content.description ? {
         hid: 'description',
         name: 'description',
         content: content.description
+      } : {
+        hid: 'description',
+        name: 'description',
+        content: 'default description'
       },
-      content.keywords && {
+      content.keywords ? {
         hid: 'keywords',
         name: 'keywords',
         content: content.keywords
+      } : {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'default keywords'
       }
     ]
   }

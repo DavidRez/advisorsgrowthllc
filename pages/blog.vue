@@ -1,0 +1,39 @@
+<template lang="pug" src="./blog.pug"></template>
+
+<script>
+import axios from 'axios'
+import { api } from '../resources/api'
+import { setMeta, postFetchHelper } from '../resources/utils'
+
+export default {
+  components: {},
+  async asyncData () {
+    try {
+      const response = await axios.get(`${api}/wp/v2/posts?per_page=100`)
+      const dataPages = response.headers['x-wp-totalpages']
+      let blogArray = response.data
+      for (let i = 2; i <= dataPages; i++) {
+        const nextPage = await axios.get(
+          `${api}/wp/v2/posts?page=${i}&per_page=100`
+        )
+        blogArray = [...blogArray, ...nextPage.data]
+      }
+      const dataArr = blogArray.reduce(
+        (acc, item) => [
+          ...acc,
+          { link: '/' + item.slug, slug: item.slug, ...item.acf }
+        ],
+        []
+      )
+      const data = await postFetchHelper('blog')
+      return { blogs: dataArr, content: data }
+    } catch (e) {
+      console.error('BLOG API: ' + e)
+    }
+  },
+  head () {
+    console.log(this.content)
+    return setMeta(this.content)
+  }
+}
+</script>

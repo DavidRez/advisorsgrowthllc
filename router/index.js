@@ -8,6 +8,11 @@ const router = [
     name: 'About',
     path: '/about',
     navigation: true
+  },
+  {
+    name: 'Blog',
+    path: '/blog',
+    navigation: true
   }
 ]
 
