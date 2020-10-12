@@ -27,7 +27,7 @@ export default {
           }
         })
         .catch((e) => {
-          console.log(e)
+          console.error(e)
         })
     },
     closeModal () {
@@ -151,7 +151,7 @@ export default {
           }, 1100)
         })
         .catch((e) => {
-          console.log(e, 'submitted')
+          console.error(e, 'submitted')
         })
     }
   }

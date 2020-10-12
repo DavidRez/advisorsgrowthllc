@@ -1,15 +1,14 @@
 <template lang='pug' src='./about.pug'></template>
 
 <script>
-import { setMeta } from '~/resources/utils'
+import { setData, setMeta } from '~/resources/utils'
 
 export default {
   components: {
   },
-  computed: {
-    props () {
-      return this.$store.state.pages.about
-    }
+  async asyncData () {
+    const data = await setData('about')
+    return { props: data }
   },
   head () {
     return setMeta(this.props)
