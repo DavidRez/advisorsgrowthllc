@@ -1,7 +1,7 @@
 <template lang='pug' src='./navigation.pug'></template>
 
 <script>
-import { postFetchHelper } from '../../resources/utils'
+import { setData } from '../../resources/utils'
 import router from '~/router/index'
 
 export default {
@@ -16,7 +16,7 @@ export default {
     }
   },
   async fetch () {
-    this.content = await postFetchHelper('navigation', 'globalData')
+    this.content = await setData('global', 'globalData')
   }
 }
 </script>

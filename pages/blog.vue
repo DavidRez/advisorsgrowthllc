@@ -3,7 +3,7 @@
 <script>
 import axios from 'axios'
 import { api } from '../resources/api'
-import { setMeta, postFetchHelper } from '../resources/utils'
+import { setMeta, setData } from '../resources/utils'
 
 export default {
   components: {},
@@ -14,7 +14,7 @@ export default {
       let blogArray = response.data
       for (let i = 2; i <= dataPages; i++) {
         const nextPage = await axios.get(
-          `${api}/wp/v2/posts?page=${i}&per_page=100`
+          `${api}/wp/v2/posts?per_page=100?page=${i}`
         )
         blogArray = [...blogArray, ...nextPage.data]
       }
@@ -25,14 +25,14 @@ export default {
         ],
         []
       )
-      const data = await postFetchHelper('blog')
-      return { blogs: dataArr, content: data }
+      const data = await setData('blog')
+      return { blogs: dataArr, props: data }
     } catch (e) {
       console.error('BLOG API: ' + e)
     }
   },
   head () {
-    return setMeta(this.content)
+    return setMeta(this.props)
   }
 }
 </script>
