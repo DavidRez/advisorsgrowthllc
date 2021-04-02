@@ -187,13 +187,12 @@
 
   &__modal
     position: fixed
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
+    top: 0
+    left: 0
     transition: opacity .25s ease-in
     opacity: 0
     z-index: 99999
-    width: 100vw
+    width: 100%
     height: 100vh
     pointer-events: none
 
@@ -202,22 +201,15 @@
       pointer-events: all
 
     &-overlay
-      position: absolute
-      top: 0
-      left: 0
+      @extend %absolute
       background: rgba($black, .15)
-      width: 100%
-      height: 100%
 
     &-container
+      @extend %centered
       display: flex
-      position: absolute
-      top: 50%
-      left: 50%
       flex-direction: column
       align-items: center
       justify-content: center
-      transform: translate(-50%, -50%)
       background: $white
       padding: 5rem
       text-align: center
