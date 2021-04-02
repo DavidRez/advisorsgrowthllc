@@ -1,9 +1,9 @@
-<template lang="pug" src="./blog.pug"></template>
+<template lang="pug" src="./index.pug"></template>
 
 <script>
 import axios from 'axios'
-import { api } from '../resources/api'
-import { setMeta, setData } from '../resources/utils'
+import { api } from '~/resources/api'
+import { setMeta, setData } from '~/resources/utils'
 
 export default {
   components: {},

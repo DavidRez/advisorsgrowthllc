@@ -1,7 +1,7 @@
 <template lang="pug" src="./_blogs.pug"></template>
 
 <script>
-import { setData, setMeta } from '../resources/utils'
+import { setData, setMeta } from '~/resources/utils'
 
 export default {
   components: {

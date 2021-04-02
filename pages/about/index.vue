@@ -1,4 +1,4 @@
-<template lang='pug' src='./about.pug'></template>
+<template lang='pug' src='./index.pug'></template>
 
 <script>
 import { setData, setMeta } from '~/resources/utils'
