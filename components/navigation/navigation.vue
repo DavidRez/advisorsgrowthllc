@@ -6,7 +6,7 @@ import router from '~/router/index'
 
 export default {
   data: () => ({
-    content: null
+    props: null
   }),
   computed: {
     links () {
@@ -16,7 +16,7 @@ export default {
     }
   },
   async fetch () {
-    this.content = await setData('global', 'globalData')
+    this.props = await setData('global', 'globalData')
   }
 }
 </script>
