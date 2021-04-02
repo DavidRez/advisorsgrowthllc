@@ -1,11 +1,11 @@
 import {
-  SET_SCROLLED,
+  VIDEO_LOADING,
   VIEW_MENU
 } from './mutation-types'
 
 const stateActions = () => ({
-  SET_SCROLLED ({ commit }, data) {
-    commit(SET_SCROLLED, data)
+  VIDEO_LOADING ({ commit }, data) {
+    commit(VIDEO_LOADING, data)
   },
   VIEW_MENU ({ commit }, data) {
     commit(VIEW_MENU, data)

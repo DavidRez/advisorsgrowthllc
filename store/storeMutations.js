@@ -1,11 +1,11 @@
 import {
-  SET_SCROLLED,
+  VIDEO_LOADING,
   VIEW_MENU
 } from './mutation-types.js'
 
 const stateMutations = () => ({
-  [SET_SCROLLED] (state, data) {
-    state.scrolled = data
+  [VIDEO_LOADING] (state, data) {
+    state.videoIsLoading = data
   },
   [VIEW_MENU] (state, data) {
     state.menu = data

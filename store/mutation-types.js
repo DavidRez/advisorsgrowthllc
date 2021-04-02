@@ -1,2 +1,2 @@
-export const SET_SCROLLED = 'SET_SCROLLED'
+export const VIDEO_LOADING = 'VIDEO_LOADING'
 export const VIEW_MENU = 'VIEW_MENU'

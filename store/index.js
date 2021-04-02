@@ -2,7 +2,7 @@ import storeActions from './storeActions'
 import storeMutations from './storeMutations'
 
 export const state = () => ({
-  scrolled: {},
+  videoIsLoading: true,
   menu: false
 })
 
