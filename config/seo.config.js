@@ -40,5 +40,5 @@ export const siteMap = {
 export const setRobots = {
   UserAgent: '*',
   Disallow: '',
-  Sitemap: url + '/sitemap.xml'
+  Sitemap: url + 'sitemap.xml'
 }
