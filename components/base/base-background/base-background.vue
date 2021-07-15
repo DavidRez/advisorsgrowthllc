@@ -11,10 +11,6 @@ export default {
       type: String,
       default: () => ``
     },
-    jp2: {
-      type: String,
-      default: () => ``
-    },
     bgColor: {
       type: String,
       default: '#ffffff'
@@ -23,13 +19,14 @@ export default {
       type: String,
       default: () => {
         if (process.client) {
-          return `${document.location.hostname} image for section`
+          return `${document.location.hostname} image`
         }
       }
     }
   },
   data () {
     return {
+      active: false,
       currentImg: null,
       loading: true,
       loaded: false,
@@ -47,23 +44,13 @@ export default {
     if (browser.includes('Safari') && !browser.includes('Chrome')) {
       this.theBrowser = 'safari'
     }
-    if (browser.includes('Trident')) {
-      this.theBrowser = 'ie11'
-    }
   },
   methods: {
     onWaypoint ({ going, direction }) {
-      if (going === 'in') {
+      if (going === 'in' && !this.active) {
         const downloadingImage = new Image()
-        if (this.theBrowser === 'ie11') {
+        if (this.theBrowser === 'safari') {
           this.currentImg = this.src
-          this.loading = false
-          return
-        } else if (this.theBrowser === 'safari') {
-          this.currentImg = this.jp2
-          if (this.src && !this.jp2) {
-            this.currentImg = this.src
-          }
         } else {
           this.currentImg = this.webp
           if (this.src && !this.webp) {
@@ -74,6 +61,7 @@ export default {
           this.loading = false
         }
         downloadingImage.src = this.currentImg
+        this.active = true
       }
     }
   }
