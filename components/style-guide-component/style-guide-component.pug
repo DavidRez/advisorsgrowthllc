@@ -17,12 +17,12 @@
       | This is the 'BaseBackground' component, it can be passed a prop (':bgColor') to change the background color. The prop takes a string of the hex-code of the color. Its default styling is set to bg position, center and bg size as cover.
       BaseBackground.style-guide-component__background-image(:bgColor='"#fff"', :src='"https://d3qms0w8ok8dkp.cloudfront.net/photo_1.jpg"')
     .style-guide-component__col-images
-      | This is the 'BaseImage' component with the ':imageBackground' prop in it's default, 'false', it is positioned relative with a flex-shrink: 0 so it will behave more closely to an img tag.
-      BaseImage.style-guide-component__image(:bgColor='"#fff"', :src='"https://d3qms0w8ok8dkp.cloudfront.net/photo_1.jpg"')
+      | This is the 'BaseImage' component with the 'imageBackground' prop in it's default, 'false', which sets an object-fit to contain so it will behave like an img tag.
+      BaseImage.style-guide-component__image(:bgColor='"#fff"', :src='"https://d3qms0w8ok8dkp.cloudfront.net/photo_1.jpg"' addLoader)
     .style-guide-component__col-images
-      | This is the 'BaseImage' component with the ':imageBackground' prop toggled true it is now positioned absolute and will behave like a background image on a div.
+      | This is the 'BaseImage' component with the 'imageBackground' prop toggled true and the object-fit is set to cover so it will behave like a background image on a div.
       .style-guide-component__image-container
-        BaseImage.style-guide-component__image.style-guide-component__image-background(:bgColor='"#fff"', :imageBackground='true' :src='"https://d3qms0w8ok8dkp.cloudfront.net/photo_1.jpg"')
+        BaseImage.style-guide-component__image.style-guide-component__image-background(:bgColor='"#fff"', imageBackground :src='"https://d3qms0w8ok8dkp.cloudfront.net/photo_1.jpg"')
   
   .style-guide-component__divider
     h1 Grid
