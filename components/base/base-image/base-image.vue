@@ -24,10 +24,6 @@ export default {
       type: Boolean,
       default: false
     },
-    addLoader: {
-      type: Boolean,
-      default: false
-    },
     alt: {
       type: String,
       default: () => {
@@ -42,7 +38,7 @@ export default {
       currentImg: null,
       currWebP: null,
       currJp2: null,
-      imageType: 'contain',
+      imageType: 'relative',
       loading: true,
       loaded: false,
       intersectionOptions: {
@@ -53,10 +49,8 @@ export default {
     }
   },
   created () {
-    if (process.client) {
-      if (this.imageBackground) {
-        this.imageType = 'cover'
-      }
+    if (this.imageBackground) {
+      this.imageType = 'absolute'
     }
   },
   mounted () {
