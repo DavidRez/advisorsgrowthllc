@@ -52,10 +52,7 @@ export default {
         if (this.theBrowser === 'safari') {
           this.currentImg = this.src
         } else {
-          this.currentImg = this.webp
-          if (this.src && !this.webp) {
-            this.currentImg = this.src
-          }
+          this.currentImg = this.webp || this.src
         }
         downloadingImage.onload = () => {
           this.loading = false
