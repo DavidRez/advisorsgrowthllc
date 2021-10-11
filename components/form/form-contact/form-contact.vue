@@ -5,12 +5,12 @@
 export default {
   data () {
     return {
-      firstName: '',
-      lastName: '',
+      fullname: '',
       clientEmail: '',
       clientPhone: '',
       isFirstTime: false,
       firstTimeMessage: 'No, I am not a first time patient',
+      preferredCommunication: [],
       clientMessage: '',
       postUrl: `https://aamuwi383c.execute-api.us-west-1.amazonaws.com/prod/roostergrin-emailer`,
       formSubmitted: false,
@@ -90,15 +90,20 @@ export default {
                           <h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">${this.clientPhone}</h5></td>
                       </tr>
                     </table>
-                    <table style="width: 50%; text-align: left">
+                    <table style="width: 100%; text-align: left">
                       <tr>
                         <th>
                           <p style="font-size: 14px; margin-bottom: .5rem; color: #848484; font-weight: 300;">First time patient?</p>
+                        </th>
+                        <th>
+                          <p style="font-size: 14px; margin-bottom: .5rem; color: #848484; font-weight: 300;">Preferred methods of communication?</p>
                         </th>
                       </tr>
                       <tr>
                         <td style="width: 50%; font-size: 20px;">
                           <h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">${this.firstTimeMessage}</h5></td>
+                        <td style="width: 50%; font-size: 20px;">
+                          <h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">${this.preferredCommunication.join(', ')}</h5></td>
                       </tr>
                     </table>
                     <table style="width: 100%; text-align: left">
@@ -142,11 +147,11 @@ export default {
         }, 750)
 
         setTimeout(() => {
-          this.firstName = ''
-          this.lastName = ''
+          this.fullname = ''
           this.clientEmail = ''
           this.clientPhone = ''
           this.clientMessage = ''
+          this.preferredCommunication = []
         }, 1000)
 
         setTimeout(() => {
