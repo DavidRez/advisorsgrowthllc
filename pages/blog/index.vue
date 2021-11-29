@@ -9,24 +9,25 @@ export default {
   components: {},
   async asyncData () {
     try {
+      // Get All Blog Posts
       const response = await axios.get(`${api}/wp/v2/posts?per_page=100`)
       const dataPages = response.headers['x-wp-totalpages']
       let blogArray = response.data
       for (let i = 2; i <= dataPages; i++) {
         const nextPage = await axios.get(
-          `${api}/wp/v2/posts?per_page=100?page=${i}`
+          `${api}/wp/v2/posts?per_page=100&page=${i}`
         )
         blogArray = [...blogArray, ...nextPage.data]
       }
-      const dataArr = blogArray.reduce(
+      const blogs = blogArray.reduce(
         (acc, item) => [
           ...acc,
           { link: '/' + item.slug, slug: item.slug, ...item.acf }
         ],
         []
       )
-      const data = await setData('blog')
-      return { blogs: dataArr, props: data }
+      const props = await setData('blog')
+      return { blogs, props }
     } catch (e) {
       console.error('BLOG API: ' + e)
     }
