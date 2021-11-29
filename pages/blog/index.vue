@@ -9,6 +9,15 @@ export default {
   components: {},
   async asyncData () {
     try {
+      // Get All Blog Post Categories
+      const categoriesResponse = await axios.get(`${api}/wp/v2/categories?per_page=100`)
+      const categories = categoriesResponse.data.reduce(
+        (acc, item) => [
+          ...acc,
+          { id: item.id, name: item.name }
+        ],
+        []
+      )
       // Get All Blog Posts
       const response = await axios.get(`${api}/wp/v2/posts?per_page=100`)
       const dataPages = response.headers['x-wp-totalpages']
@@ -27,7 +36,7 @@ export default {
         []
       )
       const props = await setData('blog')
-      return { blogs, props }
+      return { blogs, categories, props }
     } catch (e) {
       console.error('BLOG API: ' + e)
     }
