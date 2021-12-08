@@ -5,4 +5,11 @@
 
 @mixin ie11-support
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
-    @content        
+    @content
+
+@mixin focus ($offset: rem-calc(3), $width: rem-calc(2), $style: dashed, $color: blue)
+  &:focus
+    outline-offset: $offset
+    outline-width: $width
+    outline-style: $style
+    outline-color: $color

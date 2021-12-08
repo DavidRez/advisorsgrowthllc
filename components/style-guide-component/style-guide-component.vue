@@ -1,7 +1,7 @@
 <template lang='pug' src='./style-guide-component.pug'></template>
 
 <script>
-import FormContact from '~/components/form/form-contact/form-contact'
+import FormContact from '~/components/form/form-contact'
 
 export default {
   components: {
