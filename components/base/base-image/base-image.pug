@@ -2,7 +2,7 @@
   picture(v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }")
     source(:srcset='currWebP' type='image/webp')
     source(:srcset='currJp2' type='image/jp2')
-    img.base-image__image(:src='currentImg', :alt='alt', :class="{ 'base-image__image--bg': imageType === 'cover' }")
+    img.base-image__image(:src='currentImg', :alt='alt', :class="{ 'base-image__image--bg': imageType === 'cover' }", :aria-hidden='imageBackground ? imageBackground : null')
   transition(name='fade-src-img')
     .base-image__overlay(:style="{ backgroundColor: bgColor }" v-if='loading')
       svg.base-image__spinner(width='30px' height='30px' viewBox='0 0 66 66' v-if='addLoader')
