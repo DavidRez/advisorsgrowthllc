@@ -14,14 +14,6 @@ export default {
     bgColor: {
       type: String,
       default: '#ffffff'
-    },
-    alt: {
-      type: String,
-      default: () => {
-        if (process.client) {
-          return `${document.location.hostname} image`
-        }
-      }
     }
   },
   data () {
