@@ -28,6 +28,10 @@ export default {
       type: Boolean,
       default: false
     },
+    objectPosition: {
+      type: String,
+      default: 'center center'
+    },
     alt: {
       type: String,
       default: () => {
