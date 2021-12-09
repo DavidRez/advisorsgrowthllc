@@ -10,12 +10,25 @@ export default {
     SkipLink,
     TheFooter,
     TheNavigation
+  },
+  watch: {
+    $route: 'onRouteChange'
+  },
+  methods: {
+    onRouteChange () {
+      const target = document.querySelector('#page-wrapper')
+      console.log('change', target)
+      target.focus()
+    }
   }
 }
 </script>
 
 <style>
   main:focus {
+    outline: none;
+  }
+  #page-wrapper:focus {
     outline: none;
   }
 </style>
