@@ -1,2 +1,4 @@
 export const VIDEO_LOADING = 'VIDEO_LOADING'
 export const VIEW_MENU = 'VIEW_MENU'
+export const VIEW_SITE = 'VIEW_SITE'
+export const VIEW_THANK_YOU_MODAL = 'VIEW_THANK_YOU_MODAL'

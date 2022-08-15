@@ -7,9 +7,22 @@
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
     @content
 
-@mixin focus ($offset: rem-calc(3), $width: rem-calc(2), $style: dashed, $color: blue)
-  &:focus
+@mixin focus ($offset: rem-calc(3), $width: rem-calc(2), $style: dashed, $color: $accent1)
+  &:focus-visible
     outline-offset: $offset
     outline-width: $width
     outline-style: $style
     outline-color: $color
+
+@mixin section-padding-classes
+  &--padding-full
+    @extend %section-padding-full
+
+  &--padding-full-top
+    @extend %section-padding-top
+
+  &--padding-full-bottom
+    @extend %section-padding-bottom
+
+  &--padding-half
+    @extend %section-padding-half

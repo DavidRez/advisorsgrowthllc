@@ -1,9 +1,32 @@
-@mixin button($background, $color)
+@mixin button($color, $background)
+  @include focus
   @include hover-supported
+    box-shadow: 0 1px 6px rgba($black, .102)
+    border-color: $background
     background: $background
-    color: $white
+  display: block
+  transition: background .2s ease, border .2s ease, box-shadow .2s ease
+  border: 1px solid $color
+  text-align: center
+  text-transform: uppercase
+  letter-spacing: 0.1em
+  padding: 1rem 2rem
+  color: $color
+  font-weight: 600
+
+  &:focus-visible
+    box-shadow: 0 1px 6px rgba($black, .102)
+    border-color: $background
+    background: $background
+
+@mixin button-transparent($color)
+  @include hover-supported
+    background: $white
+    color: $color
   display: block
   transition: background .2s ease, color .2s ease
-  border: 1px solid $background
+  border: 1px solid $white
+  background: transparent
   text-align: center
-  color: $color
+  padding: 1rem 2rem
+  color: $white

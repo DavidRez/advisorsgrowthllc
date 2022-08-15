@@ -49,7 +49,7 @@
       padding-bottom: .5rem
 
   &__input
-    border-bottom: 1px solid $c1
+    border-bottom: 1px solid $primary
     border-radius: 0
     padding: .75rem
     width: 100%
@@ -133,7 +133,7 @@
 
     &-overlay
       transition: border .25s ease
-      border: 1px solid $c1
+      border: 1px solid $primary
 
       &:after
         position: absolute
@@ -142,7 +142,7 @@
         transform: translate(-50%, -50%)
         transition: opacity .2s ease
         opacity: 0
-        color: $c1
+        color: $primary
         font-size: 1.25rem
         content: '\2713'
 
@@ -156,7 +156,7 @@
     transition: background .2s ease, opacity .2s ease
     // margin: 0 auto
     border: none
-    background: $c1
+    background: $primary
     cursor: pointer
     padding: 0
     overflow: hidden
@@ -243,7 +243,7 @@
 
     &-close
       @include hover-supported
-        color: $c1
+        color: $primary
       @include phone-lg
         right: 1rem
       position: absolute
@@ -255,7 +255,7 @@
       padding: 0
 
     &-title
-      color: $c1
+      color: $primary
 
     // Place styles below here for slotted content
     &-body

@@ -2,8 +2,10 @@ import storeActions from './storeActions'
 import storeMutations from './storeMutations'
 
 export const state = () => ({
-  videoIsLoading: true,
-  menu: false
+  menu: false,
+  siteLoaded: false,
+  thankYouModalOpen: false,
+  videoIsLoading: true
 })
 
 export const actions = storeActions()

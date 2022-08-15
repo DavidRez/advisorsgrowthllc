@@ -2,17 +2,50 @@ const router = [
   {
     name: 'Home',
     path: '/',
-    navigation: true
+    navigation: false,
+    mobile: true
   },
   {
     name: 'About',
     path: '/about',
-    navigation: true
+    navigation: true,
+    mobile: true
   },
   {
-    name: 'Blog',
-    path: '/blog',
-    navigation: true
+    name: 'Team',
+    path: '/team',
+    navigation: true,
+    mobile: true
+  },
+  {
+    name: 'M & A',
+    path: '/m-and-a',
+    navigation: true,
+    mobile: true
+  },
+  {
+    name: 'Management Consulting',
+    path: '/management-consulting',
+    navigation: true,
+    mobile: true
+  },
+  {
+    name: 'Transition',
+    path: '/transition',
+    navigation: true,
+    mobile: true
+  },
+  {
+    name: 'Thought Leadership',
+    path: '/thought-leadership',
+    navigation: true,
+    mobile: true
+  },
+  {
+    name: 'RIA Deal Room',
+    path: '/ria-deal-room',
+    navigation: true,
+    mobile: true
   }
 ]
 

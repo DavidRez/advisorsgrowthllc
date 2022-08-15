@@ -8,36 +8,140 @@
     font-size: 14px
   text-rendering: optimizeLegibility
   line-height: 1.467
-  font-family: $font
+  color: $text
+  font-family: $font-primary
   font-size: 16px
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+%body-lg
+  @include desktop
+    font-size: rem-calc(22)
+  @include nexus
+    font-size: rem-calc(16)
+  @include phone-land-lg
+    font-size: rem-calc(16)
+  @include phone
+    font-size: rem-calc(14)
+  color: $text
+  font-family: $font-primary
+  font-size: rem-calc(20)
+
+%italic
+  font-family: $font-secondary
+  font-style: italic
+
 %h1
-  font-size: 40px
-  font-weight: 800
+  @include desktop
+    font-size: rem-calc(60)
+  @include laptop
+    font-size: rem-calc(42)
+  @include tablet-lg
+    font-size: rem-calc(34)
+  @include tablet-md
+    font-size: rem-calc(32)
+  @include nexus
+    font-size: rem-calc(32)
+  @include phone-land-lg
+    font-size: rem-calc(36)
+  @include phone-lg
+    font-size: rem-calc(28)
+  @include phone
+    font-size: rem-calc(28)
+  font-family: $font-primary
+  font-size: rem-calc(50)
+
+%h1-hero
+  @include desktop
+    font-size: rem-calc(66)
+  @include tablet-lg
+    font-size: rem-calc(42)
+  @include tablet
+    font-size: rem-calc(36)
+  @include nexus
+    font-size: rem-calc(32)
+  @include phone-lg
+    font-size: rem-calc(28)
+  @include phone-land-lg
+    font-size: rem-calc(36)
+  @include phone
+    font-size: rem-calc(28)
+  letter-spacing: 0.05em
+  font-family: $font-primary
+  font-size: rem-calc(56)
 
 %h2
-  font-size: 40px
-  font-weight: bold
+  @include desktop
+    font-size: rem-calc(40)
+  @include tablet-lg
+    font-size: rem-calc(30)
+  @include nexus
+    font-size: rem-calc(26)
+  @include phone-land-lg
+    font-size: rem-calc(26)
+  @include phone-lg
+    font-size: rem-calc(24)
+  @include phone
+    letter-spacing: 0
+    font-size: rem-calc(22)
+  text-transform: uppercase
+  line-height: 1.2
+  letter-spacing: 0.1em
+  font-family: $font-primary
+  font-size: rem-calc(36)
+  font-weight: 600
 
 %h3
-  font-size: 30px
-  font-weight: 500
+  @include desktop
+    font-size: rem-calc(28)
+  @include tablet-lg
+    font-size: rem-calc(20)
+  @include nexus
+    font-size: rem-calc(18)
+  line-height: 1.1
+  letter-spacing: 0.1em
+  font-family: $font-primary
+  font-size: rem-calc(24)
+  font-weight: 600
 
 %h4
-  font-size: 25px
-  font-weight: bold
+  @include desktop
+    font-size: rem-calc(22)
+  @include phone-lg
+    line-height: 1.15
+  line-height: 1.34
+  letter-spacing: 0
+  font-family: $font-primary
+  font-size: rem-calc(20)
+  font-weight: 800
 
 %h5
+  font-family: $font-primary
   font-size: 20px
 
 %h6
+  font-family: $font-primary
   font-size: 18px
 
 %a
   text-decoration: none
   color: $black
+  font-family: $font-primary
 
 %no-margin
   margin: 0
+
+%wysiwyg-text
+  p:not(:last-of-type)
+    @include nexus  
+      margin-bottom: 1rem
+    @include phone-land-lg
+      margin-bottom: 1rem
+    margin-bottom: 1.5rem
+  
+  a
+    @include hover-supported
+      color: $primary
+    transition: color .2s ease
+    text-decoration: underline
+    color: $accent1
