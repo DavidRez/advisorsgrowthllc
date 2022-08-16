@@ -1,2 +1,99 @@
 .navigation
-  padding: 1rem
+  &__top
+    @include nexus
+      height: rem-calc(75)
+    @include phone-land-lg
+      height: rem-calc(75)
+    position: fixed
+    top: 0
+    left: 0
+    transition: transform .2s ease
+    z-index: 999
+    box-shadow: 0px 2px 8px rgba($black, 0.1)
+    background: $white
+    width: 100%
+    height: rem-calc(100)
+
+    &--hidden
+      transform: translateY(-105%)
+
+  &__container
+    @include container--large
+    align-items: center
+    justify-content: space-between
+    height: 100%
+
+  &__home
+    @include nexus
+      height: 45%
+    display: flex
+    align-items: center
+    margin-right: 2rem
+    height: 55%
+
+  &__logo
+    height: 100%
+
+    svg
+      width: auto
+      height: 100%
+
+  &__links
+    @include laptop-sm
+      display: none
+    display: flex
+    flex: 1 0 auto
+    align-items: center
+    justify-content: space-evenly
+    height: 100%
+
+  &__link
+    @extend %body
+    @include hover-supported
+      color: $primary
+      &::after
+        width: 100%
+    @include laptop
+      font-size: rem-calc(14)
+    display: flex
+    position: relative
+    align-items: center
+    justify-content: center
+    padding: 0 .5rem
+    max-width: rem-calc(125)
+    height: 100%
+    text-transform: uppercase
+    line-height: 1
+    letter-spacing: 1px
+    color: $accent1
+    font-family: $font-primary
+    font-weight: 500
+
+    &::after
+      position: absolute
+      right: 0
+      bottom: 0
+      left: 0
+      transition: width .2s ease-in-out
+      margin: auto
+      border-radius: rem-calc(6)
+      background: $primary
+      width: 0%
+      height: 8px
+      content: ''
+
+    // &:not(:first-of-type)
+    //   @include laptop-lg
+    //     margin-left: 3rem
+    //   margin-left: 2rem
+
+  &__hamburger
+    @include hamburger-basic($primary, .25s, 32px, 24px)
+    @include laptop-sm
+      display: block
+    display: none
+
+  &__mobile
+    @include laptop-sm
+      display: block
+    display: none

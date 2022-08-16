@@ -1,0 +1,21 @@
+.navigation-mobile
+  transition(name='fade')
+    .navigation-mobile__overlay(v-if='drawerOpen' @click='closeDrawer')
+  
+  .navigation-mobile__drawer(id='mobile-drawer' :class="{ 'navigation-mobile__drawer--active': drawerOpen }")
+    transition(name='fade-delay')
+      .navigation-mobile__drawer-container(v-if='drawerOpen' ref='drawerContainer')
+        .navigation-mobile__drawer-header
+          .navigation-mobile__drawer-close
+            button.navigation-mobile__drawer-close-btn(@click='closeDrawer' aria-label='Close main menu' aria-controls='drawer')
+              span(v-for='(span, i) in 2' :key='`drawer-close-${i}`')
+          nuxt-link.navigation-mobile__drawer-home(to='/' aria-hidden='true' tabindex='-1' @click.native='closeDrawer')
+            BaseIcon.navigation-mobile__drawer-home-logo(name='logo')
+        .navigation-mobile__drawer-content
+          nav.navigation-mobile__drawer-menu(role='navigation' aria-label='Main navigation')
+            ul.navigation-mobile__drawer-items(v-if='links' role='menu')
+              li.navigation-mobile__drawer-item(v-for='(link, i) in links' :key='`mobile-link-${i}`' role='menuitem' :class="{ 'navigation-mobile__drawer-item--active': currFocus === i }")
+                  nuxt-link.navigation-mobile__drawer-link(:to='link.path' @focus.native='addFocus(i)' @blur.native='removeFocus(i)' @click.native='closeDrawer' :class="{ 'nuxt-link-exact-active': $route.path.includes(link.path) && link.path !== '/' }")
+                    BaseIcon.navigation-mobile__drawer-link-icon(name='caret')
+                    span.navigation-mobile__drawer-link-text(v-html='link.name')
+  

@@ -87,7 +87,7 @@
   text-transform: uppercase
   line-height: 1.2
   letter-spacing: 0.1em
-  font-family: $font-primary
+  font-family: $font-secondary
   font-size: rem-calc(36)
   font-weight: 600
 
@@ -100,7 +100,7 @@
     font-size: rem-calc(18)
   line-height: 1.1
   letter-spacing: 0.1em
-  font-family: $font-primary
+  font-family: $font-secondary
   font-size: rem-calc(24)
   font-weight: 600
 
@@ -111,21 +111,24 @@
     line-height: 1.15
   line-height: 1.34
   letter-spacing: 0
-  font-family: $font-primary
+  font-family: $font-tertiary
   font-size: rem-calc(20)
   font-weight: 800
 
 %h5
-  font-family: $font-primary
+  font-family: $font-tertiary
   font-size: 20px
 
 %h6
-  font-family: $font-primary
+  font-family: $font-tertiary
   font-size: 18px
 
 %a
+  @include hover-supported
+    color: $accent1
+  transition: color .2s ease
   text-decoration: none
-  color: $black
+  color: $primary
   font-family: $font-primary
 
 %no-margin
@@ -141,7 +144,7 @@
   
   a
     @include hover-supported
-      color: $primary
+      color: $accent1
     transition: color .2s ease
     text-decoration: underline
-    color: $accent1
+    color: $primary

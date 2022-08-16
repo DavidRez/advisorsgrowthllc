@@ -18,8 +18,8 @@ const router = [
     mobile: true
   },
   {
-    name: 'M & A',
-    path: '/m-and-a',
+    name: 'M&A',
+    path: '/m-a',
     navigation: true,
     mobile: true
   },

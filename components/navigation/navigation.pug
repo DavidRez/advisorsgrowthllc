@@ -1,2 +1,12 @@
 header.navigation
-  nuxt-link.navigation__links(v-for='(link, i) in links', :key='`link-${i}`', :to='link.path' v-html='link.name')
+  .navigation__top(:class="{ 'navigation__top--hidden': scrollPos > 20 && scrollDir === 'down' }")
+    .navigation__container
+      nuxt-link.navigation__home(to='/' aria-label='links to homepage')
+        BaseIcon.navigation__logo(name='logo')
+      .navigation__links(v-if='links' role='menu')
+        nuxt-link.navigation__link(v-for='(link, i) in links', role='menuitem' :key='`link-${i}`', :to='link.path' v-html='link.name')
+      .navigation__hamburger(@click='openDrawer' aria-label='Open menu drawer.' aria-controls='mobile-drawer' aria-haspopup='true')
+        span
+        span
+        span
+  NavigationMobile.navigation__mobile(:props='props' :links='links' :drawerOpen='drawerOpen' @close-drawer='drawerOpen = $event')
