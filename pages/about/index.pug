@@ -1,3 +1,4 @@
 .pages-about
   .pages-about__sections.page-section(v-for='(section, i) in props.page_sections' :key='`about-section-${i}`')
     BlockContent(v-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockSeparator(v-if='section.acf_fc_layout === "separator"', :props='section')
