@@ -1,3 +1,3 @@
 .pages-home
-  h1 {{ props.title }}
-  pre {{ props }}
+  .pages-home__sections.page-section(v-for='(section, i) in props.page_sections' :key='`home-section-${i}`')
+    BlockContent(v-if='section.acf_fc_layout === "block_content"', :props='section')
