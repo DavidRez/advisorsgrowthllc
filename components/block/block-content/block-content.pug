@@ -1,14 +1,14 @@
 section.block-content(v-if='props' :class='[ `block-content--padding-${props.padding}` ]' ref='container')
   .block-content__container
     .block-content__column
-      h2.block-content__header(v-if='props.header' ref='header' v-html='props.header')
-      h3.block-content__subheader(v-if='props.subheader' ref='subheader' v-html='props.subheader')
+      h2.block-content__header(v-if='props.header' v-html='props.header' ref='header')
+      h3.block-content__subheader(v-if='props.subheader' v-html='props.subheader' ref='subheader')
       .block-content__content(:class='{ "block-content__content--reverse": props.image_alignment === "left" }')
-        .block-content__text  
-          .block-content__body(v-if='props.body' ref='text' v-html='props.body')
+        .block-content__text(ref='text')  
+          p.block-content__body(v-if='props.body' v-html='props.body')
           .block-content__links(v-if='props.links')
             a.block-content__link(v-for='(link, i) in props.links' :key='`link-${i}`' :href='link.href' :target='link.external ? "_blank" : null')
               BaseIcon.block-content__link-icon(name='arrow-right')
               .block-content__link-label {{ link.label }}
         BaseImage.block-content__image(v-if='props.has_image' :src='props.image.src' :webp='props.image.webp' :alt='props.image.alt'
-          :class='{ "block-content__image--full": props.image_alignment === "full" }')
+          :class='{ "block-content__image--full": props.image_alignment === "full" }' ref='image')
