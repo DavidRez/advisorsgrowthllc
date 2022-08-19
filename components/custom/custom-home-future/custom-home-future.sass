@@ -1,0 +1,112 @@
+.custom-home-future
+  @include section-padding-classes
+  position: relative
+
+  &__container
+    @include container
+    justify-content: center
+    overflow: hidden
+  
+  &__column
+    @include col (10)
+    @include phone-land-lg
+      width: 100%
+
+  &__header
+    @extend %title-margin-bottom
+    width: 100%
+    color: $accent1
+
+  &__body
+    @extend %body-lg
+    @extend %wysiwyg-text
+
+    ul
+      padding-left: 1.25rem
+    
+  &__image
+    margin: 1rem auto
+    width: 100%
+
+    .base-image__image
+      position: relative
+      width: 100%
+      height: auto
+      object-fit: cover
+  
+  &__topics
+    display: flex
+    flex-wrap: wrap
+
+  &__topic
+    @include col (4)
+
+    &:not(:last-of-type)
+      @include tablet
+        margin-bottom: 3rem
+
+    &-title
+      margin-bottom: .25rem
+      border-top: 1px solid $accent1
+      padding-top: 2rem
+      text-transform: uppercase
+      letter-spacing: 1px
+      color: $primary
+      font-family: $font-primary
+
+    &-subtitle
+      @extend %h4
+      margin-bottom: 1rem
+      font-family: $font-primary
+      font-weight: 500
+
+    &-body
+      @extend %body
+      @extend %wysiwyg-text
+      border-bottom: 1px solid rgba($accent1, .4)
+      padding-bottom: 2rem
+      font-weight: 400
+
+      ul
+        margin-bottom: 0
+        padding-left: 1.25rem
+
+    &-links
+      margin-top: 2rem
+
+    &-link
+      @include hover-supported
+        .custom-home-future__topic-link-icon svg
+          fill: $primary
+        .custom-home-future__topic-link-label
+          color: $primary
+      display: flex
+      align-items: center
+      width: fit-content
+
+      &:focus-visible
+        @include focus
+
+      &:not(:last-of-type)
+        margin-bottom: 1.25rem
+
+      &-icon
+        display: inline-flex
+        align-items: center
+        transition: all .25s ease
+        margin-right: 1rem
+        height: 1rem
+
+        svg
+          height: 100%
+          fill: $accent1
+
+      &-label
+        @extend %body
+        display: inline
+        transition: all .25s ease
+        text-transform: uppercase
+        line-height: 1
+        letter-spacing: 1px
+        color: $accent1
+        font-weight: 600
