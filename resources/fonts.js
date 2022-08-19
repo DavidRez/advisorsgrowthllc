@@ -3,6 +3,6 @@
 
 export default {
   google: {
-    families: [ 'Raleway:300,400,500,600,700', 'Roboto+Slab:400,500,600,700', 'IBM+Plex+Sans:400,700&display=swap' ]
+    families: [ 'Raleway:300,400,500,600,700,800,900', 'Roboto+Slab:400,500,600,700', 'IBM+Plex+Sans:400,700&display=swap' ]
   }
 }
