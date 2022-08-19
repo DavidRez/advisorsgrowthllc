@@ -1,5 +1,7 @@
 #page-wrapper(tabindex='-1')
   SkipLink
+  transition(name='hero-fade')
+    BaseLoader(v-if='!$store.state.siteLoaded')
   TheNavigation
   main.main-content#main-content(tabindex='-1')
     nuxt
