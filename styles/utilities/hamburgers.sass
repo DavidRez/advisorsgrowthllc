@@ -12,19 +12,20 @@
     left: 0
     transform: rotate(0deg)
     transition: all #{$timing} ease
+    border-radius: rem-calc(10)
     background: $color
     width: 100%
-    height: rem-calc(3)
+    height: rem-calc(4)
 
     &:first-child
       top: 0
 
     &:nth-child(2),
     &:nth-child(3)
-      top: calc(50% - 1.5px)
+      top: calc(50% - 2.5px)
 
     &:last-child
-      top: calc(100% - 3px)
+      top: calc(100% - 5px)
 
   &--active
     span

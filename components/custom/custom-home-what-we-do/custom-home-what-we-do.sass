@@ -1,0 +1,128 @@
+.custom-home-what-we-do
+  @include section-padding-classes
+  position: relative
+  overflow-x: clip
+
+  &__background
+    @extend %absolute
+    opacity: .15
+    z-index: -1
+
+  &__stripe
+    @include laptop-lg
+      bottom: 25%
+      height: rem-calc(75)
+    @include desktop
+      bottom: 40%
+      height: rem-calc(100)
+    @include laptop
+      bottom: 25%
+      height: rem-calc(60)
+    @include tablet-lg
+      bottom: 20%
+      height: rem-calc(50)
+    @include tablet
+      bottom: 15%
+      height: rem-calc(40)
+    @include nexus
+      bottom: 10%
+    @include phone-lg
+      bottom: 0
+    position: absolute
+    left: -30%
+    transform: rotate(45deg)
+    z-index: 1
+    border-radius: rem-calc(60)
+    background: $primary
+    width: 50vw
+    height: rem-calc(70)
+    
+  &__container
+    @include container
+  
+  &__column
+    @include col (11)
+    @include col--offset (.5)
+  
+  &__bullet
+    @include nexus
+      flex-direction: column
+      align-items: flex-start
+      border-radius: unset
+      padding: 2rem 1rem
+    display: flex
+    position: relative
+    flex-direction: row
+    align-items: center
+    border-radius: rem-calc(50)
+    background: rgb(255,255,255)
+    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(225,234,239,1) 100%)
+    padding: 1rem 2rem
+    
+    &-title
+      @include nexus
+        margin-bottom: .5rem
+        border-right: unset
+        padding-right: unset
+        max-width: unset
+      border-right: 1px solid $accent1
+      padding-right: 1rem
+      max-width: rem-calc(175)
+      text-transform: uppercase
+      line-height: 1
+      letter-spacing: 1px
+      color: $primary
+      font-family: $font-primary
+      font-weight: 700
+
+    &-description
+      @extend %body
+      @include nexus
+        padding-left: unset
+        line-height: 1.25
+      display: inline
+      padding-left: 2rem
+      line-height: 1
+      font-weight: 500
+
+    &:not(:last-of-type)
+      margin-bottom: 1rem
+
+  &__link
+    @include hover-supported
+      .custom-home-what-we-do__link-icon svg
+        fill: $primary
+      .custom-home-what-we-do__link-label
+        color: $primary
+    display: flex
+    float: right
+    align-items: center
+    margin-top: 2rem
+    width: fit-content
+
+    &:focus-visible
+      @include focus
+
+    &:not(:last-of-type)
+      margin-bottom: 1.25rem
+
+    &-icon
+      display: inline-flex
+      align-items: center
+      transition: all .25s ease
+      margin-right: 1rem
+      height: 1rem
+
+      svg
+        height: 100%
+        fill: $accent1
+
+    &-label
+      @extend %body
+      display: inline
+      transition: all .25s ease
+      text-transform: uppercase
+      line-height: 1
+      letter-spacing: 1px
+      color: $accent1
+      font-weight: 600

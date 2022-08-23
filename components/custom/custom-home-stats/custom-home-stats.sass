@@ -1,0 +1,46 @@
+.custom-home-stats
+  @include section-padding-classes
+  position: relative
+  background: $bg1
+  overflow: hidden
+    
+  &__container
+    @include container
+  
+  &__stats
+    @include col (10)
+    @include col--offset (1)
+    @include tablet
+      grid-template-columns: 1fr 1fr 1fr
+    @include phone-land-lg
+      grid-template-columns: 1fr 1fr 1fr
+    @include phone-lg
+      grid-template-columns: 1fr
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-row-gap: 2rem
+    grid-column-gap: 2rem
+    justify-content: center
+    width: 100%
+  
+  &__stat
+    @include phone-lg
+      align-items: center
+      text-align: center
+    display: flex
+    position: relative
+    flex-direction: column
+    align-items: flex-start
+    text-align: left
+    
+    &-top
+      @extend %h1-hero
+      letter-spacing: .5px
+      color: $accent1
+      font-family: $font-secondary
+      font-weight: 700
+
+    &-bottom
+      @extend %body-lg
+      color: $accent1
+      font-weight: 400

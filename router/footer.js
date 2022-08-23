@@ -26,7 +26,7 @@ const footer = [
   },
   {
     name: 'Contact Us',
-    path: '/contact-us',
+    path: '/contact',
     navigation: true
   }
 ]

@@ -1,0 +1,21 @@
+.footer-mobile
+  .footer-mobile__graphic
+    span
+    span
+    span
+  .footer-mobile__container
+    .footer-mobile__row
+      .footer-mobile__social-media(v-if='props.social_media')
+        a.footer-mobile__social-media-link(v-for='(social, i) in props.social_media'
+          :key='`social-link-${i}`' 
+          :aria-label='social.aria'
+          :href='social.href'
+          target='_blank')
+          BaseIcon(:name='social.account')
+      .footer-mobile__address
+        .footer-mobile__address-name {{ props.company_name }}
+        a.footer-mobile__address-link(v-html='props.address.label' :href='props.address.href' target='_blank' :aria-label='`open map to ${props.address.label}`')
+    .footer-mobile__row
+      FormFormSubscribe.footer-mobile__form(:props='props.subscription_label')
+      .footer-mobile__links(v-if='links' role='menu')
+        nuxt-link.footer-mobile__link(v-for='(link, i) in links', role='menuitem' :key='`footer-mobile-link-${i}`', :to='link.path' v-html='link.name')

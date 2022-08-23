@@ -1,0 +1,108 @@
+.footer-desktop
+  @extend %section-padding-full
+  position: relative
+  background: $accent1
+  padding: rem-calc(50) 0
+  overflow: hidden
+
+  &__graphic
+    position: absolute
+    top: 0
+    left: 0
+    transform: rotate(-45deg)
+    width: rem-calc(250)
+    height: rem-calc(250)
+
+    span
+      display: block
+      position: absolute
+      border-radius: rem-calc(35)
+      background: rgba($white, .09)
+      width: 100%
+      height: 1.25rem
+
+      &:first-of-type
+        top: 0
+        left: -40%
+
+      &:nth-child(2)
+        top: 15%
+        left: -10%
+        margin: auto
+        width: 150%
+
+      &:last-of-type
+        top: 30%
+        left: 10%
+
+  &__container
+    @include container
+
+  &__col
+    &:first-of-type
+      display: flex
+      flex: 1 0 auto
+      flex-direction: column
+      justify-content: space-between
+
+  &__social-media
+    margin-bottom: 2rem
+    &-link
+      @include hover-supported
+        background: $bg1
+
+        .base-icon svg
+          fill: $accent1
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      transition: all .25s ease
+      border: 1px solid $bg1
+      border-radius: 50%
+      width: rem-calc(50)
+      height: rem-calc(50)
+
+      .base-icon
+        height: 40%
+
+        svg
+          transition: all .25s ease
+          height: 100%
+          fill: $bg1
+      
+      &:not(:last-of-type)
+        margin-right: 2rem
+
+  &__address
+    @extend %body
+    line-height: 1.75
+    letter-spacing: 1px
+    &-name
+      text-transform: uppercase
+      color: $white
+      font-weight: 600
+    &-link
+      @include hover-supported
+        text-shadow: 0 0 1px $white
+        color: $white
+      color: $white
+
+  &__links
+    margin-top: rem-calc(90)
+
+  &__link
+    @extend %body
+    @include hover-supported
+      color: $bg2
+    transition: all .25s ease-in
+    text-transform: uppercase
+    letter-spacing: 1px
+    color: $white
+    font-weight: 700
+
+    &:not(:last-of-type)
+      @include laptop
+        margin-right: 2rem
+      @include laptop-sm
+        margin-right: 1.5rem
+      margin-right: 3rem

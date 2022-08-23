@@ -1,0 +1,147 @@
+.hero-pages
+  @include tablet-lg
+    height: 40vw
+  @include tablet
+    height: 65vw
+  @include nexus
+    height: 70vw
+  @include phone-land-lg
+    height: 100vh
+  @include phone-lg
+    height: 85vw
+  @include phone
+    height: 120vw
+  position: relative
+  width: 100%
+  height: 33vw
+  overflow-x: clip
+
+  &__stripe
+    @include desktop
+      bottom: 40%
+      height: rem-calc(100)
+    @include laptop
+      right: -30%
+      bottom: 35%
+      height: rem-calc(60)
+    @include tablet-lg
+      right: -30%
+      bottom: 30%
+      height: rem-calc(50)
+    @include tablet
+      bottom: 20%
+      height: rem-calc(40)
+    @include nexus
+      bottom: 10%
+    position: absolute
+    right: -27%
+    bottom: 40%
+    transform: rotate(-55deg)
+    z-index: 1
+    border-radius: rem-calc(60)
+    background: $primary
+    width: 50vw
+    height: rem-calc(70)
+
+  &__background
+    @extend %absolute
+    z-index: -1
+
+    &-picture
+      @extend %absolute
+      @include nexus
+        display: none
+      opacity: .1
+      z-index: -1
+  
+    &-image
+      @extend %absolute
+      @include phone-land-lg
+        object-position: center top
+      object-fit: cover
+      object-position: center center
+
+  &__picture
+    @include laptop-lg
+      width: 45%
+    @include tablet
+      left: -10%
+      height: 60%
+    @include nexus
+      left: 0
+      opacity: .1
+      width: 100%
+      height: 100%
+    @include phone-land-lg
+      width: 45%
+      height: 70%
+    // @include nexus
+    //   height: 65vw
+    // @include phone-lg
+    //   height: 75vw
+    // @include phone
+    //   height: 100vw
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 50%
+    height: 90%
+
+    .base-icon
+      position: absolute
+      bottom: 0
+      left: 0
+      z-index: -2
+      width: 100%
+      height: 100%
+
+  &__image
+    @extend %absolute
+    @include nexus
+      clip-path: unset
+    @include phone-land-lg
+      object-position: center top
+      clip-path: url(#svgPath)
+    top: unset
+    bottom: -2%
+    object-fit: cover
+    object-position: 65% center
+    clip-path: url(#svgPath)
+
+  &__container
+    @include container
+    @include tablet
+      justify-content: flex-end
+    align-items: center
+    justify-content: space-between
+    height: 100%
+
+  &__content
+    @include col (6.5)
+    @include col--offset (5.5)
+    @include tablet
+      width: 65%
+    @include nexus
+      // background: rgba($bg1, .95)
+      // box-shadow: 0 0 8px rgba($black, .5)
+      padding: 1rem .75rem
+      width: 100%
+    @include phone-land-lg
+      background: unset
+      width: 60%
+
+  &__title
+    @extend %title-margin-bottom-lg
+    @include nexus
+      font-size: 1.75rem
+    @include phone-land-lg
+      font-size: 2rem
+    text-transform: uppercase
+    line-height: 1
+    letter-spacing: 0.05em
+    color: $accent1
+    font-family: $font-primary
+    font-weight: 800
+
+  &__body
+    @extend %body-lg

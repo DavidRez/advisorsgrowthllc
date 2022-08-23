@@ -1,0 +1,11 @@
+section.custom-home-stats(:class='[ `custom-home-stats--padding-${props.padding}` ]')
+  .custom-home-stats__container
+    .custom-home-stats__stats(ref='content')
+      .custom-home-stats__stat(v-for='(stat, i) in props.stats' :key='`stat-${i}`' ref='stats')
+        .custom-home-stats__stat-top(v-if='stat.top')
+          span(v-if='stat.top.first_label') {{ stat.top.first_label }}
+          span(v-if='stat.top.first_number' v-html='0' :data-target='stat.top.first_number' ref='numbersFirst') {{ stat.top.first_number }}
+          span(v-if='stat.top.middle_label') {{ stat.top.middle_label }}
+          span(v-if='stat.top.second_number' v-html='0' :data-target='stat.top.second_number' ref='numbersSecond') {{ stat.top.second_number }}
+          span(v-if='stat.top.last_label') {{ stat.top.last_label }}
+        p.custom-home-stats__stat-bottom(v-html='stat.bottom')

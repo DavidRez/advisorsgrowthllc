@@ -1,0 +1,21 @@
+.footer-desktop
+  .footer-desktop__graphic
+    span
+    span
+    span
+  .footer-desktop__container
+    .footer-desktop__col
+      .footer-desktop__social-media(v-if='props.social_media')
+        a.footer-desktop__social-media-link(v-for='(social, i) in props.social_media'
+          :key='`social-link-${i}`' 
+          :aria-label='social.aria'
+          :href='social.href'
+          target='_blank')
+          BaseIcon(:name='social.account')
+      .footer-desktop__address
+        .footer-desktop__address-name {{ props.company_name }}
+        a.footer-desktop__address-link(v-html='props.address.label' :href='props.address.href' target='_blank' :aria-label='`open map to ${props.address.label}`')
+    .footer-desktop__col
+      FormFormSubscribe(:props='props.subscription_label')
+      .footer-desktop__links(v-if='links' role='menu')
+        nuxt-link.footer-desktop__link(v-for='(link, i) in links', role='menuitem' :key='`footer-desktop-link-${i}`', :to='link.path' v-html='link.name')
