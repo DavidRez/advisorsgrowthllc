@@ -1,0 +1,55 @@
+.custom-contact-section
+  @include section-padding-classes
+  position: relative
+  overflow-x: clip
+
+  &__background
+    @extend %absolute
+    opacity: .15
+    z-index: -1
+    
+  &__container
+    @include container
+  
+  &__column
+    &--left
+      @include col (4)
+      @include tablet
+        text-align: center
+    &--right
+      flex: 4
+      margin: 0 auto
+      max-width: rem-calc(700)
+      text-align: center
+
+  &__address
+    @extend %body
+    line-height: 1.75
+    letter-spacing: 1px
+    &-name
+      text-transform: uppercase
+      color: $text
+      font-weight: 600
+    &-link
+      @include hover-supported
+        text-shadow: 0 0 1px $accent1
+        color: $accent1
+      display: block
+      color: $text
+
+      &:not(:last-of-type)
+        margin-bottom: 1rem
+
+  &__header
+    margin-bottom: 1rem
+    width: 100%
+    color: $accent1
+
+  &__subheader
+    @extend %body-lg
+    margin-bottom: 2rem
+    width: 100%
+
+  &__form
+    &--margin
+      margin-top: 4rem
