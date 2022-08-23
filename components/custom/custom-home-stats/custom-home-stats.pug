@@ -1,4 +1,4 @@
-section.custom-home-stats(ref='container')
+section.custom-home-stats(:class='[ `custom-home-stats--padding-${props.padding}` ]')
   .custom-home-stats__container
     .custom-home-stats__stats(ref='content')
       .custom-home-stats__stat(v-for='(stat, i) in props.stats' :key='`stat-${i}`' ref='stats')

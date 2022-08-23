@@ -1,0 +1,11 @@
+section.custom-home-what-we-do(:class='[ `custom-home-what-we-do--padding-${props.padding}` ]')
+  BaseBackground.custom-home-what-we-do__background(v-if='props.background' :src='props.background.src' :webp='props.background.webp')
+  .custom-home-what-we-do__stripe(ref='stripe')
+  .custom-home-what-we-do__container
+    .custom-home-what-we-do__column
+      .custom-home-what-we-do__bullet(v-for='(bullet, i) in props.bullets' :key='`bullet-${i}`' ref='bullets')
+        h4.custom-home-what-we-do__bullet-title(v-if='bullet.title') {{ bullet.title }}
+        p.custom-home-what-we-do__bullet-description(v-if='bullet.description' v-html='bullet.description')
+      a.custom-home-what-we-do__link(v-if='props.cta' :href='props.cta.href' :target='props.cta.external ? "_blank" : null' ref='cta')
+        BaseIcon.custom-home-what-we-do__link-icon(name='arrow-right')
+        .custom-home-what-we-do__link-label(v-html='props.cta.label')
