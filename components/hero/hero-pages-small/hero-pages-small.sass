@@ -1,42 +1,52 @@
-.hero-home
-  @include laptop-lg
-    height: 35vw
+.hero-pages-small
+  @include tablet
+    height: 22vw
   @include nexus
-    height: 50vw
+    height: 40vw
   @include phone-lg
-    height: 80vw
-  @include phone
-    height: 120vw
+    height: 75vw
   position: relative
   width: 100%
-  height: 44vw
+  height: 16vw
   overflow-x: clip
 
   &__stripe
+    @include laptop-lg
+      right: -30%
+      bottom: 90%
+      height: rem-calc(32)
     @include desktop
-      bottom: 40%
-      height: rem-calc(100)
+      right: -30%
+      bottom: 100%
+      height: rem-calc(45)
     @include laptop
       right: -30%
-      bottom: 35%
-      height: rem-calc(60)
+      bottom: 95%
+      height: rem-calc(25)
     @include tablet-lg
-      right: -30%
-      bottom: 30%
-      height: rem-calc(50)
+      height: rem-calc(20)
     @include tablet
-      height: rem-calc(40)
+      bottom: 65%
     @include nexus
-      bottom: 20%
+      right: -25%
+      bottom: 25%
+      height: rem-calc(30)
+    @include phone-lg
+      bottom: 15%
+      height: rem-calc(35)
+    @include phone
+      right: -20%
+      bottom: 15%
+      height: rem-calc(30)
     position: absolute
-    right: -27%
-    bottom: 40%
+    right: -30%
+    bottom: 75%
     transform: rotate(-55deg)
     z-index: 1
     border-radius: rem-calc(60)
     background: $primary
-    width: 50vw
-    height: rem-calc(70)
+    width: 45vw
+    height: rem-calc(45)
 
   &__background
     @extend %absolute
@@ -47,19 +57,28 @@
     @extend %absolute
     @include tablet
       opacity: .4
+    @include phone-land-lg
+      opacity: .4
     display: flex
     opacity: .9
     z-index: 0
 
     &-stripes
-      width: 50%
+      @include tablet
+        width: 35vw
+      @include nexus
+        width: 50vw
+      @include phone-lg
+        width: 100%
+      width: 22vw
       height: 100%
 
       svg
         @include laptop-lg
           width: 100%
           height: auto
-        height: 100%
+        width: 100%
+        height: auto
 
     &-fill
       @include phone-lg
@@ -72,6 +91,8 @@
     @extend %absolute
     @include tablet
       opacity: .2
+    @include phone-land-lg
+      opacity: .2
     z-index: -1
   
   &__image
@@ -83,17 +104,18 @@
 
   &__container
     @include container
-    @include tablet
-      justify-content: flex-end
     align-items: center
+    justify-content: center
     height: 100%
 
   &__content
-    @include col (6.5)
-    @include col--offset (5.5)
+    @include col (12)
 
   &__title
     @extend %h1-hero
+    text-align: center
+    line-height: 1.1
 
   &__body
     @extend %body-lg
+    text-align: center

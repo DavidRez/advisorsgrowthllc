@@ -1,4 +1,4 @@
-<template lang="pug" src="./hero-home.pug"></template>
+<template lang="pug" src="./hero-pages-small.pug"></template>
 
 <script>
 import { debounce } from '~/resources/mixins'
@@ -83,4 +83,4 @@ export default {
 }
 </script>
 
-<style lang="sass" src="./hero-home.sass"></style>
+<style lang="sass" src="./hero-pages-small.sass"></style>

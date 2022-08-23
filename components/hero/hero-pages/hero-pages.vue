@@ -1,4 +1,4 @@
-<template lang="pug" src="./hero-home.pug"></template>
+<template lang="pug" src="./hero-pages.pug"></template>
 
 <script>
 import { debounce } from '~/resources/mixins'
@@ -14,6 +14,8 @@ export default {
   data: () => ({
     imgSrc: null,
     imgWebp: null,
+    bgSrc: null,
+    bgWebp: null,
     windowWidth: null,
     navHeight: 0
   }),
@@ -27,6 +29,8 @@ export default {
     },
     handleResize () {
       this.windowWidth = window.innerWidth
+      this.windowWidth > 600 ? this.bgSrc = this.props.background.src : this.bgSrc = this.props.background_mobile.src
+      this.windowWidth > 600 ? this.bgWebp = this.props.background.webp : this.bgWebp = this.props.background_mobile.webp
       this.windowWidth > 600 ? this.imgSrc = this.props.image.src : this.imgSrc = this.props.image_mobile.src
       this.windowWidth > 600 ? this.imgWebp = this.props.image.webp : this.imgWebp = this.props.image_mobile.webp
       this.getNavHeight()
@@ -51,15 +55,16 @@ export default {
     handleAnimation () {
       this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
       const tl = this.$gsap.timeline()
-      // const bg = this.$refs.bg
+      const bg = this.$refs.bg
+      const mainImage = this.$refs.mainImage
       const title = this.$refs.title
       const body = this.$refs.body
       const stripe = this.$refs.stripe
-      // tl.from(bg, {
-      //   opacity: 0,
-      //   duration: 1,
-      //   ease: 'customEaseOut'
-      // }, '<+=0.175')
+      tl.from(bg, {
+        opacity: 0,
+        duration: 1,
+        ease: 'customEaseOut'
+      }, '<+=0.175')
       tl.from(title, {
         x: '-24',
         opacity: 0,
@@ -72,9 +77,17 @@ export default {
         duration: 1,
         ease: 'customEaseOut'
       }, '<+=0.175')
+      tl.from(mainImage, {
+        x: '-54',
+        y: '+54',
+        opacity: 0,
+        duration: 1,
+        ease: 'customEaseOut'
+      }, '<+=0.175')
       tl.from(stripe, {
         x: '400',
         y: '-400',
+        opacity: 0.5,
         duration: 0.25,
         ease: 'customEaseOut'
       }, '<+=0.175')
@@ -83,4 +96,4 @@ export default {
 }
 </script>
 
-<style lang="sass" src="./hero-home.sass"></style>
+<style lang="sass" src="./hero-pages.sass"></style>

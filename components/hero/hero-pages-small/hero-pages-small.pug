@@ -1,0 +1,14 @@
+.hero-pages-small(:style='{ marginTop: navHeight }')
+  .hero-pages-small__stripe(ref='stripe')
+  .hero-pages-small__background(:key='imgSrc' ref='bg')
+    .hero-pages-small__overlay
+      BaseIcon.hero-pages-small__overlay-stripes(name='home-hero-overlay')
+      .hero-pages-small__overlay-fill
+    picture.hero-pages-small__picture(ref='image')
+      source(:srcset='imgWebp' type='image/webp')
+      img.hero-pages-small__image(:src='imgSrc' alt='hero image' aria-hidden='true')
+  .hero-pages-small__container
+    .hero-pages-small__content
+      h1.hero-pages-small__title(v-if='props.title' v-html='props.title' ref='title')
+      .hero-pages-small__body( v-html='props.body' ref='body')
+  
