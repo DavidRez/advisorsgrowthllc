@@ -1,0 +1,5 @@
+.pages-transition
+  .pages-transition__sections.page-section(v-for='(section, i) in props.page_sections' :key='`transition-section-${i}`')
+    HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
+    BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
