@@ -1,6 +1,8 @@
 section.custom-transition-help(v-if='props' :class='[ `custom-transition-help--padding-${props.padding}` ]')
   .custom-transition-help__container
-    h3.custom-transition-help__header(v-html='props.header')
-    .custom-transition-help__list(v-for='(item, i) in props.help', :key='`help-${i}`' , v-html='item.text')
-    .custom-transition-help__text
-      p.custom-transition-help__body(v-html='props.body')
+    .custom-transition-help__column
+      .custom-transition-help__header(v-html='props.header')
+      .custom-transition-help__content
+        .custom-transition-help__list(v-for='(item, i) in props.help', :key='`help-${i}`' , v-html='item.text')
+        .custom-transition-help__text
+          p.custom-transition-help__body(v-html='props.body')

@@ -6,3 +6,31 @@
     @include container
     justify-content: center
     overflow: hidden
+
+  &__column
+    @include col (10)
+    @include phone-land-lg
+      width: 100%
+
+  &__header
+    @extend %title-margin-bottom
+    @extend %h3
+    width: 100%
+    font-size: 1rem
+    font-weight: 700
+
+  &__text
+    @include tablet
+      margin-top: 1rem
+    margin-top: 2rem
+
+  &__list
+    @include tablet
+      font-size: 1rem
+    margin-bottom: 1rem
+    padding-bottom: 1rem
+    color: $accent1
+    font-size: rem-calc(20)
+
+    &:not(:nth-last-child(2))
+      border-bottom: 1px solid $accent1
