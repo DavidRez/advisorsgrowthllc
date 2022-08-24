@@ -1,0 +1,8 @@
+section.custom-about-data(v-if='props' :class='[ `custom-about-data--padding-${props.padding}` ]')
+  .custom-about-data__container
+    .custom-about-data__columns(v-if='props.columns')
+      .custom-about-data__column(v-for='(column, i) in props.columns' :key='`column-${i}`' ref='columns')
+        BaseIcon.custom-about-data__column-icon(:name='column.icon')
+        h4.custom-about-data__column-title(v-if='column.title') {{ column.title }}
+        h5.custom-about-data__column-subtitle(v-if='column.subtitle') {{ column.subtitle }}
+        p.custom-about-data__column-body(v-if='column.body' v-html='column.body')
