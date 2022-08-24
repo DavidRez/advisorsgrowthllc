@@ -13,13 +13,13 @@ export default {
   },
   mounted () {
     if (this.$store.state.siteLoaded) {
-      // this.handleAnimation()
+      this.handleAnimation()
     } else {
       this.$store.watch(
         state => this.$store.state.siteLoaded,
         (newVal) => {
           if (newVal) {
-            // this.handleAnimation()
+            this.handleAnimation()
           }
         }
       )
@@ -37,6 +37,7 @@ export default {
         this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
       }
       if (this.props.links) {
+        this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
         this.$nextTick(() => {
           this.$refs.links.forEach((link, i) => {
             this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
@@ -49,7 +50,7 @@ export default {
             const delay = 0.1 + (0.1 * i)
             linktl.from(link, {
               opacity: 0,
-              y: '32',
+              x: 32,
               delay,
               duration: 0.8,
               ease: 'customEastOut'
@@ -58,7 +59,7 @@ export default {
         })
       }
       if (this.props.has_image) {
-        this.$_fadeIn(this.$refs.image, 24, 0, 'top+=58', 0, 1.2)
+        this.$_fadeIn(this.$refs.image.$el, 24, 0, 'top+=58', 0, 1.2)
       }
     }
   }
