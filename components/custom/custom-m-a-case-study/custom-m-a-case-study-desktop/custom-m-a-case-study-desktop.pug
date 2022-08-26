@@ -1,0 +1,16 @@
+section.custom-m-a-case-study-desktop(v-if='props' :class='`custom-m-a-case-study-desktop--padding-${props.padding}`')
+  BaseBackground.custom-m-a-case-study-desktop__image-desktop(v-if='props.image' :src='props.image.src' :webp='props.image.webp' ref='imageDesktop')
+  .custom-m-a-case-study-desktop__container
+    .custom-m-a-case-study-desktop__column
+      BaseBackground.custom-m-a-case-study-desktop__image-mobile(v-if='props.image' :src='props.image.src' :webp='props.image.webp' ref='imageMobile')
+      h2.custom-m-a-case-study-desktop__header(ref='header') {{ props.header }}
+      .custom-m-a-case-study-desktop__body(ref='body') {{ props.body }}
+      .custom-m-a-case-study-desktop__table(v-if='props.rows')
+        .custom-m-a-case-study-desktop__row(
+            v-for='(row, i) in props.rows'
+            ref='rows'
+            :key='`case-study-desktop-row-${i}`'
+          )
+          .custom-m-a-case-study-desktop__row-text(:class='`custom-m-a-case-study-desktop__block-label--${props.color}`' v-html='row.column_one')
+          .custom-m-a-case-study-desktop__row-text(:class='`custom-m-a-case-study-desktop__block-label--${props.color}`' v-html='row.column_two')
+          .custom-m-a-case-study-desktop__row-text(:class='`custom-m-a-case-study-desktop__block-label--${props.color}`' v-html='row.column_three')

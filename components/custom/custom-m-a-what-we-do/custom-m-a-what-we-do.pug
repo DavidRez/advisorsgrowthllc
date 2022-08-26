@@ -1,0 +1,5 @@
+section.custom-m-a-what-we-do(:class='[ `custom-m-a-what-we-do--padding-${props.padding}` ]')
+  .custom-m-a-what-we-do__container
+    .custom-m-a-what-we-do__bullets
+      .custom-m-a-what-we-do__bullet(v-for='(bullet, i) in props.bullets' :key='`bullet-${i}`' ref='bullets' :style='{ height: maxHeight }')
+        .custom-m-a-what-we-do__bullet-label(v-if='bullet.body' ref='labels') {{ bullet.body }}

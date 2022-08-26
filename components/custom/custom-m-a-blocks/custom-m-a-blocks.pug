@@ -1,0 +1,8 @@
+section.custom-m-a-blocks(v-if='props' :class='`custom-m-a-blocks--padding-${props.padding}`')
+  .custom-m-a-blocks__container
+    .custom-m-a-blocks__column
+      .custom-m-a-blocks__blocks(v-if='props.blocks')
+        .custom-m-a-blocks__block(v-for='(block, i) in props.blocks' :key='`m-a-block-${i}`')
+          .custom-m-a-blocks__block-text(ref='texts')
+            .custom-m-a-blocks__block-title {{ block.title }}
+            .custom-m-a-blocks__block-subtitle {{ block.subtitle }}
