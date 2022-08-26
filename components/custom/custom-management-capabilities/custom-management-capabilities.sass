@@ -18,20 +18,27 @@
     color: $primary
 
   &__row
+    @include tablet
+      flex-direction: column
     display: flex
     justify-content: space-between
 
   &__image
+    @include tablet-lg
+      margin-right: 2rem
+    @include tablet
+      margin-right: 0
+      margin-bottom: 1rem
+      min-width: auto
     @include nexus
       width: 100%
       height: 55vw
-    width: rem-calc(350)
-    height: rem-calc(350)
+    margin-right: 4rem
+    min-width: rem-calc(350)
+    max-width: rem-calc(350)
+    max-height: rem-calc(350)
 
     .base-image__image
       position: relative
       width: 100%
       object-fit: cover
-
-  &__content
-    width: 60%
