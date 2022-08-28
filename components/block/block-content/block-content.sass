@@ -32,6 +32,10 @@
       @include nexus
         flex-direction: column-reverse
       flex-direction: row-reverse
+      
+    .pages-ria-deal-room &
+      @include tablet
+        flex-direction: column-reverse
 
   &__text
     flex: 4
@@ -95,6 +99,12 @@
     margin-left: 3rem
     width: rem-calc(250)
     height: rem-calc(250)
+    .pages-ria-deal-room &
+      @include col(3)
+      @include tablet
+        margin: 0 auto
+        max-width: rem-calc(300)
+      height: 100%
 
     .base-image__image
       position: relative
