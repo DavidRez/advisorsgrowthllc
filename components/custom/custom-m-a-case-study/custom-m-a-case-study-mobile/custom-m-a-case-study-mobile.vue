@@ -1,4 +1,4 @@
-<template lang="pug" src="./custom-m-a-case-study-desktop.pug"></template>
+<template lang="pug" src="./custom-m-a-case-study-mobile.pug"></template>
 
 <script>
 import { fadeIn, debounce } from '~/resources/mixins'
@@ -12,9 +12,11 @@ export default {
     }
   },
   data: () => ({
-    windowWidth: null
+    windowWidth: null,
+    active: ''
   }),
   mounted () {
+    this.setActive(this.props.column_one_label)
     this.handleResize()
     if (this.$store.state.siteLoaded) {
       this.handleAnimation()
@@ -31,6 +33,9 @@ export default {
     window.addEventListener('resize', this.debounceFunc)
   },
   methods: {
+    setActive (str) {
+      this.active = str
+    },
     debounceFunc () {
       this.debounce(this.handleResize, null, 300)
     },
@@ -38,11 +43,7 @@ export default {
       this.windowWidth = window.innerWidth
     },
     handleAnimation () {
-      if (this.windowWidth > 1100) {
-        this.$_fadeIn(this.$refs.imageDesktop.$el, 0, -250, 'top+=58', 0, 1.5)
-      } else {
-        this.$_fadeIn(this.$refs.imageMobile.$el, 0, -250, 'top+=58', 0, 1.5)
-      }
+      this.$_fadeIn(this.$refs.image.$el, 0, -250, 'top+=58', 0, 1.5)
       this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
       this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
       this.$_fadeIn(this.$refs.firstRow, 24, 32, 'top+=48', 0, 1.2)
@@ -71,4 +72,4 @@ export default {
 
 </script>
 
-<style lang="sass" src="./custom-m-a-case-study-desktop.sass"></style>
+<style lang="sass" src="./custom-m-a-case-study-mobile.sass"></style>

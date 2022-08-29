@@ -1,0 +1,108 @@
+.custom-m-a-case-study-mobile
+  @include section-padding-classes
+  position: relative
+  overflow: hidden
+  
+  &__image
+    display: block
+    position: relative
+    top: 0
+    left: -15%
+    align-self: flex-end
+    margin-bottom: 2rem
+    border-top-right-radius: rem-calc(100)
+    border-bottom-right-radius: rem-calc(100)
+    width: 90%
+    height: rem-calc(100)
+  
+  &__container
+    @include container
+    flex-direction: row
+    justify-content: center
+
+  &__column
+    @include col (10)
+    @include phone-land-lg
+      width: 100%
+
+  &__header
+    @extend %title-margin-bottom-lg
+    text-align: left
+    color: $accent1
+    font-weight: 600
+    
+  &__body
+    @extend %body
+    @extend %wysiwyg-text
+
+    ul
+      padding-left: 1.25rem
+
+  &__table
+    display: flex
+    flex-direction: column
+    margin-top: 2rem
+    overflow: hidden
+
+  &__button
+    @include hover-supported
+      background: linear-gradient(0deg,  #e1e5e7 0%, #f1f0f0 100%)
+    display: inline-block
+    transition: all .25s ease
+    border-top-left-radius: rem-calc(25)
+    border-top-right-radius: rem-calc(25)
+    background: rgb(255,255,255)
+    background: linear-gradient(0deg,  #edf1f3 0%, #f1f0f0 100%)
+    cursor: pointer
+    padding: 1rem
+    width: 50%
+    text-align: center
+    text-transform: uppercase
+    line-height: 1
+    letter-spacing: 1px
+    color: rgba($accent1, .7)
+    font-family: $font-primary
+    font-weight: 700
+
+    &--active
+      @include hover-supported
+        background: linear-gradient(180deg,  #d1dbe0 0%, #f7f7f7 100%)
+      background: linear-gradient(180deg,  #d1dbe0 0%, #f7f7f7 100%)
+      line-height: 1
+      color: rgba($accent1, 1)
+      font-weight: 700
+
+    &:focus-visible
+      @include focus
+
+  &__rows
+    background: #f7f7f7
+
+  &__row
+    display: grid
+    grid-template-columns: 1fr
+    margin-top: 1rem
+    padding: 0 1rem
+    width: 100%
+
+    &:not(:last-of-type)
+      border-bottom: 1px solid $accent1
+
+    &-label
+      text-transform: uppercase
+      color: $primary
+      font-weight: 800
+
+    &-text
+      @extend %body
+      padding: 1rem 0
+
+      ul
+        margin: 0
+        padding-left: .75rem
+
+      &:first-of-type
+        @extend %body-lg
+        text-transform: uppercase
+        color: $primary
+        font-weight: 800

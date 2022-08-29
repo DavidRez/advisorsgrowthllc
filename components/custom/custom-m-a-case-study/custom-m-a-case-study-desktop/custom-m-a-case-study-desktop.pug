@@ -6,11 +6,15 @@ section.custom-m-a-case-study-desktop(v-if='props' :class='`custom-m-a-case-stud
       h2.custom-m-a-case-study-desktop__header(ref='header') {{ props.header }}
       .custom-m-a-case-study-desktop__body(ref='body') {{ props.body }}
       .custom-m-a-case-study-desktop__table(v-if='props.rows')
+        .custom-m-a-case-study-desktop__row(ref='firstRow')
+          .custom-m-a-case-study-desktop__row-text
+          .custom-m-a-case-study-desktop__row-text(v-html='props.column_one_label')
+          .custom-m-a-case-study-desktop__row-text(v-html='props.column_two_label')
         .custom-m-a-case-study-desktop__row(
             v-for='(row, i) in props.rows'
             ref='rows'
             :key='`case-study-desktop-row-${i}`'
           )
-          .custom-m-a-case-study-desktop__row-text(:class='`custom-m-a-case-study-desktop__block-label--${props.color}`' v-html='row.column_one')
-          .custom-m-a-case-study-desktop__row-text(:class='`custom-m-a-case-study-desktop__block-label--${props.color}`' v-html='row.column_two')
-          .custom-m-a-case-study-desktop__row-text(:class='`custom-m-a-case-study-desktop__block-label--${props.color}`' v-html='row.column_three')
+          .custom-m-a-case-study-desktop__row-text(v-html='row.label')
+          .custom-m-a-case-study-desktop__row-text(v-html='row.column_one')
+          .custom-m-a-case-study-desktop__row-text(v-html='row.column_two')

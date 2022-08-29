@@ -1,0 +1,27 @@
+section.custom-m-a-case-study-mobile(v-if='props' :class='`custom-m-a-case-study-mobile--padding-${props.padding}`')
+  .custom-m-a-case-study-mobile__container
+    .custom-m-a-case-study-mobile__column
+      BaseBackground.custom-m-a-case-study-mobile__image(v-if='props.image' :src='props.image.src' :webp='props.image.webp' ref='image')
+      h2.custom-m-a-case-study-mobile__header(ref='header') {{ props.header }}
+      .custom-m-a-case-study-mobile__body(ref='body') {{ props.body }}
+      .custom-m-a-case-study-mobile__table(v-if='props.rows')
+        .custom-m-a-case-study-mobile__buttons(ref='firstRow')
+          .custom-m-a-case-study-mobile__button(v-html='props.column_one_label'
+            :class='{ "custom-m-a-case-study-mobile__button--active": active === props.column_one_label }'
+            @click='setActive(props.column_one_label)'
+            @keyup.enter='setActive(props.column_one_label)'
+            tabindex='0')
+          .custom-m-a-case-study-mobile__button(v-html='props.column_two_label'
+            :class='{ "custom-m-a-case-study-mobile__button--active": active === props.column_two_label }'
+            @click='setActive(props.column_two_label)'
+            @keyup.enter='setActive(props.column_two_label)'
+            tabindex='0')
+        .custom-m-a-case-study-mobile__rows
+          .custom-m-a-case-study-mobile__row(
+              v-for='(row, i) in props.rows'
+              ref='rows'
+              :key='`case-study-mobile-row-${i}`'
+            )
+            .custom-m-a-case-study-mobile__row-label(v-html='row.label')
+            .custom-m-a-case-study-mobile__row-text(v-if='active === props.column_one_label' :class='{ "custom-m-a-case-study-mobile__row-text--active": active === props.column_one_label }' v-html='row.column_one')
+            .custom-m-a-case-study-mobile__row-text(v-if='active === props.column_two_label' :class='{ "custom-m-a-case-study-mobile__row-text--active": active === props.column_two_label }' v-html='row.column_two')
