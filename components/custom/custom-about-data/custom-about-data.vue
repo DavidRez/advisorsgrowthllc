@@ -39,10 +39,10 @@ export default {
           const delay = 0.1 + (0.1 * i)
           columntl.from(column, {
             opacity: 0,
-            y: 32,
+            y: '32',
             delay,
             duration: 0.8,
-            ease: 'customEastOut'
+            ease: 'customEaseOut'
           })
         })
       })

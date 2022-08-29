@@ -51,10 +51,10 @@ export default {
           const delay = 0.1 + (0.1 * i)
           tabtl.from(tab, {
             opacity: 0,
-            x: 32,
+            x: '32',
             delay,
             duration: 0.8,
-            ease: 'customEastOut'
+            ease: 'customEaseOut'
           })
         })
       })
