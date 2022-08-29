@@ -1,10 +1,10 @@
 <template lang="pug" src="./custom-management-capabilities.pug"></template>
 
 <script>
-import { fadeIn, parallax } from '~/resources/mixins'
+import { fadeIn } from '~/resources/mixins'
 
 export default {
-  mixins: [fadeIn, parallax],
+  mixins: [fadeIn],
   props: {
     props: {
       type: Object,
@@ -27,14 +27,14 @@ export default {
   },
   methods: {
     handleAnimation () {
-      if (this.props.header) {
+      if (this.props.section.title) {
         this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 0, 1.2)
       }
-      if (this.props.subheader) {
-        this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 0, 1.2)
+      if (this.props.section.image) {
+        this.$_fadeIn(this.$refs.image.$el, 24, 0, 'top+=58', 0, 1.2)
       }
-      if (this.props.content) {
-        this.$_fadeIn(this.$refs.text, 24, 0, 'top+=58', 0, 1.2)
+      if (this.props.section.content) {
+        this.$_fadeIn(this.$refs.content, 24, 0, 'top+=58', 0, 1.2)
       }
     }
   }

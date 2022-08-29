@@ -20,6 +20,8 @@
   &__row
     @include tablet
       flex-direction: column
+    @include phone-land-lg
+      flex-direction: row
     display: flex
     justify-content: space-between
 
@@ -30,12 +32,20 @@
       margin-right: 0
       margin-block: 1rem
       width: rem-calc(320)
+      max-width: unset
       min-width: unset
       height: rem-calc(320)
       max-height: unset
+    @include phone-land-lg
+      margin-top: unset
+      margin-right: 1rem
+      width: 25vw
+      height: 25vw
     @include phone-lg
       margin: 0 auto
       margin-bottom: 1rem
+      width: 100%
+      height: 90vw
     margin-right: 4rem
     min-width: rem-calc(350)
     max-width: rem-calc(350)
@@ -45,3 +55,6 @@
       position: relative
       width: 100%
       object-fit: cover
+
+  &__content
+    flex: 4

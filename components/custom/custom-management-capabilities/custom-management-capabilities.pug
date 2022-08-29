@@ -1,7 +1,7 @@
 section.custom-management-capabilities(v-if='props' :class='[ `custom-management-capabilities--padding-${props.padding}` ]')
   .custom-management-capabilities__container
     .custom-management-capabilities__column
-      .custom-management-capabilities__header(v-html='props.section.title')
+      .custom-management-capabilities__header(v-html='props.section.title' ref='title')
       .custom-management-capabilities__row
-        BaseImage.custom-management-capabilities__image(:src='props.section.image.src', :webp='props.section.image.webp', :alt='props.section.image.alt')
-        p.custom-management-capabilities__content(v-html='props.section.content')
+        BaseImage.custom-management-capabilities__image(:src='props.section.image.src', :webp='props.section.image.webp', :alt='props.section.image.alt' ref='image')
+        p.custom-management-capabilities__content(v-html='props.section.content' ref='content')
