@@ -35,7 +35,7 @@ export default {
         })
         this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
         tl.from(text, {
-          y: 24,
+          y: '24',
           opacity: 0,
           duration: 1.2,
           ease: 'customEaseOut'
