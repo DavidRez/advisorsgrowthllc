@@ -2,11 +2,11 @@
   @include laptop-lg
     height: 35vw
   @include nexus
-    height: 50vw
-  @include phone-lg
-    height: 80vw
+    height: 40vw
+  @include phone-land-lg
+    height: 75vh
   @include phone
-    height: 120vw
+    height: 50vw
   position: relative
   width: 100%
   height: 44vw
@@ -27,12 +27,19 @@
     @include tablet
       height: rem-calc(40)
     @include nexus
-      bottom: 20%
+      bottom: 30%
+      height: rem-calc(30)
+    @include phone-land-lg
+      bottom: 45%
+      height: rem-calc(25)
+    @include phone-lg
+      bottom: 25%
+      height: rem-calc(20)
     position: absolute
     right: -27%
     bottom: 40%
     transform: rotate(-55deg)
-    z-index: 1
+    z-index: 2
     border-radius: rem-calc(60)
     background: $primary
     width: 50vw
@@ -45,13 +52,15 @@
 
   &__overlay
     @extend %absolute
-    @include tablet
-      opacity: .4
     display: flex
     opacity: .9
     z-index: 0
 
     &-stripes
+      @include phone-land-lg
+        width: 35%
+      @include phone-lg
+        left: -5%
       width: 50%
       height: 100%
 
@@ -62,16 +71,14 @@
         height: 100%
 
     &-fill
-      @include phone-lg
-        display: none
+      // @include phone-lg
+      //   display: none
       flex: 1 0 auto
       background: $white
       height: 100%
 
   &__picture
     @extend %absolute
-    @include tablet
-      opacity: .2
     z-index: -1
   
   &__image
@@ -91,6 +98,15 @@
   &__content
     @include col (6.5)
     @include col--offset (5.5)
+    @include tablet
+      margin-left: 45%
+      width: 55%
+    @include phone-lg
+      margin-left: 35%
+      width: 65%
+    @include phone
+      margin-left: 45%
+      width: 55%
 
   &__title
     @extend %h1-hero

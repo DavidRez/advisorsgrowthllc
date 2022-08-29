@@ -1,0 +1,56 @@
+.custom-about-data
+  @include section-padding-classes
+  position: relative
+
+  &__container
+    @include container
+    justify-content: center
+    overflow: hidden
+    
+  &__columns
+    @include col (10)
+    @include phone-land-lg
+      width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  &__column
+    @include tablet
+      width: 49%
+    @include nexus
+      width: 100%
+    @include phone-land-lg
+      width: 31%
+    display: flex
+    flex: 0 1 auto
+    flex-direction: column
+    margin-top: 1rem
+    width: 27%
+
+    &:not(:last-of-type)
+      @include nexus
+        margin-bottom: 1rem
+
+    &-icon
+      width: rem-calc(65)
+
+      svg
+        width: 100%
+
+    &-title
+      flex: 0 1 auto
+      margin-bottom: 1rem
+      text-transform: uppercase
+      letter-spacing: 1px
+      color: $accent1
+      font-family: $font-primary
+
+    &-body
+      @extend %body
+      @extend %wysiwyg-text
+      font-weight: 400
+
+      ul
+        margin-bottom: 0
+        padding-left: 1.25rem

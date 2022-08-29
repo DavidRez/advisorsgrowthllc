@@ -1,16 +1,16 @@
 .hero-pages
-  @include tablet-lg
-    height: 40vw
-  @include tablet
-    height: 65vw
-  @include nexus
-    height: 70vw
-  @include phone-land-lg
-    height: 100vh
+  // @include tablet-lg
+  //   height: 40vw
+  // @include tablet
+  //   height: 65vw
+  // @include nexus
+  //   height: 70vw
+  // @include phone-land-lg
+  //   height: 100vh
   @include phone-lg
-    height: 85vw
+    height: 45vw
   @include phone
-    height: 120vw
+    height: 65vw
   position: relative
   width: 100%
   height: 33vw
@@ -29,10 +29,12 @@
       bottom: 30%
       height: rem-calc(50)
     @include tablet
-      bottom: 20%
+      bottom: 45%
       height: rem-calc(40)
-    @include nexus
-      bottom: 10%
+    @include phone-lg
+      bottom: 35%
+    @include phone
+      bottom: 20%
     position: absolute
     right: -27%
     bottom: 40%
@@ -49,8 +51,8 @@
 
     &-picture
       @extend %absolute
-      @include nexus
-        display: none
+      // @include nexus
+      //   display: none
       opacity: .1
       z-index: -1
   
@@ -66,12 +68,9 @@
       width: 45%
     @include tablet
       left: -10%
-      height: 60%
-    @include nexus
-      left: 0
-      opacity: .1
-      width: 100%
-      height: 100%
+      // height: 80%
+    @include phone-lg
+      height: 80%
     @include phone-land-lg
       width: 45%
       height: 70%
@@ -79,8 +78,10 @@
     //   height: 65vw
     // @include phone-lg
     //   height: 75vw
-    // @include phone
-    //   height: 100vw
+    @include phone
+      left: -27%
+      width: 70%
+      height: 65%
     position: absolute
     bottom: 0
     left: 0
@@ -97,8 +98,8 @@
 
   &__image
     @extend %absolute
-    @include nexus
-      clip-path: unset
+    // @include nexus
+    //   clip-path: unset
     @include phone-land-lg
       object-position: center top
       clip-path: url(#svgPath)
@@ -120,12 +121,14 @@
     @include col (6.5)
     @include col--offset (5.5)
     @include tablet
+      width: 60%
+    @include phone
       width: 65%
-    @include nexus
+    // @include nexus
       // background: rgba($bg1, .95)
       // box-shadow: 0 0 8px rgba($black, .5)
-      padding: 1rem .75rem
-      width: 100%
+      // padding: 1rem .75rem
+      // width: 100%
     @include phone-land-lg
       background: unset
       width: 60%

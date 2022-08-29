@@ -1,9 +1,6 @@
-.block-content
+.block-links
   @include section-padding-classes
   position: relative
-
-  &--bg
-    background: $bg1
 
   &__container
     @include container
@@ -15,65 +12,32 @@
     @include phone-land-lg
       width: 100%
 
-  &__header
-    @extend %title-margin-bottom
-    width: 100%
-    color: $accent1
-
-  &__subheader
-    @extend %h4
-    @extend %title-margin-bottom
-    width: 100%
-
-  &__content
-    @include nexus
-      flex-direction: column-reverse
-    display: flex
-    flex-direction: row
-
-    &--reverse
-      @include nexus
-        flex-direction: column-reverse
-      flex-direction: row-reverse
-      
-    .pages-ria-deal-room &
-      @include tablet
-        flex-direction: column-reverse
-
-  &__text
-    flex: 4
-
-  &__body
-    @extend %body
-    @extend %wysiwyg-text
-
-    ul
-      padding-left: 1.25rem
-
-    &--large
-      @extend %body-lg
-      letter-spacing: 1px
-      color: $accent3
-      font-weight: 600
-  
-  &__links
-    margin-top: 3rem
-
   &__link
     @include hover-supported
-      .block-content__link-icon svg
+      .block-links__link-icon svg
         fill: $primary
-      .block-content__link-label
+      .block-links__link-label
         color: $primary
     display: flex
     align-items: center
     width: fit-content
 
+    &-container
+      @include nexus
+        display: block
+      display: inline-block
+
+      &-title
+        margin-bottom: rem-calc(10)
+
+      &:not(:last-of-type)
+        @include nexus
+          margin-right: unset
+          margin-bottom: 2rem
+        margin-right: 2rem
+
     &:focus-visible
       @include focus
-
-    &:not(:last-of-type)
-      margin-bottom: 1.25rem
 
     &-icon
       display: inline-flex
@@ -108,19 +72,13 @@
     margin-left: 3rem
     width: rem-calc(250)
     height: rem-calc(250)
-    .pages-ria-deal-room &
-      @include col(3)
-      @include tablet
-        margin: 0 auto
-        max-width: rem-calc(300)
-      height: 100%
 
     .base-image__image
       position: relative
       width: 100%
       object-fit: cover
 
-    .block-content__content--reverse &
+    .block-links__content--reverse &
       @include tablet-lg
         margin-right: 2rem
       margin-right: 3rem

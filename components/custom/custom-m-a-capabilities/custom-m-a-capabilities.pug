@@ -1,0 +1,13 @@
+section.custom-m-a-capabilities(v-if='props' :class='`custom-m-a-capabilities--padding-${props.padding}`')
+  BaseBackground.custom-m-a-capabilities__image-desktop(v-if='props.image' :src='props.image.src' :webp='props.image.webp' ref='imageDesktop')
+  .custom-m-a-capabilities__container
+    .custom-m-a-capabilities__column
+      BaseBackground.custom-m-a-capabilities__image-mobile(v-if='props.image' :src='props.image.src' :webp='props.image.webp' ref='imageMobile')
+      h2.custom-m-a-capabilities__header(ref='header') {{ props.header }}
+      .custom-m-a-capabilities__blocks(v-if='props.blocks')
+        .custom-m-a-capabilities__block(
+            v-for='(block, i) in props.blocks'
+            ref='blocks'
+            :key='`capability-block-${i}`'
+          )
+          .custom-m-a-capabilities__block-label(:class='`custom-m-a-capabilities__block-label--${props.color}`') {{ block.label }}

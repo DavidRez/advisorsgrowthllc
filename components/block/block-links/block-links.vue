@@ -1,4 +1,4 @@
-<template lang="pug" src="./block-content.pug"></template>
+<template lang="pug" src="./block-links.pug"></template>
 
 <script>
 import { fadeIn } from '~/resources/mixins'
@@ -27,15 +27,6 @@ export default {
   },
   methods: {
     handleAnimation () {
-      if (this.props.header) {
-        this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
-      }
-      if (this.props.subheader) {
-        this.$_fadeIn(this.$refs.subheader, 24, 0, 'top+=58', 0, 1.2)
-      }
-      if (this.props.body) {
-        this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
-      }
       if (this.props.links) {
         this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
         this.$nextTick(() => {
@@ -58,13 +49,10 @@ export default {
           })
         })
       }
-      if (this.props.has_image) {
-        this.$_fadeIn(this.$refs.image.$el, 24, 0, 'top+=58', 0, 1.2)
-      }
     }
   }
 }
 
 </script>
 
-<style lang="sass" src="./block-content.sass"></style>
+<style lang="sass" src="./block-links.sass"></style>
