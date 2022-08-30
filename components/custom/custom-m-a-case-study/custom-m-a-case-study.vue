@@ -38,7 +38,6 @@ export default {
       this.windowWidth = window.innerWidth
     },
     handleAnimation () {
-      console.log(this.windowWidth)
       if (this.windowWidth > 1100) {
         this.$_fadeIn(this.$refs.imageDesktop.$el, 0, -250, 'top+=58', 0, 1.5)
       } else {
