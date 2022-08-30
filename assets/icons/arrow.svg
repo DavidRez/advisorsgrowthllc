@@ -1,4 +1,6 @@
-<svg id="49af24e8-8954-4eee-ae32-0d35e598a7ed" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.78 48.5">
-  <title>arrow</title>
-  <path d="M14.54,5.13,28,21.89h-.1l2.34,2.86-2.3,2.85H28L14.54,44.36a3,3,0,0,0,.45,4,2.86,2.86,0,0,0,4-.45l17.12-21.4a2.61,2.61,0,0,0,.62-1.78h0A4.21,4.21,0,0,0,36.11,23L19,1.56a2.87,2.87,0,0,0-4-.45A3,3,0,0,0,14.54,5.13Z" transform="translate(-13.95 -0.5)" />
+<svg xmlns="http://www.w3.org/2000/svg" width="18.264" height="17.695" viewBox="0 0 18.264 17.695">
+  <g id="Group_10" data-name="Group 10" transform="translate(-91.292 -140.026)">
+    <path id="Path_2092" data-name="Path 2092" d="M6610.528,140.381,6602,148.836l8.527,8.532" transform="translate(-6510)" fill="none" stroke-width="1"/>
+    <line id="Line_26" data-name="Line 26" x2="17.42" transform="translate(92.136 148.851)" fill="none" stroke-width="1"/>
+  </g>
 </svg>

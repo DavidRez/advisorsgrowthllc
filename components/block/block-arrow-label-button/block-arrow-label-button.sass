@@ -1,0 +1,55 @@
+.block-arrow-label-button
+
+  &__container
+    @include focus
+    display: flex
+    position: relative
+    flex-direction: row
+    align-items: center
+    margin-bottom: 2rem
+    cursor: pointer
+    width: fit-content
+    height: 1rem
+
+    @include hover-supported
+      .block-arrow-label-button__icon
+        path,
+        line
+          stroke: $primary
+      .block-arrow-label-button__label
+        color: $primary
+
+    &--reverse
+      flex-direction: row-reverse
+
+  &__icon
+    display: flex
+    width: 1rem
+    height: 1rem
+
+    svg
+      height: 100%
+      overflow: visible
+
+    path,
+    line
+      transition: stroke .3s ease
+      stroke: $accent1
+      stroke-width: 2
+
+    &--reverse
+      transform: rotate(180deg)
+  
+  &__label
+    @extend %body
+    transition: color .3s ease
+    margin-left: .5rem
+    text-transform: uppercase
+    line-height: 1
+    letter-spacing: 2px
+    color: $accent1
+    font-weight: 700
+
+    .block-arrow-label-button__container--reverse &
+      margin-right: .5rem
+      margin-left: unset

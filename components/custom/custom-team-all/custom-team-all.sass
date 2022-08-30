@@ -1,0 +1,86 @@
+.custom-team-all
+  @extend %section-padding-full
+  position: relative
+  color: $accent1
+
+  &__container
+    @include container
+    justify-content: center
+
+  &__grid
+    // display: flex
+    // flex-wrap: wrap
+    // align-items: flex-start
+    // justify-content: center
+    @include col (10)
+    @include tablet
+      grid-template-columns: 1fr 1fr
+    @include nexus
+      grid-template-columns: 1fr
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-row-gap: rem-calc(70)
+    grid-column-gap: 3rem
+
+  &__member
+    @include focus
+    @include hover-supported
+      .custom-team-all__member-image
+        background: rgba($accent1, .45)
+        box-shadow: rgba($black, 0.15) 0 6px 12px -2px, rgba($black, 0.3) 0 3px 7px -3px
+      .base-image__image
+        transform: scale(1.1)
+    @include tablet
+      margin-top: 1rem
+    position: relative
+    transition: transform .4s ease, box-shadow .4s ease
+    // width: 33%
+    text-align: center
+
+    &-image
+      @include laptop-sm
+        width: rem-calc(200)
+        height: rem-calc(200)
+      @include phone-land-lg
+        width: 50vh
+        height: 50vh
+      @include phone
+        width: 85vw
+        height: 85vw
+      display: block
+      transition: .4s all ease
+      margin: 0 auto rem-calc(20)
+      border-radius: 50%
+      background: #e1dcf3
+      width: rem-calc(250)
+      height: rem-calc(250)
+      overflow: hidden
+
+      .base-image__image
+        transition: .2s all ease
+        border-radius: 50%
+
+      .base-image__overlay
+        border-radius: 50%
+        background: #e1dcf3 !important
+    
+    &-name
+      @extend %h3
+      // @include nexus
+      //   font-size: 1.75rem
+      display: block
+      margin-bottom: rem-calc(4)
+      text-align: center
+      letter-spacing: 0
+      color: $accent1
+      font-size: rem-calc(30)
+      font-weight: 700
+    
+    &-position
+      @extend %body
+      display: block
+      text-align: center
+      text-transform: uppercase
+      line-height: 1.1
+      letter-spacing: 1px
+      color: $primary
