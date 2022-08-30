@@ -1,0 +1,6 @@
+section.custom-about-advantage-mobile
+  .custom-about-advantage-mobile__container
+    .custom-about-advantage-mobile__column
+      .custom-about-advantage-mobile__stage(v-for='(stage, i) in props.stages' :key='`stage-${i}`' ref='stages')
+        h4.custom-about-advantage-mobile__stage-name(v-if='stage.name') {{ stage.name }}
+        p.custom-about-advantage-mobile__stage-description(v-if='stage.description' v-html='stage.description')

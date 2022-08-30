@@ -1,0 +1,169 @@
+.custom-about-advantage-desktop
+  position: relative
+  margin: 8rem 0 4rem
+  overflow-x: clip
+    
+  &__container
+    @include container
+    justify-content: center
+  
+  &__column
+    @include col (10)
+    @include phone-land-lg
+      width: 100%
+  
+  &__circles
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 100%
+    height: fit-content
+
+  &__circle
+    @include hover-supported
+      .custom-about-advantage-desktop__circle-bg
+        background: radial-gradient(circle, rgba(239,244,247,.8) 0%, #EAF0F3 10%, rgba(166,186,195,1) 100%)
+      .custom-about-advantage-desktop__circle-name
+        color: $accent1
+      .custom-about-advantage-desktop__line
+        span
+          transition: height .2s ease
+          transform: scaleY(1)
+          // height: rem-calc(50)
+        .custom-about-advantage-desktop__dot
+          transition: transform .2s ease .2s
+          transform: scale(1)
+      .custom-about-advantage-desktop__description
+        transition: visibility .2s ease, opacity .3s ease .4s
+        visibility: visible
+        opacity: 1
+    display: inline
+    position: relative
+    cursor: pointer
+    height: fit-content
+
+    &:focus-visible
+      @include focus
+    
+    &:nth-child(2n)
+      margin-top: -3rem
+      .custom-about-advantage-desktop__branch
+        top: rem-calc(50)
+        bottom: 0
+        transform: rotate(-45deg)
+      .custom-about-advantage-desktop__line
+        top: -27%
+        bottom: unset
+        flex-direction: column-reverse
+        span
+          transform-origin: left bottom
+      .custom-about-advantage-desktop__description
+        top: -50%
+        bottom: unset
+    
+    &:nth-last-child(2)
+      .custom-about-advantage-desktop__description
+        @include laptop-sm
+          bottom: -70%
+        bottom: -75%
+        left: -140%
+    
+    &:last-of-type
+      .custom-about-advantage-desktop__branch
+        display: none
+      .custom-about-advantage-desktop__description
+        top: -50%
+        right: 30%
+        bottom: unset
+        left: unset
+
+    &--active
+      background: $gradient-dark
+
+    &-bg
+      @include laptop-sm
+        width: 12.5vw
+        height: 12.5vw
+      display: inline-flex
+      position: relative
+      align-items: center
+      justify-content: center
+      transition: all .25s ease
+      z-index: 2
+      border-radius: 50%
+      background: radial-gradient(circle, rgba(239,244,247,1) 0%, #EAF0F3 30%, rgba(166,186,195,1) 100%)
+      padding: 1rem
+      width: rem-calc(145)
+      height: rem-calc(145)
+    
+    &-name
+      @extend %body
+      @include laptop-sm
+        font-size: rem-calc(14)
+      transition: all .25s ease
+      text-align: center
+      text-transform: uppercase
+      line-height: 1
+      letter-spacing: .5px
+      color: $accent1
+      font-family: $font-primary
+      font-weight: 700
+
+      .custom-about-advantage-desktop__circle--active &
+        line-height: 1
+        color: rgba($accent1, 1)
+        font-weight: 700
+
+  &__branch
+    position: absolute
+    top: 0
+    right: rem-calc(-10)
+    bottom: rem-calc(50)
+    transform: rotate(45deg)
+    z-index: -1
+    margin: auto
+    background: $bg2
+    width: 1px
+    height: rem-calc(50)
+
+  &__line
+    display: flex
+    position: absolute
+    bottom: -30%
+    left: 47%
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    z-index: -1
+
+    span
+      display: block
+      transform: scaleY(0)
+      transition: transform .2s ease .4s
+      background: $text
+      width: 1px
+      height: rem-calc(50)
+      transform-origin: left top
+
+  &__dot
+    display: block
+    transform: scale(0)
+    transition: transform .2s ease .2s
+    border-radius: 50%
+    background: $text
+    width: rem-calc(7)
+    height: rem-calc(7)
+
+  &__description
+    @include laptop-sm
+      bottom: -70%
+      font-size: rem-calc(14)
+    display: flex
+    position: absolute
+    bottom: -75%
+    left: 50%
+    transition: visibility .4s ease .3s, opacity .3s ease
+    visibility: hidden
+    opacity: 0
+    padding-left: rem-calc(10)
+    width: rem-calc(300)
