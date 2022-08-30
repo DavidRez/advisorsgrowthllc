@@ -3,5 +3,6 @@
     HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
     BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
     BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
+    CustomAboutAdvantage(v-else-if='section.acf_fc_layout === "custom_about_advantage"', :props='section')
     CustomAboutData(v-else-if='section.acf_fc_layout === "custom_about_data"', :props='section')
     CustomAboutProcess(v-else-if='section.acf_fc_layout === "custom_about_process"', :props='section')
