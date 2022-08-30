@@ -1,16 +1,20 @@
 <template lang='pug' src='./custom-about-advantage-desktop.pug'></template>
 
 <script>
-import { fadeIn } from '~/resources/mixins'
+import { fadeIn, debounce } from '~/resources/mixins'
 
 export default {
-  mixins: [fadeIn],
+  mixins: [fadeIn, debounce],
   props: {
     props: {
       type: Object,
       default: () => ({})
     }
   },
+  data: () => ({
+    active: null,
+    windowWidth: 0
+  }),
   mounted () {
     if (this.$store.state.siteLoaded) {
       this.handleAnimation()
@@ -24,8 +28,21 @@ export default {
         }
       )
     }
+    window.addEventListener('resize', this.debounceFunc)
   },
   methods: {
+    debounceFunc () {
+      this.debounce(this.handleResize, null, 300)
+    },
+    handleResize () {
+      this.windowWidth = window.innerWidth
+      if (this.windowWidth >= 1025) {
+        this.active = null
+      }
+    },
+    changeCircle (i) {
+      this.active = i
+    },
     handleAnimation () {
       this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
       this.$nextTick(() => {

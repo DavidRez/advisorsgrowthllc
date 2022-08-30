@@ -2,7 +2,9 @@ section.custom-about-advantage-desktop
   .custom-about-advantage-desktop__container
     .custom-about-advantage-desktop__column
       .custom-about-advantage-desktop__circles(v-if='props.stages')
-        .custom-about-advantage-desktop__circle(v-for='(circle, i) in props.stages' :key='`stage-${i}`' tabindex='0' ref='circles')
+        .custom-about-advantage-desktop__circle(v-for='(circle, i) in props.stages' :key='`stage-${i}`' tabindex='0' ref='circles'
+        :class='{ "custom-about-advantage-desktop__circle--active": active === i }' 
+        @click='windowWidth < 1025 ? changeCircle(i) : ""' @keyup.enter='windowWidth < 1025 ? changeCircle(i) : ""')
           .custom-about-advantage-desktop__circle-bg
             h4.custom-about-advantage-desktop__circle-name(v-if='circle.name') {{ circle.name }}
           .custom-about-advantage-desktop__branch
