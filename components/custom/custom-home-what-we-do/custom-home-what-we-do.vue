@@ -47,7 +47,7 @@ export default {
           const delay = 0.1 + (0.1 * i)
           bullettl.from(bullet, {
             opacity: 0,
-            x: '32',
+            x: 32,
             delay,
             duration: 0.8,
             ease: 'customEaseOut'
@@ -58,8 +58,8 @@ export default {
         this.$_fadeIn(this.$refs.cta, 24, 0, 'top+=58', 0, 1.2)
       }
       tl.from(stripe, {
-        x: '-400',
-        y: '-400',
+        x: -400,
+        y: -400,
         opacity: 0.5,
         duration: 0.25,
         delay: 0.25,

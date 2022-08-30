@@ -66,27 +66,27 @@ export default {
         ease: 'customEaseOut'
       }, '<+=0.175')
       tl.from(title, {
-        x: '-24',
+        x: -24,
         opacity: 0,
         duration: 1,
         ease: 'customEaseOut'
       }, '<+=0.25')
       tl.from(body, {
-        x: '-24',
+        x: -24,
         opacity: 0,
         duration: 1,
         ease: 'customEaseOut'
       }, '<+=0.175')
       tl.from(mainImage, {
-        x: '-54',
-        y: '+54',
+        x: -54,
+        y: 54,
         opacity: 0,
         duration: 1,
         ease: 'customEaseOut'
       }, '<+=0.175')
       tl.from(stripe, {
-        x: '400',
-        y: '-400',
+        x: 400,
+        y: -400,
         opacity: 0.5,
         duration: 0.25,
         ease: 'customEaseOut'

@@ -64,7 +64,7 @@ export default {
           const delay = 0.1 + (0.1 * i)
           bullettl.from(bullet, {
             opacity: 0,
-            x: '32',
+            x: 32,
             delay,
             duration: 0.8,
             ease: 'customEaseOut'
