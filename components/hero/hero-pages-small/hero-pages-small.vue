@@ -64,20 +64,20 @@ export default {
       //   ease: 'customEaseOut'
       // }, '<+=0.175')
       tl.from(title, {
-        x: '-24',
+        x: -24,
         opacity: 0,
         duration: 1,
         ease: 'customEaseOut'
       }, '<+=0.25')
       tl.from(body, {
-        x: '-24',
+        x: -24,
         opacity: 0,
         duration: 1,
         ease: 'customEaseOut'
       }, '<+=0.175')
       tl.from(stripe, {
-        x: '400',
-        y: '-400',
+        x: 400,
+        y: -400,
         duration: 0.25,
         ease: 'customEaseOut'
       }, '<+=0.175')

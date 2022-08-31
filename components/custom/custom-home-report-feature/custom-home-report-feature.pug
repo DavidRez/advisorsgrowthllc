@@ -4,7 +4,7 @@ section.custom-home-report-feature(v-if='props' :class='[ `custom-home-report-fe
       BaseImage.custom-home-report-feature__image(v-if='props.image' :src='props.image.src' :webp='props.image.webp' :alt='props.image.alt' ref='image')
       .custom-home-report-feature__text(ref='text')
         h2.custom-home-report-feature__title(v-if='props.title' v-html='props.title')
-        p.custom-home-report-feature__body(v-if='props.body' v-html='props.body')
+        .custom-home-report-feature__body(v-if='props.body' v-html='props.body')
       .custom-home-report-feature__links(v-if='props.links' ref='links')
         a.custom-home-report-feature__link(v-for='(link, i) in props.links' :key='`link-${i}`' :href='link.href' :target='link.external ? "_blank" : null')
           BaseIcon.custom-home-report-feature__link-icon(name='arrow-right')

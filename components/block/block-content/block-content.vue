@@ -27,18 +27,18 @@ export default {
   },
   methods: {
     handleAnimation () {
-      if (this.props.header) {
-        this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
-      }
-      if (this.props.subheader) {
-        this.$_fadeIn(this.$refs.subheader, 24, 0, 'top+=58', 0, 1.2)
-      }
-      if (this.props.body) {
-        this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
-      }
-      if (this.props.links) {
-        this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
-        this.$nextTick(() => {
+      this.$nextTick(() => {
+        if (this.props.header) {
+          this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
+        }
+        if (this.props.subheader) {
+          this.$_fadeIn(this.$refs.subheader, 24, 0, 'top+=58', 0, 1.2)
+        }
+        if (this.props.body) {
+          this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
+        }
+        if (this.props.links) {
+          this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
           this.$refs.links.forEach((link, i) => {
             this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
             const linktl = this.$gsap.timeline({
@@ -50,17 +50,17 @@ export default {
             const delay = 0.1 + (0.1 * i)
             linktl.from(link, {
               opacity: 0,
-              x: '32',
+              x: 32,
               delay,
               duration: 0.8,
               ease: 'customEaseOut'
             })
           })
-        })
-      }
-      if (this.props.has_image) {
-        this.$_fadeIn(this.$refs.image.$el, 24, 0, 'top+=58', 0, 1.2)
-      }
+        }
+        if (this.props.has_image) {
+          this.$_fadeIn(this.$refs.image.$el, 24, 0, 'top+=58', 0, 1.2)
+        }
+      })
     }
   }
 }
