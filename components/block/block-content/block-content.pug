@@ -3,7 +3,7 @@ section.block-content(v-if='props' :class='[ `block-content--padding-${props.pad
     .block-content__column
       h2.block-content__header(v-if='props.header' v-html='props.header' ref='header')
       h3.block-content__subheader(v-if='props.subheader' v-html='props.subheader' ref='subheader')
-      .block-content__content(:class='{ "block-content__content--reverse": props.image_alignment === "left" }')
+      .block-content__content(:class='{ "block-content__content--reverse": props.image_alignment === "left", "block-content__content--margin": props.links }')
         .block-content__text 
           .block-content__body(v-if='props.body' v-html='props.body' :class='{ "block-content__body--large": props.body_large }' ref='body') 
           .block-content__links(v-if='props.links')
