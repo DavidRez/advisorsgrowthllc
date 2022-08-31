@@ -54,7 +54,7 @@ export default {
     },
     setMinHeight () {
       const footerHeight = document.querySelector('footer').clientHeight
-      const navHeight = document.querySelector('header').children[0].clientHeight
+      const navHeight = document.querySelector('.navigation__top').clientHeight
       this.elemMinHeight = window.innerHeight - (footerHeight + navHeight)
     }
   },
