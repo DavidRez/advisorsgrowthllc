@@ -27,15 +27,17 @@ export default {
   },
   methods: {
     handleAnimation () {
-      if (this.props.section.title) {
-        this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 0, 1.2)
-      }
-      if (this.props.section.image) {
-        this.$_fadeIn(this.$refs.image.$el, 24, 0, 'top+=58', 0, 1.2)
-      }
-      if (this.props.section.content) {
-        this.$_fadeIn(this.$refs.content, 24, 0, 'top+=58', 0, 1.2)
-      }
+      this.$nextTick(() => {
+        if (this.props.section.title) {
+          this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 0, 1.2)
+        }
+        if (this.props.section.image) {
+          this.$_fadeIn(this.$refs.image.$el, 24, 0, 'top+=58', 0, 1.2)
+        }
+        if (this.props.section.content) {
+          this.$_fadeIn(this.$refs.content, 24, 0, 'top+=58', 0, 1.2)
+        }
+      })
     }
   }
 }

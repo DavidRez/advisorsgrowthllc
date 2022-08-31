@@ -38,15 +38,15 @@ export default {
       this.windowWidth = window.innerWidth
     },
     handleAnimation () {
-      if (this.windowWidth > 1100) {
-        this.$_fadeIn(this.$refs.imageDesktop.$el, 0, -250, 'top+=58', 0, 1.5)
-      } else {
-        this.$_fadeIn(this.$refs.imageMobile.$el, 0, -250, 'top+=58', 0, 1.5)
-      }
-      this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
-      this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
-      this.$_fadeIn(this.$refs.firstRow, 24, 32, 'top+=48', 0, 1.2)
       this.$nextTick(() => {
+        if (this.windowWidth > 1100) {
+          this.$_fadeIn(this.$refs.imageDesktop.$el, 0, -250, 'top+=58', 0, 1.5)
+        } else {
+          this.$_fadeIn(this.$refs.imageMobile.$el, 0, -250, 'top+=58', 0, 1.5)
+        }
+        this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
+        this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
+        this.$_fadeIn(this.$refs.firstRow, 24, 32, 'top+=48', 0, 1.2)
         this.$refs.rows.forEach((row, i) => {
           this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
           const rowtl = this.$gsap.timeline({

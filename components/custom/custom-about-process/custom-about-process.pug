@@ -7,6 +7,6 @@ section.custom-about-process(:class='[ `custom-about-process--padding-${props.pa
           h4.custom-about-process__tab-title(v-if='tab.tab') {{ tab.tab }}
       .custom-about-process__info
         .custom-about-process__info-column
-          p(v-html='props.processes[active].title' ref='title') 
+          div(v-html='props.processes[active].title' ref='title') 
         .custom-about-process__info-column 
-          p(v-html='props.processes[active].body' ref='body') 
+          div(v-html='props.processes[active].body' ref='body') 
