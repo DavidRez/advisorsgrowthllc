@@ -6,8 +6,8 @@ section.custom-home-future(v-if='props' :class='[ `custom-home-future--padding-$
       BaseImage.custom-home-future__image(v-if='props.image' :src='props.image.src' :webp='props.image.webp' :alt='props.image.alt' ref='image')
       .custom-home-future__topics(v-if='props.topics')
         .custom-home-future__topic(v-for='(topic, i) in props.topics' :key='`topic-${i}`' ref='topics')
-          h4.custom-home-future__topic-title(v-if='topic.title') {{ topic.title }}
-          h5.custom-home-future__topic-subtitle(v-if='topic.subtitle') {{ topic.subtitle }}
+          h3.custom-home-future__topic-title(v-if='topic.title') {{ topic.title }}
+          h4.custom-home-future__topic-subtitle(v-if='topic.subtitle') {{ topic.subtitle }}
           p.custom-home-future__topic-body(v-if='topic.body' v-html='topic.body')
           .custom-home-future__topic-links(v-if='topic.links')
             a.custom-home-future__topic-link(v-for='(link, j) in topic.links' :key='`link-${i}-${j}`' :href='link.href' :target='link.external ? "_blank" : null')

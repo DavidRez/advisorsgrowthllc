@@ -11,12 +11,15 @@ export default {
     margin: 0
   }),
   async asyncData () {
-    const data = await setData('contact')
+    const data = await setData('contact-us')
     return { props: data }
   },
   mounted () {
     this.getNavHeight()
     window.addEventListener('resize', this.debounceFunc)
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.debounceFunc)
   },
   methods: {
     debounceFunc () {
@@ -28,8 +31,7 @@ export default {
     getNavHeight () {
       this.$nextTick(() => {
         const navHeight = document.querySelector('.navigation__top').clientHeight
-        const loaderHeight = document.querySelector('.base-loader').clientHeight
-        this.margin = `${navHeight - loaderHeight}px`
+        this.margin = `${navHeight}px`
       })
     }
   }

@@ -1,0 +1,33 @@
+.block-text
+  @extend %section-padding-full
+  position: relative
+
+  &__container
+    @include container
+    justify-content: center
+  
+  &__column
+    @include col (10)
+  
+  &__title
+    @extend %title-margin-bottom-lg
+    line-height: 1.1
+    color: $accent1
+    font-weight: 600
+
+  &__body
+    @extend %body
+    @extend %wysiwyg-text
+
+    h2
+      @extend %h3
+      @extend %title-margin-bottom
+      color: $accent1
+
+    a
+      @include hover-supported
+        color: $primary
+      transition: color .2s ease
+      color: $accent1
+      font-weight: 700
+

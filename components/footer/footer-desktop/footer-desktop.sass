@@ -50,7 +50,6 @@
     &-link
       @include hover-supported
         background: $bg1
-
         .base-icon svg
           fill: $accent1
       display: inline-flex
@@ -73,6 +72,9 @@
       &:not(:last-of-type)
         margin-right: 2rem
 
+      &:focus-visible
+        @include focus($color: $white)
+
   &__address
     @extend %body
     line-height: 1.75
@@ -86,6 +88,9 @@
         text-shadow: 0 0 1px $white
         color: $white
       color: $white
+
+      &:focus-visible
+        @include focus($color: $white)
 
   &__links
     margin-top: rem-calc(90)
@@ -106,3 +111,6 @@
       @include laptop-sm
         margin-right: 1.5rem
       margin-right: 3rem
+
+    &:focus-visible
+      @include focus($color: $white)

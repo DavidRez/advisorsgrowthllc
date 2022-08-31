@@ -5,8 +5,8 @@
       .form-subscribe__title {{ props }}
 
     .form-subscribe__group.form-subscribe__group--required
-      input.form-subscribe__input(name='clientEmail', v-model='clientEmail', id='email' v-validate="'required|email'", :class="{ 'form-subscribe__input--error': errors.has('clientEmail') }" type='email' autocomplete='email', :aria-invalid="errors.has('clientEmail') ? true : false")
-      label.form-subscribe__label(:class="{ 'form-subscribe__label--active': clientEmail }" for='email') Email
+      input.form-subscribe__input(name='clientEmail', v-model='clientEmail', id='subscribe-email' v-validate="'required|email'", :class="{ 'form-subscribe__input--error': errors.has('clientEmail') }" type='email' autocomplete='email', :aria-invalid="errors.has('clientEmail') ? true : false")
+      label.form-subscribe__label(:class="{ 'form-subscribe__label--active': clientEmail }" for='subscribe-email') Email
       .form-subscribe__error-message(v-show="errors.has('clientEmail')")  Please input a valid Email
   
       button.form-subscribe__submit-button(:class="{ 'form-subscribe__submit-button--success': formSuccess, 'form-subscribe__submit-button--sending': formSubmitted && !formSuccess }")

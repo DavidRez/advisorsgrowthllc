@@ -5,7 +5,7 @@ header.navigation
         BaseIcon.navigation__logo(name='logo')
       .navigation__links(v-if='links' role='menu')
         nuxt-link.navigation__link(v-for='(link, i) in links', role='menuitem' :key='`link-${i}`', :to='link.path' v-html='link.name')
-      .navigation__hamburger(@click='openDrawer' aria-label='Open menu drawer.' aria-controls='mobile-drawer' aria-haspopup='true')
+      .navigation__hamburger(@click='openDrawer' @keyup.enter='openDrawer' aria-label='Open menu drawer.' aria-controls='mobile-drawer' aria-haspopup='true' role='button' tabindex='0')
         span
         span
         span

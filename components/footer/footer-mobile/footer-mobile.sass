@@ -78,6 +78,9 @@
       &:not(:last-of-type)
         margin-right: 2rem
 
+      &:focus-visible
+        @include focus($color: $white)
+
   &__address
     @extend %body
     display: block
@@ -95,6 +98,9 @@
         text-shadow: 0 0 1px $white
         color: $white
       color: $white
+
+      &:focus-visible
+        @include focus($color: $white)
 
   &__form
     margin: 3rem auto
@@ -116,3 +122,6 @@
     letter-spacing: 1px
     color: $white
     font-weight: 700
+
+    &:focus-visible
+      @include focus($color: $white)

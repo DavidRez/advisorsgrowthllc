@@ -7,7 +7,7 @@
       .navigation-mobile__drawer-container(v-if='drawerOpen' ref='drawerContainer')
         .navigation-mobile__drawer-header
           .navigation-mobile__drawer-close
-            button.navigation-mobile__drawer-close-btn(@click='closeDrawer' aria-label='Close main menu' aria-controls='drawer')
+            button.navigation-mobile__drawer-close-btn(@click='closeDrawer' @keyup.enter='closeDrawer'  aria-label='Close main menu' aria-controls='drawer')
               span(v-for='(span, i) in 2' :key='`drawer-close-${i}`')
           nuxt-link.navigation-mobile__drawer-home(to='/' aria-hidden='true' tabindex='-1' @click.native='closeDrawer')
             BaseIcon.navigation-mobile__drawer-home-logo(name='logo')
