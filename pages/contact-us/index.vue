@@ -18,6 +18,9 @@ export default {
     this.getNavHeight()
     window.addEventListener('resize', this.debounceFunc)
   },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.debounceFunc)
+  },
   methods: {
     debounceFunc () {
       this.debounce(this.handleResize, null, 300)
@@ -28,8 +31,7 @@ export default {
     getNavHeight () {
       this.$nextTick(() => {
         const navHeight = document.querySelector('.navigation__top').clientHeight
-        const loaderHeight = document.querySelector('.base-loader').clientHeight
-        this.margin = `${navHeight - loaderHeight}px`
+        this.margin = `${navHeight}px`
       })
     }
   }
