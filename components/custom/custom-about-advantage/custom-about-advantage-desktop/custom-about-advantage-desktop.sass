@@ -25,6 +25,10 @@
     cursor: pointer
     height: fit-content
 
+    &:focus-visible
+      @include focus
+
+    &:focus-visible,
     &:hover
       @media screen and (min-width: 1025px)
         .custom-about-advantage-desktop__circle-bg
