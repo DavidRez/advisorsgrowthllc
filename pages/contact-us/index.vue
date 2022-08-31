@@ -11,7 +11,7 @@ export default {
     margin: 0
   }),
   async asyncData () {
-    const data = await setData('contact')
+    const data = await setData('contact-us')
     return { props: data }
   },
   mounted () {

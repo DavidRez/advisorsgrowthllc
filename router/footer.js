@@ -11,7 +11,7 @@ const footer = [
   },
   {
     name: 'Privacy',
-    path: '/privacy',
+    path: '/privacy-policy',
     navigation: true
   },
   {
@@ -26,7 +26,7 @@ const footer = [
   },
   {
     name: 'Contact Us',
-    path: '/contact',
+    path: '/contact-us',
     navigation: true
   }
 ]
