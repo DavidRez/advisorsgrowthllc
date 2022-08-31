@@ -30,9 +30,6 @@ export default {
     }
     window.addEventListener('resize', this.debounceFunc)
   },
-  beforeDestroy () {
-    window.removeEventListener('resize', this.debounceFunc)
-  },
   methods: {
     debounceFunc () {
       this.debounce(this.handleResize, null, 300)
