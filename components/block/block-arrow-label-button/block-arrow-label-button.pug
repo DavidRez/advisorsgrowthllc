@@ -1,0 +1,4 @@
+.block-arrow-label-button
+  nuxt-link.block-arrow-label-button__container(:to='page')
+    BaseIcon.block-arrow-label-button__icon(name='arrow' :class='{ "block-arrow-label-button__icon--reverse": reverse }')
+    .block-arrow-label-button__label {{ title }}

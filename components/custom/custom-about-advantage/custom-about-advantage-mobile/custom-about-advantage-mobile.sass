@@ -1,0 +1,42 @@
+.custom-about-advantage-mobile
+  @include section-padding-classes
+  position: relative
+  overflow-x: clip
+
+  &__container
+    @include container
+    justify-content: center
+  
+  &__column
+    @include col (10)
+  
+  &__stage
+    @include nexus
+      flex-direction: column
+      align-items: flex-start
+      border-radius: unset
+      padding: 2rem 1rem
+    display: flex
+    position: relative
+    flex-direction: column
+    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(166,186,195, .35) 100%)
+    padding: 1rem 2rem
+    
+    &-name
+      margin-bottom: .5rem
+      text-transform: uppercase
+      line-height: 1
+      letter-spacing: 1px
+      color: $accent1
+      font-family: $font-primary
+      font-weight: 700
+
+    &-description
+      @extend %body
+      @include nexus
+        line-height: 1.25
+      line-height: 1
+      font-weight: 500
+
+    &:not(:last-of-type)
+      margin-bottom: 1rem

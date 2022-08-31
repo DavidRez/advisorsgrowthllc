@@ -1,0 +1,8 @@
+section.custom-team-all
+  .custom-team-all__container
+    .custom-team-all__grid
+      nuxt-link.custom-team-all__member(v-for='(member, j) in team' :key='`member-${j}`' ref='members' :to='member.link' :aria-label='`Go to ${member.name} page.`')
+        BaseImage.custom-team-all__member-image(:src='replaceImgSrc(member.headshot)' :alt='`headshot of ${member.name}`' imageBackground)
+        .custom-team-all__member-content
+          p.custom-team-all__member-name(v-html='member.name')
+          p.custom-team-all__member-position(v-html='member.position')

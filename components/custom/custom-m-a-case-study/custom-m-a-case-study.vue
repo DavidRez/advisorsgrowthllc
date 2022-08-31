@@ -30,6 +30,9 @@ export default {
     }
     window.addEventListener('resize', this.debounceFunc)
   },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.debounceFunc)
+  },
   methods: {
     debounceFunc () {
       this.debounce(this.handleResize, null, 300)
@@ -38,7 +41,6 @@ export default {
       this.windowWidth = window.innerWidth
     },
     handleAnimation () {
-      console.log(this.windowWidth)
       if (this.windowWidth > 1100) {
         this.$_fadeIn(this.$refs.imageDesktop.$el, 0, -250, 'top+=58', 0, 1.5)
       } else {

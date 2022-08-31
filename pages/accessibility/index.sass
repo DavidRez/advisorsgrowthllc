@@ -1,22 +1,22 @@
 .pages-accessibility
-  @include phone-lg
-    padding: 4rem 0 0
+  @extend %section-padding-full
   position: relative
-  padding: 6rem 0 0
+  margin-top: rem-calc(75)
   min-height: 80vh
 
   &__container
     @include container
 
   &__title
-    @include col (8)
-    @include col--offset (2)
-    @extend %h2
-    margin-bottom: 1rem
+    @extend %title-margin-bottom
+    @include col (9)
+    @include col--offset (1.5)
+    color: $accent1
+    font-weight: 600
 
   &__col
-    @include col (8)
-    @include col--offset (2)
+    @include col (9)
+    @include col--offset (1.5)
 
     p
       &:not(:last-child)
@@ -24,10 +24,10 @@
 
     a
       @include hover-supported
-        text-decoration: underline
         color: $primary
       transition: color .2s ease
-      &:focus
-        outline: none
-        text-decoration: underline
+      text-decoration: underline
+      color: $accent1
+      &:focus-visible
+        @include focus
         color: $primary

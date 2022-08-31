@@ -1,4 +1,4 @@
-<template lang="pug" src="./custom-m-a-case-study-mobile.pug"></template>
+<template lang='pug' src='./custom-about-advantage-desktop.pug'></template>
 
 <script>
 import { fadeIn, debounce } from '~/resources/mixins'
@@ -12,12 +12,10 @@ export default {
     }
   },
   data: () => ({
-    windowWidth: null,
-    active: ''
+    active: null,
+    windowWidth: 0
   }),
   mounted () {
-    this.setActive(this.props.column_one_label)
-    this.handleResize()
     if (this.$store.state.siteLoaded) {
       this.handleAnimation()
     } else {
@@ -32,37 +30,34 @@ export default {
     }
     window.addEventListener('resize', this.debounceFunc)
   },
-  beforeDestroy () {
-    window.removeEventListener('resize', this.debounceFunc)
-  },
   methods: {
-    setActive (str) {
-      this.active = str
-    },
     debounceFunc () {
       this.debounce(this.handleResize, null, 300)
     },
     handleResize () {
       this.windowWidth = window.innerWidth
+      if (this.windowWidth >= 1025) {
+        this.active = null
+      }
+    },
+    changeCircle (i) {
+      this.active = i
     },
     handleAnimation () {
+      this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
       this.$nextTick(() => {
-        this.$_fadeIn(this.$refs.image.$el, 0, -250, 'top+=58', 0, 1.5)
-        this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
-        this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
-        this.$_fadeIn(this.$refs.firstRow, 24, 32, 'top+=48', 0, 1.2)
-        this.$refs.rows.forEach((row, i) => {
+        this.$refs.circles.forEach((circle, i) => {
           this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
-          const rowtl = this.$gsap.timeline({
+          const circletl = this.$gsap.timeline({
             scrollTrigger: {
-              trigger: row,
+              trigger: circle,
               start: 'top+=48 bottom'
             }
           })
           const delay = 0.1 + (0.1 * i)
-          rowtl.from(row, {
+          circletl.from(circle, {
             opacity: 0,
-            x: 32,
+            scale: 0,
             delay,
             duration: 0.8,
             ease: 'customEaseOut'
@@ -72,7 +67,6 @@ export default {
     }
   }
 }
-
 </script>
 
-<style lang="sass" src="./custom-m-a-case-study-mobile.sass"></style>
+<style lang='sass' src='./custom-about-advantage-desktop.sass'></style>

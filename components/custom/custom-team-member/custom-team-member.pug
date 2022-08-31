@@ -1,0 +1,21 @@
+section.custom-team-member
+  .custom-team-member__container
+    .custom-team-member__columns
+      .custom-team-member__column-sm
+        .custom-team-member__headshot(ref='image')
+          BaseImage.custom-team-member__headshot-image(:src='replaceSrc(props.full_image.url)' :alt='props.full_image.title')
+      .custom-team-member__column-lg
+        h1.custom-team-member__name(v-html='props.title' ref='name')
+        .custom-team-member__position(v-html='props.position' ref='position')
+        .custom-team-member__bio(v-html='props.bio' ref='bio')
+      .custom-team-member__buttons
+        BlockArrowLabelButton(:page='"/team"' :title='"back to team"' ref='back')
+        .custom-team-member__social-media(v-if='props.social_links')
+          a.custom-team-member__social-media-link(v-for='(social, i) in props.social_links'
+            :key='`social-link-${i}`' 
+            :aria-label='`${social.account} opens new window`'
+            :href='social.href'
+            target='_blank'
+            ref='links')
+            BaseIcon(:name='social.account')
+        BlockArrowLabelButton(v-if='props.next_team_member' :page='props.next_team_member.href' :title='props.next_team_member.label' reverse ref='forward')
