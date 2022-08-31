@@ -12,7 +12,8 @@ export default {
   }),
   async asyncData () {
     const data = await setData('contact-us')
-    return { props: data }
+    const globalData = await setData('global', 'globalData')
+    return { props: data, global: globalData }
   },
   mounted () {
     this.getNavHeight()
