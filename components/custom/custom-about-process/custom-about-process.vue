@@ -38,7 +38,6 @@ export default {
       this.active = i
     },
     handleAnimation () {
-      this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
       this.$nextTick(() => {
         this.$refs.tabs.forEach((tab, i) => {
           this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
@@ -58,8 +57,10 @@ export default {
           })
         })
       })
-      this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 1, 1.2)
-      this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 1, 1.2)
+      this.$nextTick(() => {
+        this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 1, 1.2)
+        this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 1, 1.2)
+      })
     }
   }
 }
