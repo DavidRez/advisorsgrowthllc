@@ -10,8 +10,8 @@ export default {
   ],
   props: {
     props: {
-      type: String,
-      default: ''
+      type: Object,
+      default: () => ({})
     }
   },
   data: () => ({
