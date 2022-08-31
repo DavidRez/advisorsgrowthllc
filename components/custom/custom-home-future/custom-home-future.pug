@@ -2,13 +2,13 @@ section.custom-home-future(v-if='props' :class='[ `custom-home-future--padding-$
   .custom-home-future__container
     .custom-home-future__column
       h2.custom-home-future__header(v-if='props.header' v-html='props.header' ref='header')
-      p.custom-home-future__body(v-if='props.body' v-html='props.body' ref='body')
+      .custom-home-future__body(v-if='props.body' v-html='props.body' ref='body')
       BaseImage.custom-home-future__image(v-if='props.image' :src='props.image.src' :webp='props.image.webp' :alt='props.image.alt' ref='image')
       .custom-home-future__topics(v-if='props.topics')
         .custom-home-future__topic(v-for='(topic, i) in props.topics' :key='`topic-${i}`' ref='topics')
           h4.custom-home-future__topic-title(v-if='topic.title') {{ topic.title }}
           h5.custom-home-future__topic-subtitle(v-if='topic.subtitle') {{ topic.subtitle }}
-          p.custom-home-future__topic-body(v-if='topic.body' v-html='topic.body')
+          .custom-home-future__topic-body(v-if='topic.body' v-html='topic.body')
           .custom-home-future__topic-links(v-if='topic.links')
             a.custom-home-future__topic-link(v-for='(link, j) in topic.links' :key='`link-${i}-${j}`' :href='link.href' :target='link.external ? "_blank" : null')
               BaseIcon.custom-home-future__topic-link-icon(name='arrow-right')
