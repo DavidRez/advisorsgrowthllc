@@ -1,0 +1,5 @@
+section.block-text(v-if='props' :style='{ marginTop: navHeight }')
+  .block-text__container
+    .block-text__column
+      h1.block-text__title(ref='title' v-html='props.title')
+      .block-text__body(ref='body' v-html='props.body')
