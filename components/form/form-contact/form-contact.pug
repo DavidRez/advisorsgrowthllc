@@ -21,7 +21,7 @@
         span.form-contact__submit-label(:class="{ 'form-contact__submit-label--hidden': formSuccess }") Send
         span.form-contact__submit-check(:class="{ 'form-contact__submit-check--showing': formSuccess }" aria-hidden='true') &#10003
   
-  .form-contact__modal(:class="{ 'form-contact__modal--open': modalOpen }", :aria-hidden='modalOpen ? false : true' role='dialog' aria-modal='true')
+  .form-contact__modal(:class="{ 'form-contact__modal--open': modalOpen }", role='dialog' aria-modal='true')
     .form-contact__modal-overlay
     .form-contact__modal-container(ref='contactFormModal')
       button.form-contact__modal-close(@click='closeModal()' tabindex='0') close

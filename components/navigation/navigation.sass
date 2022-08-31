@@ -31,6 +31,9 @@
     margin-right: 2rem
     height: 55%
 
+    &:focus-visible
+      @include focus
+
   &__logo
     height: 100%
 
@@ -69,6 +72,9 @@
     font-family: $font-primary
     font-weight: 500
 
+    &:focus-visible
+      @include focus
+
     &::after
       position: absolute
       right: 0
@@ -92,6 +98,9 @@
     @include laptop-sm
       display: block
     display: none
+
+    &:focus-visible
+      @include focus
 
   &__mobile
     @include laptop-sm

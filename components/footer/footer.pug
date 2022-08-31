@@ -1,3 +1,3 @@
 footer.footer
-  FooterDesktop.footer--desktop(:props='props' :links='links' :top='top')
-  FooterMobile.footer--mobile(:props='props' :links='links' :top='top')
+  FooterDesktop.footer--desktop(v-if='windowWidth > 1024' :props='props' :links='links' :top='top')
+  FooterMobile.footer--mobile(v-if='windowWidth < 1025' :props='props' :links='links' :top='top')
