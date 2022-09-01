@@ -1,0 +1,10 @@
+section.custom-ria-webinar(:class='[ `custom-ria-webinar--padding-${props.padding}` ]')
+  .custom-ria-webinar__container
+    .custom-ria-webinar__column
+      h2.custom-ria-webinar__header(v-if='props.header' v-html='props.header' ref='header')
+      .custom-ria-webinar__webinars(v-if='webinars')
+        a.custom-ria-webinar__webinar(v-for='(webinar, i) in webinars' :key='`webinar-${i}`' :href='webinar.custom_post.link.href' :aria-label='`webinar.custom_post.link.aria for ${webinar.custom_post.title}`' target='_blank' ref='webinars')
+          .custom-ria-webinar__webinar-info 
+            span(v-if='webinar.custom_post.date') {{ webinar.custom_post.date }}
+            span(v-if='webinar.custom_post.time') {{ webinar.custom_post.time }}
+          h3.custom-ria-webinar__webinar-title(v-if='webinar.custom_post.title') {{ webinar.custom_post.title }}
