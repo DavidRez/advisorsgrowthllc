@@ -19,7 +19,7 @@ export default {
         []
       )
       // Get All Blog Posts
-      const response = await axios.get(`${api}/wp/v2/posts?per_page=100`)
+      const response = await axios.get(`${api}/wp/v2/posts?per_page=12`)
       const dataPages = response.headers['x-wp-totalpages']
       let blogArray = response.data
       for (let i = 2; i <= dataPages; i++) {
@@ -35,7 +35,7 @@ export default {
         ],
         []
       )
-      const props = await setData('blog')
+      const props = await setData('thought-leadership')
       return { blogs, categories, props }
     } catch (e) {
       console.error('BLOG API: ' + e)

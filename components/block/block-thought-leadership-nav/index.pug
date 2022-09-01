@@ -1,0 +1,9 @@
+section.block-thought-leadership-nav
+  .block-thought-leadership-nav__container
+    .block-thought-leadership-nav__column
+      transition(name='fade')
+        .block-thought-leadership-nav__scroll-overlay(v-if='overlayVisible')
+      .block-thought-leadership-nav__nav-container(ref='navContainer')
+        ul.block-thought-leadership-nav__nav(ref='nav')
+          li.block-thought-leadership-nav__item(v-for='(link, i) in links' :key='`thought-leadership-link-${i}`' :class="{ 'block-thought-leadership-nav__item--active': $route.path === link.path }")
+            nuxt-link.block-thought-leadership-nav__link(:to='link.path', v-html='link.name')
