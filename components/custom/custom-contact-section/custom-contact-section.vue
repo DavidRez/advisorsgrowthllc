@@ -1,7 +1,6 @@
 <template lang='pug' src='./custom-contact-section.pug'></template>
 
 <script>
-import { setData } from '~/resources/utils'
 import { fadeIn, debounce } from '~/resources/mixins'
 
 export default {
@@ -10,16 +9,16 @@ export default {
     props: {
       type: Object,
       default: () => ({})
+    },
+    global: {
+      type: Object,
+      default: () => ({})
     }
   },
   data: () => ({
-    global: null,
     elemMinHeight: 0,
     windowWidth: 0
   }),
-  async fetch () {
-    this.global = await setData('global', 'globalData')
-  },
   mounted () {
     this.handleResize()
     window.addEventListener('resize', this.debounceFunc)
@@ -53,6 +52,9 @@ export default {
         }
         if (this.props.subheader) {
           this.$_fadeIn(this.$refs.subheader, 24, 0, 'top+=58', 0, 1.2)
+        }
+        if (this.props.has_address) {
+          this.$_fadeIn(this.$refs.address, 24, 0, 'top+=58', 0, 1.2)
         }
       })
     }

@@ -1,10 +1,10 @@
-section.custom-contact-section(:class='[ `custom-contact-section--padding-${props.padding}` ]' :style="{ minHeight: elemMinHeight }")
+section.custom-contact-section(v-if='props && global' :class='[ `custom-contact-section--padding-${props.padding}` ]' :style="{ minHeight: elemMinHeight }")
   BaseBackground.custom-contact-section__background(v-if='props.background' :src='props.background.src' :webp='props.background.webp')
   .custom-contact-section__container
     .custom-contact-section__column--left(v-if='props.has_address')
       h2.custom-contact-section__header(v-if='props.header' ref='header') {{ props.header }}
       p.custom-contact-section__subheader(v-if='props.subheader' v-html='props.subheader' ref='subheader')
-      .custom-contact-section__address
+      .custom-contact-section__address(ref='address')
         .custom-contact-section__address-name {{ global.company_name }}
         a.custom-contact-section__address-link(v-html='global.address.label' :href='global.address.href' target='_blank' :aria-label='`open map to ${global.address.label}`')
         a.custom-contact-section__address-link(:href='global.phone.href' target='_blank' :aria-label='`call ${global.phone.number}`') {{ "Office: " + global.phone.number }}
