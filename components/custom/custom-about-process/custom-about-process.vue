@@ -34,26 +34,26 @@ export default {
     },
     handleAnimation () {
       this.$nextTick(() => {
-        this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 1, 1.2)
-        this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 1, 1.2)
-        this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
-        this.$refs.tabs.forEach((tab, i) => {
-          this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
-          const tabtl = this.$gsap.timeline({
-            scrollTrigger: {
-              trigger: tab,
-              start: 'center bottom'
-            }
-          })
-          const delay = 0.1 + (0.1 * i)
-          tabtl.from(tab, {
-            opacity: 0,
-            x: -32,
-            delay,
-            duration: 0.8,
-            ease: 'customEaseOut'
-          })
-        })
+        this.$_fadeIn(this.$refs.main, 24, 0, 'top+=58', 0, 1.2)
+        // this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 1, 1.2)
+        // this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
+        // this.$refs.tabs.forEach((tab, i) => {
+        //   this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
+        //   const tabtl = this.$gsap.timeline({
+        //     scrollTrigger: {
+        //       trigger: tab,
+        //       start: 'center bottom'
+        //     }
+        //   })
+        //   const delay = 0.1 + (0.1 * i)
+        //   tabtl.from(tab, {
+        //     opacity: 0,
+        //     x: -32,
+        //     delay,
+        //     duration: 0.8,
+        //     ease: 'customEaseOut'
+        //   })
+        // })
       })
     }
   }
