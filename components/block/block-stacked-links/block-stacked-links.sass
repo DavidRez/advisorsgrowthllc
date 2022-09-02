@@ -1,0 +1,50 @@
+.block-stacked-links
+  @include section-padding-classes
+  position: relative
+
+  &__container
+    @include container
+    justify-content: center
+    overflow: hidden
+  
+  &__column
+    @include col (10)
+    @include phone-land-lg
+      width: 100%
+
+  &__link
+    @include hover-supported
+      .block-stacked-links__link-icon svg
+        fill: $primary
+      .block-stacked-links__link-label
+        color: $primary
+    display: flex
+    align-items: center
+    width: fit-content
+
+    &:focus-visible
+      @include focus
+
+    &:not(:last-of-type)
+      margin-bottom: 1.25rem
+
+    &-icon
+      display: inline-flex
+      align-items: center
+      transition: all .25s ease
+      margin-right: 1rem
+      height: 1rem
+
+      svg
+        height: 100%
+        fill: $accent1
+
+    &-label
+      @extend %body
+      display: inline
+      transition: all .25s ease
+      text-transform: uppercase
+      line-height: 1
+      letter-spacing: 1px
+      color: $accent1
+      font-weight: 600s

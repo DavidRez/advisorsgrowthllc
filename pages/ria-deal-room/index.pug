@@ -3,5 +3,7 @@
     HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
     HeroPagesSmall(v-else-if='section.acf_fc_layout === "hero_pages_small"', :props='section')
     BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockStackedLinks(v-else-if='section.acf_fc_layout === "custom_ria_report"' :links='recent' :props='section')
+    BlockStackedLinks(v-else-if='section.acf_fc_layout === "custom_ria_reports_previous"' :links='previous' :props='section')
     BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
     CustomRiaWebinar(v-else-if='section.acf_fc_layout === "block_webinar_list"', :props='section' :webinars='webinars')

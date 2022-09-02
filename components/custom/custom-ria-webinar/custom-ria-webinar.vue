@@ -30,27 +30,16 @@ export default {
     }
   },
   methods: {
+    convertDate (str) {
+      const date = new Date(str)
+      const month = date.toLocaleString('default', { month: 'long' })
+      return `${month} ${date.getDay()}, ${date.getFullYear()}`
+    },
     handleAnimation () {
       this.$nextTick(() => {
-        this.$_fadeIn(this.$refs.header, 24, 0, 'top+=58', 0, 1.2)
+        this.$_fadeIn(this.$refs.header, 0, 24, 'top+=58', 0, 1.2)
 
-        this.$refs.webinars.forEach((webinar, i) => {
-          this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
-          const webinartl = this.$gsap.timeline({
-            scrollTrigger: {
-              trigger: webinar,
-              start: 'center bottom'
-            }
-          })
-          const delay = 0.1 + (0.1 * i)
-          webinartl.from(webinar, {
-            opacity: 0,
-            x: '70',
-            delay,
-            duration: 0.8,
-            ease: 'customEaseOut'
-          })
-        })
+        this.$_fadeIn(this.$refs.webinars, 0, 68, 'top+=58', 0, 1.2)
       })
     }
   }
