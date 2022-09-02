@@ -5,5 +5,5 @@ section.block-thought-leadership-grid(ref='main')
         .block-thought-leadership-grid__post(v-for='(post, i) in posts' :key='`post-${i}`')
           p.block-thought-leadership-grid__post-date(v-html='formatDate(post.date)')
           a.block-thought-leadership-grid__post-title(:href='post.custom_post.link.file_type === "link" ? post.custom_post.link.href : replaceUrl(post.custom_post.link.file.url)' v-html='post.title' target='_blank' :aria='post.custom_post.link.aria_label' rel='noopener noreferrer')
-          p.block-thought-leadership-grid__post-excerpt(v-if='post.custom_post.excerpt' v-html='post.custom_post.excerpt')
+          .block-thought-leadership-grid__post-excerpt(v-if='post.custom_post.excerpt' v-html='post.custom_post.excerpt')
           
