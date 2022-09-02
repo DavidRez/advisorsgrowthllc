@@ -6,7 +6,7 @@
       img.hero-pages__background-image(:src='imgSrc' alt='hero image' aria-hidden='true')
   picture.hero-pages__picture(ref='mainImage')
     source(:srcset='imgWebp' type='image/webp')
-    img.hero-pages__image(:src='imgSrc' alt='hero image' aria-hidden='true')
+    img.hero-pages__image(:src='imgSrc' alt='hero image' aria-hidden='true' :style='{ objectPosition: props.image }')
     BaseIcon(name='hero-pages-clip')
   .hero-pages__container
     .hero-pages__content
