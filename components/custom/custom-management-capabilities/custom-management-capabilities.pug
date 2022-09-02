@@ -4,4 +4,4 @@ section.custom-management-capabilities(v-if='props' :class='[ `custom-management
       .custom-management-capabilities__header(v-html='props.section.title' ref='title')
       .custom-management-capabilities__row
         BaseImage.custom-management-capabilities__image(:src='props.section.image.src', :webp='props.section.image.webp', :alt='props.section.image.alt' ref='image')
-        p.custom-management-capabilities__content(v-html='props.section.content' ref='content')
+        .custom-management-capabilities__content(v-html='props.section.content' ref='content')
