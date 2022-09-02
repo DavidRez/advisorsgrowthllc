@@ -1,0 +1,20 @@
+.block-thought-leadership-grid
+  @extend %section-padding-bottom-only
+
+  &__container
+    @include container
+  
+  &__column
+    @include col(10)
+    @include col--offset(1)
+  
+  &__grid
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 4rem
+  
+  &__post
+    @extend %section-padding-half
+
+    &:not(:nth-of-type(-n+2))
+      border-top: 1px solid rgba($accent2, 0.4)

@@ -11,7 +11,8 @@ export default {
     }
   },
   data: () => ({
-    overlayVisible: false,
+    overlayStartVisible: false,
+    overlayEndVisible: false,
     windowWidth: 0
   }),
   computed: {
@@ -33,17 +34,16 @@ export default {
         this.handleScrollOverlay()
         this.$refs.navContainer.addEventListener('scroll', this.handleScrollOverlay)
       } else {
+        this.overlayStartVisible = false
+        this.overlayEndVisible = false
         this.$refs.navContainer.removeEventListener('scroll', this.handleScrollOverlay)
       }
     },
     handleScrollOverlay () {
-      if (this.$refs.navContainer.clientWidth + this.$refs.navContainer.scrollLeft < this.$refs.nav.scrollWidth) {
-        this.overlayVisible = true
-      } else {
-        this.overlayVisible = false
-      }
-      console.log(this.$refs.navContainer.clientWidth + this.$refs.navContainer.scrollLeft)
-      console.log(this.$refs.nav.scrollWidth)
+      const container = this.$refs.navContainer
+      const nav = this.$refs.nav
+      container.clientWidth + container.scrollLeft < nav.scrollWidth ? this.overlayEndVisible = true : this.overlayEndVisible = false
+      container.scrollLeft > 5 ? this.overlayStartVisible = true : this.overlayStartVisible = false
     }
   }
 }

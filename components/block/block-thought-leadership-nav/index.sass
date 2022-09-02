@@ -1,5 +1,5 @@
 .block-thought-leadership-nav
-  @extend %section-padding-half
+  @extend %section-padding-half-top-only
 
   &__container
     @include container
@@ -8,20 +8,25 @@
     @include col(10)
     @include col--offset(1)
     position: relative
-    border-bottom: 1px solid $black
 
   &__scroll-overlay
     position: absolute
     top: 0
-    right: 0
+    left: 0
     z-index: 1
-    background: linear-gradient(to right, transparent, $white)
+    background: linear-gradient(to left, transparent, $white)
     width: rem-calc(75)
     height: 100%
+
+    &--end
+      right: 0
+      left: unset
+      background: linear-gradient(to right, transparent, $white)
   
   &__nav-container
     @include max-width(1060px)
       overflow-x: auto
+    border-bottom: 1px solid $black
 
     &::-webkit-scrollbar
       display: none
@@ -31,9 +36,8 @@
     justify-content: space-between
     margin: 0
     padding: 0
-    width: 100%
     list-style: none
-  
+
   &__item
     @include hover-supported
       &::after
