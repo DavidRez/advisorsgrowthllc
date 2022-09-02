@@ -99,6 +99,7 @@
     @extend %body
     @include hover-supported
       color: $bg2
+    position: relative
     transition: all .25s ease-in
     text-transform: uppercase
     letter-spacing: 1px
@@ -114,3 +115,6 @@
 
     &:focus-visible
       @include focus($color: $white)
+      
+    &.nuxt-link-exact-active
+      color: $bg2

@@ -1,0 +1,7 @@
+section.block-stacked-links(v-if='props && links' :class='[ `block-stacked-links--padding-${props.padding}` ]')
+  .block-stacked-links__container
+    .block-stacked-links__column
+      .block-stacked-links__links
+        a.block-stacked-links__link(v-for='(link, i) in links' :key='`link-${i}`' :href='link.href' :target='link.external ? "_blank" : null' ref='links')
+          BaseIcon.block-stacked-links__link-icon(name='arrow-right')
+          .block-stacked-links__link-label {{ link.label }}

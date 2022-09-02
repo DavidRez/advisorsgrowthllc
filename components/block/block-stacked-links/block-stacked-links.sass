@@ -1,4 +1,4 @@
-.block-links
+.block-stacked-links
   @include section-padding-classes
   position: relative
 
@@ -14,30 +14,19 @@
 
   &__link
     @include hover-supported
-      .block-links__link-icon svg
+      .block-stacked-links__link-icon svg
         fill: $primary
-      .block-links__link-label
+      .block-stacked-links__link-label
         color: $primary
     display: flex
     align-items: center
     width: fit-content
 
-    &-container
-      @include nexus
-        display: block
-      display: inline-block
-
-      &-title
-        margin-bottom: rem-calc(10)
-
-      &:not(:last-of-type)
-        @include nexus
-          margin-right: unset
-          margin-bottom: 2rem
-        margin-right: 2rem
-
     &:focus-visible
       @include focus
+
+    &:not(:last-of-type)
+      margin-bottom: 1.25rem
 
     &-icon
       display: inline-flex
@@ -58,4 +47,4 @@
       line-height: 1
       letter-spacing: 1px
       color: $accent1
-      font-weight: 600
+      font-weight: 600s

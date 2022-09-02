@@ -14,6 +14,7 @@ export default {
   data: () => ({
     imgSrc: null,
     imgWebp: null,
+    imgPosition: 'center',
     bgSrc: null,
     bgWebp: null,
     windowWidth: null,
@@ -36,6 +37,7 @@ export default {
       this.windowWidth > 600 ? this.bgWebp = this.props.background.webp : this.bgWebp = this.props.background_mobile.webp
       this.windowWidth > 600 ? this.imgSrc = this.props.image.src : this.imgSrc = this.props.image_mobile.src
       this.windowWidth > 600 ? this.imgWebp = this.props.image.webp : this.imgWebp = this.props.image_mobile.webp
+      this.windowWidth > 600 ? this.imgPosition = this.props.image.position : this.imgPosition = this.props.image_mobile.position
       this.getNavHeight()
     },
     loadImage () {

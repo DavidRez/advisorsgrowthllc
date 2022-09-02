@@ -1,4 +1,4 @@
-<template lang='pug' src='./custom-about-process.pug'></template>
+<template lang='pug' src='./custom-ria-webinar.pug'></template>
 
 <script>
 import { fadeIn } from '~/resources/mixins'
@@ -9,11 +9,12 @@ export default {
     props: {
       type: Object,
       default: () => ({})
+    },
+    webinars: {
+      type: Array,
+      default: () => ([])
     }
   },
-  data: () => ({
-    active: 0
-  }),
   mounted () {
     if (this.$store.state.siteLoaded) {
       this.handleAnimation()
@@ -29,19 +30,20 @@ export default {
     }
   },
   methods: {
-    changeTab (i) {
-      this.active = i
+    convertDate (str) {
+      const date = new Date(str)
+      const month = date.toLocaleString('default', { month: 'long' })
+      return `${month} ${date.getDay()}, ${date.getFullYear()}`
     },
     handleAnimation () {
       this.$nextTick(() => {
-        this.$_fadeIn(this.$refs.box, 24, 0, 'top+=58', 0, 1.2)
-        this.$_fadeIn(this.$refs.tabs, 0, 60, 'top+=58', 0, 2)
-        this.$_fadeIn(this.$refs.title, 24, 0, 'top+=58', 0.5, 1.2)
-        this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0.5, 1.2)
+        this.$_fadeIn(this.$refs.header, 0, 24, 'top+=58', 0, 1.2)
+
+        this.$_fadeIn(this.$refs.webinars, 0, 68, 'top+=58', 0, 1.2)
       })
     }
   }
 }
 </script>
 
-<style lang='sass' src='./custom-about-process.sass'></style>
+<style lang='sass' src='./custom-ria-webinar.sass'></style>
