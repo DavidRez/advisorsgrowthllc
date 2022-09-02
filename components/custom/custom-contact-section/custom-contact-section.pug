@@ -1,4 +1,4 @@
-section.custom-contact-section(v-if='props && global' :class='[ `custom-contact-section--padding-${props.padding}` ]' :style="{ minHeight: elemMinHeight }")
+section.custom-contact-section(v-if='props && global' :class='[ `custom-contact-section--padding-${props.padding}` ]' :style="[ $route.path === '/contact-us' ? { minHeight: elemMinHeight } : null ]")
   BaseBackground.custom-contact-section__background(v-if='props.background' :src='props.background.src' :webp='props.background.webp')
   .custom-contact-section__container
     .custom-contact-section__column--left(v-if='props.has_address')

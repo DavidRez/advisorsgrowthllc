@@ -1,0 +1,57 @@
+.custom-ria-webinar
+  @include section-padding-classes
+  position: relative
+    
+  &__container
+    @include container
+    justify-content: center
+  
+  &__column
+    @include col (10)
+    @include phone-land-lg
+      width: 100%
+    overflow: hidden
+
+  &__header
+    @extend %title-margin-bottom-lg
+    color: $accent1
+
+  &__webinar
+    @include hover-supported
+      .custom-ria-webinar__webinar-info,
+      .custom-ria-webinar__webinar-title
+        color: $primary
+    display: block
+    position: relative
+    transition: all .25s ease
+    cursor: pointer
+    width: fit-content
+
+    &:focus-visible
+      @include focus
+
+    &:not(:last-of-type)
+      margin-bottom: 2rem
+
+    &-info
+      @extend %body
+      transition: all .25s ease
+      margin-bottom: .5rem
+      font-weight: 700
+
+      span:not(:first-of-type)
+        @include phone-lg
+          margin-left: unset
+        margin-left: rem-calc(10)
+
+      span
+        @include phone-lg
+          display: block
+
+    &-title
+      transition: all .25s ease
+      line-height: 1
+      letter-spacing: 1px
+      color: $accent1
+      font-family: $font-primary
+      font-weight: 800

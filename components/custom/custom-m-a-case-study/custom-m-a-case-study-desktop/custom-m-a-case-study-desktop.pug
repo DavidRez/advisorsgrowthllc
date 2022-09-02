@@ -4,7 +4,7 @@ section.custom-m-a-case-study-desktop(v-if='props' :class='`custom-m-a-case-stud
     .custom-m-a-case-study-desktop__column
       BaseBackground.custom-m-a-case-study-desktop__image-mobile(v-if='props.image' :src='props.image.src' :webp='props.image.webp' ref='imageMobile')
       h2.custom-m-a-case-study-desktop__header(ref='header') {{ props.header }}
-      .custom-m-a-case-study-desktop__body(ref='body') {{ props.body }}
+      .custom-m-a-case-study-desktop__body(ref='body' v-html='props.body')
       .custom-m-a-case-study-desktop__table(v-if='props.rows')
         .custom-m-a-case-study-desktop__row(ref='firstRow')
           .custom-m-a-case-study-desktop__row-text
