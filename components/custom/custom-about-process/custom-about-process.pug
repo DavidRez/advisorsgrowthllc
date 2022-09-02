@@ -1,10 +1,10 @@
 section.custom-about-process(:class='[ `custom-about-process--padding-${props.padding}` ]')
   .custom-about-process__container
     .custom-about-process__column
-      .custom-about-process__tabs(v-if='props.processes')
+      .custom-about-process__tabs(v-if='props.processes' ref='tabs')
         .custom-about-process__tab(v-for='(tab, i) in props.processes' :key='`tab-${i}`' :class='{ "custom-about-process__tab--active": active === i }'
-          :style='{ zIndex: `${9 - i}` }' @click='changeTab(i)' @keyup.enter='changeTab(i)' ref='tabs' tabindex='0')
+          :style='{ zIndex: `${9 - i}` }' @click='changeTab(i)' @keyup.enter='changeTab(i)' tabindex='0')
           h4.custom-about-process__tab-title(v-if='tab.tab') {{ tab.tab }}
-      .custom-about-process__info
+      .custom-about-process__info(ref='box')
         .custom-about-process__info-column(v-html='props.processes[active].title' ref='title') 
         .custom-about-process__info-column(v-html='props.processes[active].body' ref='body') 
