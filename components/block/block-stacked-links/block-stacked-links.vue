@@ -41,12 +41,13 @@ export default {
                 start: 'top+=48 bottom'
               }
             })
-            const delay = 0.1 + (0.1 * i)
+            const delay = this.delay + (0.1 * i)
             linktl.from(link, {
               opacity: 0,
-              x: 32,
+              y: 24,
+              x: 0,
               delay,
-              duration: 0.8,
+              duration: 1.25,
               ease: 'customEaseOut'
             })
           })
