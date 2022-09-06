@@ -35,6 +35,7 @@ export default {
         this.margin = `${navHeight}px`
       })
     }
-  }
+  },
+  transition: 'fade'
 }
 </script>
