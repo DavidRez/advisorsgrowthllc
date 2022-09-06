@@ -55,7 +55,6 @@ export default {
       this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
       const tl = this.$gsap.timeline()
       // const bg = this.$refs.bg
-      const overlay = this.$refs.overlay
       const title = this.$refs.title
       const body = this.$refs.body
       const stripe = this.$refs.stripe
@@ -64,11 +63,6 @@ export default {
       //   duration: 1,
       //   ease: 'customEaseOut'
       // }, '<+=0.175')
-      tl.from(overlay, {
-        opacity: 0,
-        duration: 1,
-        ease: 'customEaseOut'
-      }, '<+=0.175')
       tl.from(title, {
         x: -24,
         opacity: 0,
