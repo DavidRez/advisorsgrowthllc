@@ -45,20 +45,21 @@ export default {
       return image ? image.url.replace('api.advisorgrowthllc.com', 'dld7fz6mejerl.cloudfront.net') : null
     },
     handleAnimation () {
+      const container = this.$refs.container
       this.$refs.members.forEach((member, i) => {
         this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
         const membertl = this.$gsap.timeline({
           scrollTrigger: {
-            trigger: member.$el,
+            trigger: container,
             start: '+48 bottom'
           }
         })
-        const delay = 0.1 + (0.1 * i)
+        const delay = 0.5 + (0.1 * i)
         membertl.from(member.$el, {
           opacity: 0,
           y: '32',
           delay,
-          duration: 0.8,
+          duration: 1.5,
           ease: 'customEaseOut'
         })
       })
