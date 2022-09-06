@@ -1,5 +1,3 @@
-$array: 187
-
 .base-loader
   position: fixed
   top: 0
@@ -14,31 +12,3 @@ $array: 187
     align-items: center
     justify-content: center
     height: 100%
-
-  &__spinner
-    animation: rotator 1.4s linear infinite
-
-    @keyframes rotator
-      0%
-        transform: rotate(0deg)
-      100%
-        transform: rotate(270deg)
-
-  &__ring
-    animation: spinning 1.4s ease-in-out infinite
-    transform-origin: center
-    fill: transparent
-    stroke-width: 6
-    stroke: $black
-    stroke-dasharray: $array
-    stroke-dashoffset: 0
-
-    @keyframes spinning
-      0%
-        stroke-dashoffset: $array
-      50%
-        transform: rotate(135deg)
-        stroke-dashoffset: ($array / 4)
-      100%
-        transform: rotate(450deg)
-        stroke-dashoffset: $array
