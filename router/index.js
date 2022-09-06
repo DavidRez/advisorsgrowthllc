@@ -2,7 +2,7 @@ const router = [
   {
     name: 'Home',
     path: '/',
-    navigation: false,
+    navigation: true,
     mobile: true
   },
   {

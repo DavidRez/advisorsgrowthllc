@@ -35,7 +35,11 @@ export default {
           this.$_fadeIn(this.$refs.subheader, 24, 0, 'top+=58', 0, 1.2)
         }
         if (this.props.body) {
-          this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', 0, 1.2)
+          let delay = 0
+          if (this.props.body_large && this.props.background_color) {
+            delay = 1
+          }
+          this.$_fadeIn(this.$refs.body, 24, 0, 'top+=58', delay, 1.2)
         }
         if (this.props.links) {
           this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')

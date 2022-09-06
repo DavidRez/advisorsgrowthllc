@@ -43,6 +43,7 @@ export default {
   },
   head () {
     return setMeta(this.props)
-  }
+  },
+  transition: 'fade'
 }
 </script>
