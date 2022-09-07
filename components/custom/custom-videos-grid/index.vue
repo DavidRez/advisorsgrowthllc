@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     filterPosts (page) {
-      const apiStr = page ? `${api}/wp/v2/${this.postType}?per_page=12&page=${page}` : `${api}/wp/v2/${this.postType}?per_page=12`
+      const apiStr = page ? `${api}/wp/v2/${this.postType}?per_page=6&page=${page}` : `${api}/wp/v2/${this.postType}?per_page=6`
       axios.get(apiStr).then((response) => {
         const blogs = response.data.reduce(
           (acc, item) => [

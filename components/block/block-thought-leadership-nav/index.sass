@@ -45,7 +45,6 @@
       .block-thought-leadership-nav__link
         color: $primary
     position: relative
-    padding-bottom: .75rem
 
     &:not(:first-of-type)
       margin-left: 1rem
@@ -72,7 +71,9 @@
   
   &__link
     @include focus
+    display: block
     transition: color .2s ease
+    padding-bottom: .75rem
     text-transform: uppercase
     letter-spacing: 0.1em
     white-space: nowrap

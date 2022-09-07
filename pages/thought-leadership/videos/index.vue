@@ -9,17 +9,8 @@ export default {
   components: {},
   async asyncData ({query}) {
     try {
-      // Get All Blog Post Categories
-      // const categoriesResponse = await axios.get(`${api}/wp/v2/categories?per_page=100`)
-      // const categories = categoriesResponse.data.reduce(
-      //   (acc, item) => [
-      //     ...acc,
-      //     { id: item.id, name: item.name }
-      //   ],
-      //   []
-      // )
       // Get All Blog Posts
-      const apiStr = query.page ? `${api}/wp/v2/aria-white-papers?per_page=12&page=${query.page}` : `${api}/wp/v2/aria-white-papers?per_page=12`
+      const apiStr = query.page ? `${api}/wp/v2/videos?per_page=6&page=${query.page}` : `${api}/wp/v2/videos?per_page=6`
       const response = await axios.get(apiStr)
       const totalPages = +response.headers['x-wp-totalpages']
       const blogs = response.data.reduce(
@@ -29,10 +20,10 @@ export default {
         ],
         []
       )
-      const props = await setData('aria-white-papers')
+      const props = await setData('videos')
       return { blogs, props, totalPages }
     } catch (e) {
-      console.error('AGS Studies: ' + e)
+      console.error('Videos: ' + e)
     }
   },
   head () {

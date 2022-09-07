@@ -1,9 +1,16 @@
 section.block-thought-leadership-grid(ref='main')
   .block-thought-leadership-grid__container
     .block-thought-leadership-grid__column
-      .block-thought-leadership-grid__grid
-        .block-thought-leadership-grid__post(v-for='(post, i) in posts' :key='`post-${i}`')
-          p.block-thought-leadership-grid__post-date(v-html='formatDate(post.date)')
-          a.block-thought-leadership-grid__post-title(:href='post.custom_post.link.file_type === "link" ? post.custom_post.link.href : replaceUrl(post.custom_post.link.file.url)' v-html='post.title' target='_blank' :aria='post.custom_post.link.aria_label' rel='noopener noreferrer')
-          .block-thought-leadership-grid__post-excerpt(v-if='post.custom_post.excerpt' v-html='post.custom_post.excerpt')
+      transition(name='fade' mode='out-in')
+        .block-thought-leadership-grid__grid(:key='componentKey')
+          .block-thought-leadership-grid__post(v-for='(post, i) in posts' :key='`post-${i}`')
+            p.block-thought-leadership-grid__post-date(v-if='post.date' v-html='formatDate(post.date)')
+            a.block-thought-leadership-grid__post-title(v-if='post.custom_post.link.href || post.custom_post.link.file.url' :href='post.custom_post.link.file_type === "link" ? post.custom_post.link.href : replaceUrl(post.custom_post.link.file.url)' v-html='post.title' target='_blank' :aria='post.custom_post.link.aria_label' rel='noopener noreferrer')
+            p.block-thought-leadership-grid__post-title.block-thought-leadership-grid__post-title--nolink(v-if='!post.custom_post.link.href && !post.custom_post.link.file.url' v-html='post.title')
+            .block-thought-leadership-grid__post-excerpt(v-if='post.custom_post.excerpt' v-html='post.custom_post.excerpt')
+      .block-thought-leadership-grid__pagination(v-if='totalPages > 1' ref='pagination')
+        .block-thought-leadership-grid__pagination-container(:key='pageStart')
+          button.block-thought-leadership-grid__pagination-prev(v-if='showPrevPages' @click='decrementPagination') ...
+          nuxt-link.block-thought-leadership-grid__pagination-page(v-for='(page, i) in visiblePagination' :key='`page-${i}`' v-html='page' :class="{ 'block-thought-leadership-grid__pagination-page--active': currPage === page}" :to='{ path: $route.path, query: { page } }')
+          button.block-thought-leadership-grid__pagination-next(v-if='showNextPages' @click='incrementPagination') ...
           

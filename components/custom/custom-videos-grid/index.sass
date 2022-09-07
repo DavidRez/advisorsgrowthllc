@@ -1,4 +1,4 @@
-.block-thought-leadership-grid
+.custom-videos-grid
   @extend %section-padding-bottom-only
 
   &__container
@@ -25,27 +25,13 @@
       @include nexus
         border-top: 1px solid rgba($accent2, 0.4)
 
-    &-date
-      font-weight: 700
+    &-video
+      position: relative
+      padding-top: calc(100% * .5625)
+      width: 100%
 
-    &-title
-      @include focus
-      @include hover-supported
-        color: $primary
-      @extend %body-lg
-      transition: color .2s ease
-      margin-top: .75rem
-      text-transform: none
-      color: $accent1
-      font-weight: 700
-
-      &--nolink
-        @include hover-supported
-          color: $accent1
-
-
-    &-excerpt
-      margin-top: .75rem
+      iframe
+        @extend %absolute
     
   &__pagination
     @extend %section-padding-bottom-only

@@ -10,4 +10,4 @@
     CustomHomeReportFeature(v-else-if='section.acf_fc_layout === "custom_home_report_feature"', :props='section')
     CustomContactSection(v-else-if='section.acf_fc_layout === "block_contact_form"', :props='section')
     BlockThoughtLeadershipNav(v-else-if='section.acf_fc_layout === "thought_leadership_nav"')
-    BlockThoughtLeadershipGrid(v-else-if='section.acf_fc_layout === "thought_leadership_post_list"', :posts='blogs', :postType='"aria-white-papers"', :totalPages='totalPages', @update-blogs='blogs = $event', @update-total-pages='totalPages = $event')
+    BlockThoughtLeadershipGrid(v-else-if='section.acf_fc_layout === "thought_leadership_post_list"', :posts='blogs', :postType='"webinars"', :totalPages='totalPages', @update-blogs='blogs = $event', @update-total-pages='totalPages = $event')
