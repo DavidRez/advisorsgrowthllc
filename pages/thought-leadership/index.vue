@@ -10,14 +10,14 @@ export default {
   async asyncData ({query}) {
     try {
       // Get All Blog Post Categories
-      const categoriesResponse = await axios.get(`${api}/wp/v2/categories?per_page=100`)
-      const categories = categoriesResponse.data.reduce(
-        (acc, item) => [
-          ...acc,
-          { id: item.id, name: item.name }
-        ],
-        []
-      )
+      // const categoriesResponse = await axios.get(`${api}/wp/v2/categories?per_page=100`)
+      // const categories = categoriesResponse.data.reduce(
+      //   (acc, item) => [
+      //     ...acc,
+      //     { id: item.id, name: item.name }
+      //   ],
+      //   []
+      // )
       // Get All Blog Posts
       const apiStr = query.page ? `${api}/wp/v2/posts?per_page=12&page=${query.page}` : `${api}/wp/v2/posts?per_page=12`
       const response = await axios.get(apiStr)
@@ -30,7 +30,7 @@ export default {
         []
       )
       const props = await setData('thought-leadership')
-      return { blogs, categories, props, totalPages }
+      return { blogs, props, totalPages }
     } catch (e) {
       console.error('AGS Studies: ' + e)
     }

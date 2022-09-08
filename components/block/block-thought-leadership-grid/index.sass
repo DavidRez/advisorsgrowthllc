@@ -8,6 +8,29 @@
     @include col(10)
     @include col--offset(1)
   
+  &__filters
+    @extend %section-padding-half-top-only
+    @include nexus
+      flex-direction: column
+    display: flex
+  
+  &__filter
+    display: flex
+    align-items: center
+
+    &:not(:last-of-type)
+      @include nexus
+        margin-bottom: 1rem
+      margin-right: 1rem
+
+  &__filter-dropdown
+    margin-left: .5rem
+
+  &__no-posts
+    @extend %section-padding-half-top-only
+    width: 100%
+    text-align: center
+  
   &__grid
     @include nexus
       grid-template-columns: 1fr

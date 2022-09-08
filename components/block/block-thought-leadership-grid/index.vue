@@ -2,13 +2,27 @@
 
 <script>
 import axios from 'axios'
+import FilterDropdown from './filter-dropdown'
+import FilterDropdownYears from './filter-dropdown-years'
 import { api } from '~/resources/api'
 
 export default {
+  components: {
+    FilterDropdown,
+    FilterDropdownYears
+  },
   props: {
+    archiveID: {
+      type: Number,
+      default: null
+    },
     categories: {
       type: Array,
       default: () => ([])
+    },
+    isArchive: {
+      type: Boolean,
+      default: false
     },
     posts: {
       type: Array,
@@ -21,9 +35,15 @@ export default {
     totalPages: {
       type: [String, Number],
       default: null
+    },
+    years: {
+      type: Array,
+      default: () => ([])
     }
   },
   data: () => ({
+    activeCategory: 'All',
+    activeYear: 'All',
     componentKey: 0,
     currPage: 1,
     pageArr: [],
@@ -31,8 +51,14 @@ export default {
     pageEnd: 0,
     showNextPages: false,
     showPrevPages: false,
-    visiblePagination: []
+    visiblePagination: [],
+    yearKey: 0
   }),
+  computed: {
+    filteredCategories () {
+      return this.categories.filter(cat => cat.name !== 'Archive' && cat.name !== 'Uncategorized')
+    }
+  },
   watch: {
     '$route.query' (newVal, oldVal) {
       if (newVal !== oldVal) {
@@ -53,8 +79,58 @@ export default {
     this.handlePagination()
   },
   methods: {
-    filterPosts (page) {
-      const apiStr = page ? `${api}/wp/v2/${this.postType}?per_page=12&page=${page}` : `${api}/wp/v2/${this.postType}?per_page=12`
+    filterPosts (page, category, year) {
+      let apiStr = page ? `${api}/wp/v2/${this.postType}?per_page=12&page=${page}` : `${api}/wp/v2/${this.postType}?per_page=12`
+
+      if (this.postType === 'the-wire' && !this.isArchive) {
+        apiStr += `&the-wire-archive-categories_exclude=${this.archiveID}`
+      } else if (this.isArchive) {
+        apiStr += `&the-wire-archive-categories=${this.archiveID}`
+      }
+
+      if (this.activeCategory !== 'All' || category) {
+        this.activeCategory = category || this.activeCategory
+        if (this.activeCategory !== 'All') {
+          apiStr += this.postType === 'posts' ? `&categories=${this.activeCategory}&tax_relation=AND` : `&${this.postType}-categories=${this.activeCategory}&tax_relation=AND`
+        }
+        const getYears = async () => {
+          const yearResponse = await axios.get(apiStr)
+          const dataPages = yearResponse.headers['x-wp-totalpages']
+          let blogArray = yearResponse.data
+          for (let i = 2; i <= dataPages; i++) {
+            const nextPage = await axios.get(
+              `${apiStr}&page=${i}`
+            )
+            blogArray = [...blogArray, ...nextPage.data]
+          }
+          const years = blogArray.reduce(
+            (acc, item) => {
+              const d = new Date(item.date)
+              const itemYear = d.getFullYear()
+              if (!acc.includes(itemYear)) {
+                return [
+                  ...acc,
+                  itemYear
+                ]
+              } else {
+                return acc
+              }
+            },
+            []
+          )
+          this.yearKey++
+          this.$emit('update-years', years)
+        }
+        getYears()
+      }
+
+      if (this.activeYear !== 'All' || year) {
+        this.activeYear = year || this.activeYear
+        if (this.activeYear !== 'All') {
+          apiStr += `&after=${this.activeYear - 1}-12-31T23:59:59&before=${this.activeYear + 1}-01-01T00:00:00`
+        }
+      }
+
       axios.get(apiStr).then((response) => {
         const blogs = response.data.reduce(
           (acc, item) => [
@@ -70,7 +146,9 @@ export default {
         this.pageEnd = this.pageArr.length >= 6 ? this.pageStart + 6 : this.pageArr.length
         this.handlePagination()
         this.componentKey++
-        window.scrollTo({ top: this.$refs.main.offsetTop, behavior: 'smooth' })
+        if (page) {
+          window.scrollTo({ top: this.$refs.main.offsetTop, behavior: 'smooth' })
+        }
       })
     },
     formatDate (dateCode) {

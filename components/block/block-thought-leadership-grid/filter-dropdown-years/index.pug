@@ -1,0 +1,10 @@
+.filter-dropdown
+  button.filter-dropdown__button(@click='toggleFilterMenu()' :aria-label='dropdownActive ? "Close Filter Menu" : "Open Filter Menu"' aria-haspopup='true')
+    .filter-dropdown__button-text(v-html='activeCategory')
+    .filter-dropdown__button-arrow(:class="{ 'filter-dropdown__button-arrow--active': dropdownActive }")
+  .filter-dropdown__menu(:class="{ 'filter-dropdown__menu--active': dropdownActive }")
+    ul.filter-dropdown__menu-list(ref='dropdown')
+      li.filter-dropdown__menu-item(v-for='(filter, i) in categories' :key='`cat-${i}`')
+        button.filter-dropdown__menu-item-button(@click='filterPosts(filter)' :class="{ 'filter-dropdown__menu-item-button--active': activeCategory === filter.id }" v-html='filter')
+      li.filter-dropdown__menu-item
+        button.filter-dropdown__menu-item-button(@click='filterPosts("All")' :class="{ 'filter-dropdown__menu-item-button--active': activeCategory === 'All'}") All
