@@ -1,5 +1,5 @@
 .hero-pages-small(:style='{ marginTop: navHeight }')
-  .hero-pages-small__stripe(ref='stripe')
+  .hero-pages-small__stripe(v-if='props.has_red_stripe' ref='stripe')
   .hero-pages-small__background(:key='imgSrc' ref='bg')
     .hero-pages-small__overlay
       BaseIcon.hero-pages-small__overlay-stripes(name='home-hero-overlay')

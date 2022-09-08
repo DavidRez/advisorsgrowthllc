@@ -53,34 +53,32 @@ export default {
     },
     handleAnimation () {
       this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
-      const tl = this.$gsap.timeline()
-      // const bg = this.$refs.bg
-      const title = this.$refs.title
-      const body = this.$refs.body
-      const stripe = this.$refs.stripe
-      // tl.from(bg, {
-      //   opacity: 0,
-      //   duration: 1,
-      //   ease: 'customEaseOut'
-      // }, '<+=0.175')
-      tl.from(title, {
-        x: -24,
-        opacity: 0,
-        duration: 1,
-        ease: 'customEaseOut'
-      }, '<+=0.25')
-      tl.from(body, {
-        x: -24,
-        opacity: 0,
-        duration: 1,
-        ease: 'customEaseOut'
-      }, '<+=0.175')
-      tl.from(stripe, {
-        x: 400,
-        y: -400,
-        duration: 0.25,
-        ease: 'customEaseOut'
-      }, '<+=0.175')
+      this.$nextTick(() => {
+        const tl = this.$gsap.timeline()
+        const title = this.$refs.title
+        const body = this.$refs.body
+        const stripe = this.props.has_red_stripe ? this.$refs.stripe : null
+        tl.from(title, {
+          x: -24,
+          opacity: 0,
+          duration: 1,
+          ease: 'customEaseOut'
+        }, '<+=0.25')
+        tl.from(body, {
+          x: -24,
+          opacity: 0,
+          duration: 1,
+          ease: 'customEaseOut'
+        }, '<+=0.175')
+        if (this.props.has_red_stripe) {
+          tl.from(stripe, {
+            x: 400,
+            y: -400,
+            duration: 0.25,
+            ease: 'customEaseOut'
+          }, '<+=0.175')
+        }
+      })
     }
   }
 }
