@@ -1,5 +1,5 @@
 section.custom-team-all
-  .custom-team-all__container
+  .custom-team-all__container(ref='container')
     .custom-team-all__grid
       nuxt-link.custom-team-all__member(v-for='(member, j) in team' :key='`member-${j}`' ref='members' :to='member.link' :aria-label='`Go to ${member.name} page.`')
         BaseImage.custom-team-all__member-image(:src='replaceImgSrc(member.headshot)' :alt='`headshot of ${member.name}`' imageBackground)

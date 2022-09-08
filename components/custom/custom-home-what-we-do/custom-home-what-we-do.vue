@@ -33,11 +33,8 @@ export default {
   methods: {
     handleAnimation () {
       this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
-      const tl = this.$gsap.timeline()
-      const stripe = this.$refs.stripe
       this.$nextTick(() => {
         this.$refs.bullets.forEach((bullet, i) => {
-          this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
           const bullettl = this.$gsap.timeline({
             scrollTrigger: {
               trigger: bullet,
@@ -54,16 +51,11 @@ export default {
           })
         })
       })
-      if (this.props.cta) {
-        this.$_fadeIn(this.$refs.cta, 24, 0, 'top+=58', 0, 1.2)
-      }
-      tl.from(stripe, {
-        x: -400,
-        y: -400,
-        opacity: 0.5,
-        duration: 0.25,
-        delay: 0.25,
-        ease: 'customEaseOut'
+      this.$nextTick(() => {
+        if (this.props.cta) {
+          this.$_fadeIn(this.$refs.cta, 24, 0, 'top+=58', 0.5, 1.2)
+        }
+        this.$_fadeIn(this.$refs.stripe, -400, -400, 'top+=58', 1, 1.2)
       })
     }
   }

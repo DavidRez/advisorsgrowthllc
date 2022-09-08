@@ -65,12 +65,6 @@ export default {
       this.dropdownActive = null
       this.$_removeFocus()
     },
-    toggleDropdown (i, e) {
-      this.dropdownActive ? this.dropdownActive = null : this.dropdownActive = i
-      if (this.dropdownActive !== null) {
-        this.handleDropdown(e)
-      }
-    },
     openDrawer () {
       this.drawerOpen = true
     }

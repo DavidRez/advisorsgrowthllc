@@ -11,6 +11,43 @@
   &-leave-to
     opacity: 0
 
+.fade-delay
+  &-enter-active
+    transition: opacity .2s ease
+  &-leave-active
+    transition: opacity .2s ease .2s
+
+  &-enter,
+  &-leave-to
+    opacity: 0
+
+.fade-fast
+  &-enter-active
+    transition: opacity .2s ease
+  &-leave-active
+    transition: opacity .2s ease
+
+  &-enter,
+  &-leave-to
+    opacity: 0
+
+.fade-hover
+  &-enter-active,
+  &-leave-active
+    transition: opacity .25s ease
+
+  &-enter,
+  &-leave-to
+    opacity: 0
+
+.hero-fade
+  &-enter-active,
+  &-leave-active
+    transition: opacity .3s ease-in
+
+  &-enter,
+  &-leave-to
+    opacity: 0
 
 .crossfade
   backface-visibility: hidden

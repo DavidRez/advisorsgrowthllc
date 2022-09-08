@@ -8,6 +8,7 @@ export default {
   async asyncData () {
     const data = await setData('home')
     return { props: data }
-  }
+  },
+  transition: 'fade'
 }
 </script>
