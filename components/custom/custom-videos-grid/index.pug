@@ -1,0 +1,13 @@
+section.custom-videos-grid(ref='main')
+  .custom-videos-grid__container
+    .custom-videos-grid__column
+      transition(name='fade' mode='out-in')
+        .custom-videos-grid__grid(:key='componentKey')
+          .custom-videos-grid__post(v-for='(post, i) in posts' :key='`post-${i}`')
+            .custom-videos-grid__post-video(v-html='post.iframe')
+      .custom-videos-grid__pagination(v-if='totalPages > 1' ref='pagination')
+        .custom-videos-grid__pagination-container(:key='pageStart')
+          button.custom-videos-grid__pagination-prev(v-if='showPrevPages' @click='decrementPagination') ...
+          nuxt-link.custom-videos-grid__pagination-page(v-for='(page, i) in visiblePagination' :key='`page-${i}`' v-html='page' :class="{ 'custom-videos-grid__pagination-page--active': currPage === page}" :to='{ path: $route.path, query: { page } }')
+          button.custom-videos-grid__pagination-next(v-if='showNextPages' @click='incrementPagination') ...
+          

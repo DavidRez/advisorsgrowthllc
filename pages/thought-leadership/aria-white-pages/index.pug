@@ -1,0 +1,13 @@
+.pages-thought-leadership
+  .pages-thought-leadership__sections.page-section(v-for='(section, i) in props.page_sections' :key='`thought-leadership-section-${i}`')
+    HeroHome(v-if='section.acf_fc_layout === "hero_home"', :props='section')
+    HeroPages(v-else-if='section.acf_fc_layout === "hero_pages"', :props='section')
+    BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
+    CustomHomeStats(v-else-if='section.acf_fc_layout === "custom_home_stats"', :props='section')
+    CustomHomeFuture(v-else-if='section.acf_fc_layout === "custom_home_future"', :props='section')
+    CustomHomeWhatWeDo(v-else-if='section.acf_fc_layout === "custom_home_what_we_do"', :props='section')
+    CustomHomeReportFeature(v-else-if='section.acf_fc_layout === "custom_home_report_feature"', :props='section')
+    CustomContactSection(v-else-if='section.acf_fc_layout === "block_contact_form"', :props='section')
+    BlockThoughtLeadershipNav(v-else-if='section.acf_fc_layout === "thought_leadership_nav"')
+    BlockThoughtLeadershipGrid(v-else-if='section.acf_fc_layout === "thought_leadership_post_list"', :posts='blogs', :postType='"aria-white-papers"', :totalPages='totalPages', @update-blogs='blogs = $event', @update-total-pages='totalPages = $event')

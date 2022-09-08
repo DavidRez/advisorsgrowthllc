@@ -1,0 +1,106 @@
+.block-thought-leadership-grid
+  @extend %section-padding-bottom-only
+
+  &__container
+    @include container
+  
+  &__column
+    @include col(10)
+    @include col--offset(1)
+  
+  &__filters
+    @extend %section-padding-half-top-only
+    @include nexus
+      flex-direction: column
+    display: flex
+  
+  &__filter
+    display: flex
+    align-items: center
+
+    &:not(:last-of-type)
+      @include nexus
+        margin-bottom: 1rem
+      margin-right: 1rem
+
+  &__filter-dropdown
+    margin-left: .5rem
+
+  &__no-posts
+    @extend %section-padding-half-top-only
+    width: 100%
+    text-align: center
+  
+  &__grid
+    @include nexus
+      grid-template-columns: 1fr
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 4rem
+  
+  &__post
+    @extend %section-padding-half
+
+    &:not(:nth-of-type(-n+2))
+      border-top: 1px solid rgba($accent2, 0.4)
+    
+    &:nth-of-type(2)
+      @include nexus
+        border-top: 1px solid rgba($accent2, 0.4)
+
+    &-date
+      font-weight: 700
+
+    &-title
+      @include focus
+      @include hover-supported
+        color: $primary
+      @extend %body-lg
+      transition: color .2s ease
+      margin-top: .75rem
+      text-transform: none
+      color: $accent1
+      font-weight: 700
+
+      &--nolink
+        @include hover-supported
+          color: $accent1
+
+
+    &-excerpt
+      margin-top: .75rem
+    
+  &__pagination
+    @extend %section-padding-bottom-only
+
+    &-container
+      @include tablet-lg
+        justify-content: center
+      display: flex
+      width: 100%
+    
+    &-page, &-prev, &-next
+      @include focus
+      @include hover-supported
+        background: $primary
+        color: $white
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: color .2s ease, background .2s ease
+      margin: 0 rem-calc(8)
+      border: 1px solid rgba($accent2, .4)
+      background: $white
+      cursor: pointer
+      padding: rem-calc(4)
+      width: rem-calc(32)
+      height: rem-calc(32)
+      line-height: 1 
+      color: $primary
+      font-weight: 600
+      font-variant-numeric: lining-nums
+    
+    &-page
+      &--active
+        background: $primary
+        color: $white
