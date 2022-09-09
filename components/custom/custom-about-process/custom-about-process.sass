@@ -105,18 +105,16 @@
           margin-bottom: 1rem
 
       &:first-of-type
+        @extend %body-lg
         @include phone-lg
           margin-bottom: 1rem
           border-right: unset
           width: 100%
         border-right: 1px solid $primary
+        padding-right: 1rem
         width: 30%
-
-        p
-          @extend %body-lg
-          width: 75%
-          color: $primary
-          font-weight: 700
+        color: $primary
+        font-weight: 700
 
       &:last-of-type
         @include phone-lg
