@@ -3,7 +3,7 @@ section.block-links(v-if='props' :class='[ `block-links--padding-${props.padding
     .block-links__column
       .block-links__links(v-if='props.links')
         .block-links__link-container(v-for='(link, i) in props.links' :key='`link-${i}`' ref='links')
-          .block-links__link-container-title {{ link.label }}
+          .block-links__link-container-title(v-if='link.label') {{ link.label }}
           a.block-links__link(:href='link.link.href' :target='link.link.external ? "_blank" : null' :aria-label='link.link.aria')
             BaseIcon.block-links__link-icon(name='arrow-right')
             .block-links__link-label {{ link.link.label }}
