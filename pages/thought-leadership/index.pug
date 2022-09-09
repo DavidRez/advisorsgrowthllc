@@ -3,6 +3,7 @@
     HeroHome(v-if='section.acf_fc_layout === "hero_home"', :props='section')
     HeroPages(v-else-if='section.acf_fc_layout === "hero_pages"', :props='section')
     BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockLinks(v-else-if='section.acf_fc_layout === "block_links"', :props='section')
     BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
     CustomHomeStats(v-else-if='section.acf_fc_layout === "custom_home_stats"', :props='section')
     CustomHomeFuture(v-else-if='section.acf_fc_layout === "custom_home_future"', :props='section')

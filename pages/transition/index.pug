@@ -3,4 +3,5 @@
     HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
     CustomTransitionHelp(v-if='section.acf_fc_layout === "custom_transition_help"', :props='section')
     BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockLinks(v-else-if='section.acf_fc_layout === "block_links"', :props='section')
     BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')

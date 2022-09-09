@@ -2,6 +2,7 @@
   .pages-about__sections.page-section(v-for='(section, i) in props.page_sections' :key='`about-section-${i}`')
     HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
     BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockLinks(v-else-if='section.acf_fc_layout === "block_links"', :props='section')
     BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
     CustomAboutAdvantage(v-else-if='section.acf_fc_layout === "custom_about_advantage"', :props='section')
     CustomAboutData(v-else-if='section.acf_fc_layout === "custom_about_data"', :props='section')

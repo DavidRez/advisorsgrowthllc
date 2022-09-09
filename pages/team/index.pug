@@ -3,5 +3,6 @@
     HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
     HeroPagesSmall(v-else-if='section.acf_fc_layout === "hero_pages_small"', :props='section')
     BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockLinks(v-else-if='section.acf_fc_layout === "block_links"', :props='section')
     BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
     CustomTeamAll(v-else-if='section.acf_fc_layout === "team_list"' :team='sortedTeam' :categories='categories' :windowWidth='windowWidth')
