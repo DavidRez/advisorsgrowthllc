@@ -1,5 +1,5 @@
 section.custom-testimonials(:class='[ `custom-testimonials--padding-${props.padding}` ]')
-  .custom-testimonials__container
+  .custom-testimonials__container(ref='container')
     .custom-testimonials__grid
       .custom-testimonials__testimonial(v-for='(testimonial, j) in props.testimonials' :key='`testimonial-${j}`' ref='testimonials')
         .custom-testimonials__testimonial-body {{ testimonial.body }}

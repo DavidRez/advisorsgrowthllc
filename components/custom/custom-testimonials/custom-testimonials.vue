@@ -32,16 +32,16 @@ export default {
           this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
           const testimonialtl = this.$gsap.timeline({
             scrollTrigger: {
-              trigger: testimonial.$el,
+              trigger: testimonial,
               start: '+48 bottom'
             }
           })
           const delay = 0.1 + (0.1 * i)
-          testimonialtl.from(testimonial.$el, {
+          testimonialtl.from(testimonial, {
             opacity: 0,
             y: '32',
             delay,
-            duration: 1.5,
+            duration: 0.5,
             ease: 'customEaseOut'
           })
         })

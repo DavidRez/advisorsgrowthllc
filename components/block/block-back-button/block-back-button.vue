@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     handleAnimation () {
-      this.$_fadeIn(this.$refs.button, 0, 45, 'top+=58', 0, 1)
+      this.$_fadeIn(this.$refs.button.$el, 0, 45, 'top+=58', 0, 1)
     }
   }
 }
