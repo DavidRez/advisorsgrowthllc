@@ -1,0 +1,47 @@
+.custom-testimonials
+  @include section-padding-classes
+  position: relative
+
+  &__container
+    @include container
+    justify-content: center
+
+  &__grid
+    // display: flex
+    // flex-wrap: wrap
+    // align-items: flex-start
+    // justify-content: center
+    @include col (10)
+    @include nexus
+      grid-template-columns: 1fr
+      grid-row-gap: 1
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-row-gap: 3rem
+    grid-column-gap: 4rem
+    color: $text
+
+  &__testimonial
+    @extend %body
+    display: flex
+    flex-direction: column
+    border-bottom: 1px solid rgba($accent1, .5)
+    padding-bottom: 3rem
+    
+    &-body
+      display: block
+      flex: 4
+      margin-bottom: rem-calc(20)
+      font-weight: 700
+    
+    &-label
+      font-size: 1rem
+      font-weight: 400
+
+      span
+        @include nexus
+          display: block
+        &:nth-of-type(2)
+          @include nexus
+            display: none
+          

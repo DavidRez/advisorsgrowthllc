@@ -1,0 +1,8 @@
+.pages-who-we-serve
+  .pages-who-we-serve__sections.page-section(v-for='(section, i) in props.page_sections' :key='`who-we-serve-section-${i}`')
+    HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
+    HeroPagesSmall(v-else-if='section.acf_fc_layout === "hero_pages_small"', :props='section')
+    BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockLinks(v-else-if='section.acf_fc_layout === "block_links"', :props='section')
+    BlockLogos(v-else-if='section.acf_fc_layout === "block_logos"', :props='section')
+    BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')

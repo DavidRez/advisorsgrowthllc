@@ -46,6 +46,18 @@ const router = [
     path: '/ria-deal-room',
     navigation: true,
     mobile: true
+  },
+  {
+    name: 'Testimonials',
+    path: '/testimonials',
+    navigation: false,
+    mobile: false
+  },
+  {
+    name: 'Who We Serve',
+    path: '/who-we-serve',
+    navigation: false,
+    mobile: false
   }
 ]
 

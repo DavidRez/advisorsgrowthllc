@@ -1,0 +1,4 @@
+section.block-back-button(:class='[ `block-back-button--padding-${props.padding}` ]')
+  .block-back-button__container
+    .block-back-button__column
+      BlockArrowLabelButton(:page='props.href' :title='props.label' ref='button')
