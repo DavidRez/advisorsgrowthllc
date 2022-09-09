@@ -1,0 +1,5 @@
+section.block-logos(:class='[ `block-logos--padding-${props.padding}` ]')
+  .block-logos__container
+    .block-logos__grid
+      BaseImage.block-logos__logo(v-for='(logo, j) in props.logos' :key='`logo-${j}`' ref='logos'
+        :src='replaceImgSrc(logo.image)' :alt='`logo for ${logo.image.title}`' imageBackground)
