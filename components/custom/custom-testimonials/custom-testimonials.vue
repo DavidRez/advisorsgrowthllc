@@ -36,12 +36,11 @@ export default {
               start: '+48 bottom'
             }
           })
-          const delay = 0.1 + (0.1 * i)
           testimonialtl.from(testimonial, {
             opacity: 0,
             y: '32',
-            delay,
-            duration: 0.5,
+            delay: 0,
+            duration: 1,
             ease: 'customEaseOut'
           })
         })
