@@ -112,9 +112,13 @@
     @include col (12)
 
   &__title
-    @extend %h1-hero
     text-align: center
-    line-height: 1.1
+    text-transform: uppercase
+    line-height: 1
+    letter-spacing: 0.05em
+    color: $accent1
+    font-family: $font-primary
+    font-weight: 800
 
   &__body
     @extend %body-lg
