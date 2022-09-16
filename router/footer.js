@@ -1,24 +1,24 @@
 const footer = [
-  {
-    name: 'Careers',
-    path: '/careers',
-    navigation: true
-  },
-  {
-    name: 'Press',
-    path: '/press',
-    navigation: true
-  },
+  // {
+  //   name: 'Careers',
+  //   path: '/careers',
+  //   navigation: true
+  // },
+  // {
+  //   name: 'Press',
+  //   path: '/press',
+  //   navigation: true
+  // },
   {
     name: 'Privacy',
     path: '/privacy-policy',
     navigation: true
   },
-  {
-    name: 'Terms of use',
-    path: '/terms-of-use',
-    navigation: true
-  },
+  // {
+  //   name: 'Terms of use',
+  //   path: '/terms-of-use',
+  //   navigation: true
+  // },
   {
     name: 'Accessibility',
     path: '/accessibility',
