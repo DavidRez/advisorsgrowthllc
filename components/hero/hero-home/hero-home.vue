@@ -12,6 +12,7 @@ export default {
     }
   },
   data: () => ({
+    compOpacity: 0,
     imgSrc: null,
     imgWebp: null,
     windowWidth: null,
@@ -42,6 +43,7 @@ export default {
             this.$store.dispatch('VIEW_SITE', true)
           }
           this.handleAnimation()
+          this.compOpacity = 1
         }
       })
     },
