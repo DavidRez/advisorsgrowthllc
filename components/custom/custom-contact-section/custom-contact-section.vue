@@ -28,6 +28,10 @@ export default {
       }
       this.handleAnimation()
     })
+
+    const script1 = document.createElement('script')
+    script1.innerHTML = `(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='MMERGE1';ftypes[1]='text';fnames[2]='MMERGE2';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);`
+    document.body.appendChild(script1)
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.debounceFunc)

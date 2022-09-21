@@ -19,6 +19,9 @@ export default {
       const target = document.querySelector('#page-wrapper')
       console.log('change', target)
       target.focus()
+
+      document.getElementById('mce-success-response').innerHTML = ''
+      document.getElementById('mce-error-response').innerHTML = ''
     }
   }
 }
