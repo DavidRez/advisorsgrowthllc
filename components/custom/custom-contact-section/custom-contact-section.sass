@@ -57,161 +57,161 @@
     &--margin
       margin-top: 4rem
 
-    &--centered
-      form 
-        .button-div
-          align-self: center !important
+    // &--centered
+    //   form 
+    //     .button-div
+    //       align-self: center !important
 
-    form
+  //   form
 
-      #mc_embed_signup_scroll
-        display: flex
-        position: relative
-        flex-direction: column
-        width: 100%
+  //     #mc_embed_signup_scroll
+  //       display: flex
+  //       position: relative
+  //       flex-direction: column
+  //       width: 100%
 
-      .mc-field-group
-        @include phone-lg
-          width: calc(100% - 12px)
-        display: flex
-        position: relative
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        margin: 0 auto
-        width: 100%
-        height: rem-calc(70)
+  //     .mc-field-group
+  //       @include phone-lg
+  //         width: calc(100% - 12px)
+  //       display: flex
+  //       position: relative
+  //       flex-direction: column
+  //       align-items: center
+  //       justify-content: center
+  //       margin: 0 auto
+  //       width: 100%
+  //       height: rem-calc(70)
 
-        &:not(:first-of-type)
-          margin-top: .5rem
+  //       &:not(:first-of-type)
+  //         margin-top: .5rem
 
-        &--textarea
-          height: fit-content
+  //       &--textarea
+  //         height: fit-content
 
-      label
-        position: absolute
-        top: 0
-        left: .25rem
-        transform: translateY(0) scale(.7)
-        transition: transform .2s ease, top .2s ease, opacity .2s ease
-        opacity: .6
-        padding-left: 1.5rem
-        transform-origin: left top
-        pointer-events: none
+  //     label
+  //       position: absolute
+  //       top: 0
+  //       left: .25rem
+  //       transform: translateY(0) scale(.7)
+  //       transition: transform .2s ease, top .2s ease, opacity .2s ease
+  //       opacity: .6
+  //       padding-left: 1.5rem
+  //       transform-origin: left top
+  //       pointer-events: none
 
-        &.textarea-label
-          top: 10%
+  //       &.textarea-label
+  //         top: 10%
 
-      input,
-      #mce_embed_signup form input.mce_inline_error
-        // border-bottom: 1px solid $text
-        display: block
-        border: 1px solid rgba($accent2, 0.4)
-        border-radius: rem-calc(50)
-        padding: 1rem
-        width: 100%
-        height: rem-calc(50)
-        -webkit-appearance: none
-        appearance: none
+  //     input,
+  //     #mce_embed_signup form input.mce_inline_error
+  //       // border-bottom: 1px solid $text
+  //       display: block
+  //       border: 1px solid rgba($accent2, 0.4)
+  //       border-radius: rem-calc(50)
+  //       padding: 1rem
+  //       width: 100%
+  //       height: rem-calc(50)
+  //       -webkit-appearance: none
+  //       appearance: none
 
-        &:placeholder-shown + label
-          top: 35%
-          left: 0
-          transform: translateY(-50%)
-          opacity: .7
+  //       &:placeholder-shown + label
+  //         top: 35%
+  //         left: 0
+  //         transform: translateY(-50%)
+  //         opacity: .7
 
-        &:focus
-          outline: transparent
-          border: 2px solid red
+  //       &:focus
+  //         outline: transparent
+  //         border: 2px solid red
 
-        &:active
-          outline: transparent
+  //       &:active
+  //         outline: transparent
 
-        &:focus + label
-          opacity: .3
+  //       &:focus + label
+  //         opacity: .3
         
-        &:focus + label
-          top: 0
-          transform: translateY(0) scale(.7)
-          opacity: .6
+  //       &:focus + label
+  //         top: 0
+  //         transform: translateY(0) scale(.7)
+  //         opacity: .6
 
-      textarea
-        top: 20%
-        margin-top: .5rem
-        border: 1px solid rgba($accent2, 0.4)
-        border-radius: rem-calc(25)
-        padding: 1rem
-        width: 100%
-        -webkit-appearance: none
-        appearance: none
+  //     textarea
+  //       top: 20%
+  //       margin-top: .5rem
+  //       border: 1px solid rgba($accent2, 0.4)
+  //       border-radius: rem-calc(25)
+  //       padding: 1rem
+  //       width: 100%
+  //       -webkit-appearance: none
+  //       appearance: none
         
-        &:placeholder-shown + label.textarea-label
-          top: 15%
-          left: -.25rem
-          transform: translateY(0)
+  //       &:placeholder-shown + label.textarea-label
+  //         top: 15%
+  //         left: -.25rem
+  //         transform: translateY(0)
 
-      .button-div
-        @include tablet
-          align-self: center
-        align-self: flex-end
+  //     .button-div
+  //       @include tablet
+  //         align-self: center
+  //       align-self: flex-end
 
-      #mc-embedded-subscribe
-        @include focus
-        position: relative
-        transition: background .2s ease, opacity .2s ease, border .2s ease
-        margin-top: .5rem
-        margin-left: unset
-        border: 1px solid $bg1
-        border-radius: rem-calc(50)
-        background: $accent1
-        cursor: pointer
-        padding: 1rem 2rem
-        width: fit-content
-        overflow: hidden
-        text-transform: uppercase
-        letter-spacing: 0.1em
-        color: $white
-        font-weight: 600
+  //     #mc-embedded-subscribe
+  //       @include focus
+  //       position: relative
+  //       transition: background .2s ease, opacity .2s ease, border .2s ease
+  //       margin-top: .5rem
+  //       margin-left: unset
+  //       border: 1px solid $bg1
+  //       border-radius: rem-calc(50)
+  //       background: $accent1
+  //       cursor: pointer
+  //       padding: 1rem 2rem
+  //       width: fit-content
+  //       overflow: hidden
+  //       text-transform: uppercase
+  //       letter-spacing: 0.1em
+  //       color: $white
+  //       font-weight: 600
 
-        &:active
-          outline: transparent
+  //       &:active
+  //         outline: transparent
 
-        &:hover, &:focus-visible
-          border: 1px solid $accent1
-          box-shadow: 0px 1px 6px rgba($black, 0.102)
-          background: $bg1
-          color: $accent1
+  //       &:hover, &:focus-visible
+  //         border: 1px solid $accent1
+  //         box-shadow: 0px 1px 6px rgba($black, 0.102)
+  //         background: $bg1
+  //         color: $accent1
 
-      #mce-EMAIL-HELPERTEXT
-        position: relative
-        margin: 0 auto
-        padding: 0 !important
-        color: $white
-        font-size: 13px
+  //     #mce-EMAIL-HELPERTEXT
+  //       position: relative
+  //       margin: 0 auto
+  //       padding: 0 !important
+  //       color: $white
+  //       font-size: 13px
 
-      div.mce_inline_error
-        display: block !important
-        position: relative
-        align-self: flex-start
-        margin: 0 !important
-        background-color: unset !important
-        padding: 0 0 0 1rem !important
-        height: rem-calc(20)
-        color: $text !important
-        font-size: 13px
-        font-weight: 400 !important
+  //     div.mce_inline_error
+  //       display: block !important
+  //       position: relative
+  //       align-self: flex-start
+  //       margin: 0 !important
+  //       background-color: unset !important
+  //       padding: 0 0 0 1rem !important
+  //       height: rem-calc(20)
+  //       color: $text !important
+  //       font-size: 13px
+  //       font-weight: 400 !important
 
-      #mce-responses
-        position: relative
-        margin: 0 auto
-        width: 100%
-        height: rem-calc(25)
-        text-align: center
+  //     #mce-responses
+  //       position: relative
+  //       margin: 0 auto
+  //       width: 100%
+  //       height: rem-calc(25)
+  //       text-align: center
 
-      #mce-success-response,
-      #mce-error-response
-        color: $white
+  //     #mce-success-response,
+  //     #mce-error-response
+  //       color: $white
 
-  #mc_embed_signup form input.mce_inline_error
-    border-color: $danger !important
+  // #mc_embed_signup form input.mce_inline_error
+  //   border-color: $danger !important
 
