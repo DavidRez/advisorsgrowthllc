@@ -1,0 +1,8 @@
+.pages-careers
+  .pages-careers__sections.page-section(v-for='(section, i) in props.page_sections' :key='`careers-section-${i}`')
+    HeroPages(v-if='section.acf_fc_layout === "hero_pages"', :props='section')
+    HeroPagesSmall(v-else-if='section.acf_fc_layout === "hero_pages_small"', :props='section')
+    BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
+    BlockLinks(v-else-if='section.acf_fc_layout === "block_links"', :props='section')
+    BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
+    CustomCareersAll(v-else-if='section.acf_fc_layout === "careers_list"' :props='section' :careers='sortedTeam')

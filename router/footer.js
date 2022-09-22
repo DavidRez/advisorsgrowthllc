@@ -1,9 +1,9 @@
 const footer = [
-  // {
-  //   name: 'Careers',
-  //   path: '/careers',
-  //   navigation: true
-  // },
+  {
+    name: 'Careers',
+    path: '/careers',
+    navigation: true
+  },
   // {
   //   name: 'Press',
   //   path: '/press',

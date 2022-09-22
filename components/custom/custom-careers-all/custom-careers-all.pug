@@ -1,0 +1,7 @@
+section.custom-careers-all
+  .custom-careers-all__container(ref='container')
+    .custom-careers-all__rows
+      h3.custom-careers-all__title(ref='title') {{ props.title }}
+      nuxt-link.custom-careers-all__career(v-for='(career, j) in careers' :key='`career-${j}`' ref='careers' :to='career.link' :aria-label='`Go to ${career.custom_career_post.position} page.`')
+        .custom-careers-all__career-position(v-html='career.custom_career_post.position')
+        BlockArrowLabelButton(:title='"Learn More"' reverse)

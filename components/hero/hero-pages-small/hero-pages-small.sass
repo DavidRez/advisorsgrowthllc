@@ -10,6 +10,12 @@
   height: 16vw
   overflow-x: clip
 
+  ._careers &
+    @include tablet
+      height: 40vw
+    @include phone-land-lg
+      height: 50vh
+
   &__stripe
     @include laptop-lg
       right: -30%
@@ -47,6 +53,11 @@
     background: $primary
     width: 45vw
     height: rem-calc(45)
+
+    ._careers &
+      @include phone-lg
+        bottom: 25%
+        height: rem-calc(35)
 
   &__background
     @extend %absolute
@@ -111,6 +122,9 @@
   &__content
     @include col (12)
 
+    ._careers &
+      @include col (9)
+
   &__title
     margin-bottom: 1rem
     text-align: center
@@ -120,6 +134,9 @@
     color: $accent1
     font-family: $font-primary
     font-weight: 800
+
+    ._careers &
+      text-align: left
 
   &__body
     @extend %body-lg
