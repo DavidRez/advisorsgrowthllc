@@ -1,15 +1,15 @@
 const thoughtLeadership = [
   {
-    name: 'AGS Studies',
+    name: 'The Wire',
     path: '/thought-leadership'
+  },
+  {
+    name: 'AGS Studies',
+    path: '/thought-leadership/ags-studies'
   },
   {
     name: 'Aria White Pages',
     path: '/thought-leadership/aria-white-pages'
-  },
-  {
-    name: 'The Wire',
-    path: '/thought-leadership/the-wire'
   },
   {
     name: 'Article Archives',
