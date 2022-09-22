@@ -22,6 +22,9 @@ export default {
 
       document.getElementById('mce-success-response').innerHTML = ''
       document.getElementById('mce-error-response').innerHTML = ''
+      if (document.getElementById('mce-inline-error-response')) {
+        document.getElementById('mce-inline-error-response').innerHTML = ''
+      }
     }
   }
 }
