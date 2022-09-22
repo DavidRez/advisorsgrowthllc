@@ -1,0 +1,83 @@
+.custom-career-post
+  @extend %section-padding-full
+  position: relative
+  overflow: hidden
+
+  &__container
+    @include container
+    @include tablet-md
+      flex-direction: column
+    align-items: center
+    justify-content: center
+  
+  &__column
+    @include col (10)
+
+  &__header
+    @extend %title-margin-bottom-lg
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+  
+  &__position
+    text-transform: unset
+    letter-spacing: 0
+    color: $accent1
+
+  &__button
+    @include hover-supported
+      border: 1px solid $accent1
+      background: $white
+      color: $accent1
+    position: relative
+    transition: all .2s ease
+    border: 1px solid $bg1
+    border-radius: rem-calc(50)
+    background: $accent1
+    cursor: pointer
+    padding: .75rem 2rem
+    width: fit-content
+    height: fit-content
+    text-transform: uppercase
+    letter-spacing: 1px
+    color: $white
+    font-family: $font-primary
+    font-weight: 600
+
+    &:focus-visible
+      @include focus
+
+  &__buttons
+    @include col (12)
+    @include tablet
+      padding: 2rem 0
+    @include nexus
+      flex-direction: column
+      padding: 2rem 0
+    @include phone-land-lg
+      padding: 2rem 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-top: 1px solid $accent1
+    padding: 2rem  0
+
+  &__description
+    &-title
+      @extend %title-margin-bottom
+      text-transform: uppercase
+      letter-spacing: 1px
+      color: $accent1
+      font-family: $font-secondary
+      font-weight: 700
+
+    &-body
+      @extend %body
+      @extend %wysiwyg-text
+
+      strong
+        font-weight: 700
+
+    &:not(:last-of-type)
+      margin-bottom: 2rem
