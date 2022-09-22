@@ -121,7 +121,30 @@
     &.nuxt-link-exact-active
       color: $bg2
 
-  form
+  #mc_embed_signup
+    width: 100%
+
+    form
+      width: 100%
+
+    #mc_embed_signup_scroll
+      display: flex
+      position: relative
+      flex-direction: column
+      justify-content: flex-end
+      width: 100%
+
+    h2
+      @extend %body
+      @extend %title-margin-bottom
+      @include tablet-lg
+        text-align: center
+      width: 100%
+      text-align: right
+      text-transform: uppercase
+      color: $white
+      font-weight: 600
+
     .mc-field-group
       @include tablet-lg
         flex-direction: column
@@ -136,22 +159,10 @@
       flex-direction: row
       justify-content: flex-end
       width: 100%
-      max-width: rem-calc(600)
       height: rem-calc(55)
 
       &:not(:first-of-type)
         margin-top: 1rem
-
-    h2
-      @extend %body
-      @extend %title-margin-bottom
-      @include tablet-lg
-        text-align: center
-      width: 100%
-      text-align: right
-      text-transform: uppercase
-      color: $white
-      font-weight: 600
 
     label
       @include tablet-lg
@@ -159,7 +170,7 @@
         left: .25rem
       position: absolute
       top: 0
-      left: -45%
+      left: 0%
       transform: translateY(0) scale(.7)
       transition: transform .2s ease, top .2s ease, opacity .2s ease
       opacity: .6
@@ -167,21 +178,17 @@
       transform-origin: left top
       pointer-events: none
 
-    input,
+    #mce-EMAIL,
     #mce_embed_signup form input.mce_inline_error
-      // border-bottom: 1px solid $text
-      flex: 1 0 auto
       border: 1px solid $accent1
       border-radius: rem-calc(50)
       padding: 1rem
-      width: 100%
-      max-width: rem-calc(400)
       -webkit-appearance: none
       appearance: none
 
       &:placeholder-shown + label
         top: 50%
-        left: -45%
+        left: 0%
         transform: translateY(-50%)
         opacity: .7
 
@@ -200,6 +207,13 @@
         transform: translateY(0) scale(.7)
         opacity: .6
 
+    #mce-EMAIL
+      flex: 1 0 auto
+      max-width: rem-calc(400)
+
+    #mce_embed_signup form input.mce_inline_error
+      width: 100%
+
     #mc-embedded-subscribe
       @include focus
       @include tablet-lg
@@ -213,6 +227,7 @@
       background: $accent1
       cursor: pointer
       padding: 1rem 2rem
+      min-width: rem-calc(150)
       overflow: hidden
       text-transform: uppercase
       letter-spacing: 0.1em
@@ -245,13 +260,10 @@
       color: $white
       font-size: 13px
 
-    #mc_embed_signup_scroll
-      position: relative
-
     #mce-responses
       position: absolute
       bottom: -1.5rem
-      left: -40%
+      left: 0%
       width: 100%
 
     #mce-success-response,
