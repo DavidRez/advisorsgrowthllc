@@ -1,8 +1,8 @@
 .form-apply
   form.form-apply__form(@submit.prevent='validate')
     .form-apply__top
-      h2.form-apply__title Apply for Position
-      .form-apply__body Please fill out the form below and attached your resume.
+      h2.form-apply__title(ref='title') Apply for Position
+      .form-apply__body(ref='body') Please fill out the form below and attached your resume.
     .form-apply__group(ref='firstName')
       input.form-apply__input(name='firstName', v-model='firstName', id='firstName' v-validate="'required'", :class="{ 'form-apply__input--error': errors.has('firstName') }", type='text' autocomplete='name', :aria-invalid="errors.has('firstName') ? true : false")
       label.form-apply__label(:class="{ 'form-apply__label--active': firstName }" for='firstName') First Name *
@@ -28,7 +28,7 @@
       label.form-apply__label(:class="{ 'form-apply__label--active': subject }" for='subject' value='subject')
       .form-apply__error-message(v-show="errors.has('subject')")  Please fill out the subject
 
-    .form-apply__group.form-apply__group--upload
+    .form-apply__group.form-apply__group--upload(ref='upload')
       span {{ "Attach: " }}
       .form-apply__file-upload(v-if='!letterObj')
         input.form-apply__file-input(name='letter' type='file' id='letter' ref='letter' accept='image/jpeg,image/gif,image/png,application/pdf,image/x-eps' v-on:change='uploadLetter')
@@ -49,10 +49,10 @@
         span.form-apply__submit-label(:class="{ 'form-apply__submit-label--hidden': formSuccess }") Submit
         span.form-apply__submit-check(:class="{ 'form-apply__submit-check--showing': formSuccess }" aria-hidden='true') &#10003
   
-  .form-apply__modal(:class="{ 'form-apply__modal--open': modalOpen }", role='dialog' aria-modal='true')
-    .form-apply__modal-overlay
-    .form-apply__modal-container(ref='contactFormModal')
-      button.form-apply__modal-close(@click='closeModal()' tabindex='0') close
-      .form-apply__modal-title Thank you! 
-      .form-apply__modal-text We will be in touch shortly!
-      slot
+  //- .form-apply__modal(:class="{ 'form-apply__modal--open': modalOpen }", role='dialog' aria-modal='true')
+  //-   .form-apply__modal-overlay
+  //-   .form-apply__modal-container(ref='contactFormModal')
+  //-     button.form-apply__modal-close(@click='closeModal()' tabindex='0') close
+  //-     .form-apply__modal-title Thank you! 
+  //-     .form-apply__modal-text We will be in touch shortly!
+  //-     slot
