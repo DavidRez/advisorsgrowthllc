@@ -1,0 +1,287 @@
+.form-apply
+  @extend %section-padding-lg
+  background: rgba($accent4, .1)
+  width: 100%
+
+  &__form
+    display: flex
+    position: relative
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    margin: 0 auto
+
+  &__top
+    @extend %title-margin-bottom-lg
+    text-align: center
+
+  &__title
+    @extend %title-margin-bottom
+    color: $accent1
+
+  &__body
+    @extend %body-lg
+    @include nexus
+      font-size: rem-calc(18)
+    font-size: rem-calc(24)
+
+  &__group
+    position: relative
+    width: 100%
+    max-width: rem-calc(600)
+
+    &--half
+      width: calc(50% - (#{$gutter} / 2))
+
+    &--fieldset
+      border: none
+      padding: 0
+
+    &--button
+      @include tablet
+        justify-content: center
+      display: flex
+      justify-content: flex-end
+      width: 100%
+
+      &--centered
+        justify-content: center
+
+    &--upload
+      display: flex
+      flex-direction: row
+
+      span
+        display: block
+        &:first-of-type
+          margin-right: .5rem
+        &:last-of-type
+          margin: 0 .5rem
+
+    &:not(:last-of-type)
+      margin-bottom: 1.25rem
+
+  &__label
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    transition: transform .2s ease, top .2s ease
+    padding-left: 1rem
+    transform-origin: left top
+    color: $accent3
+    pointer-events: none
+
+    &--textarea
+      top: 20%
+      // bottom: 0
+
+    &--active
+      top: 0.15rem
+      left: 0.25rem
+      transform: translateY(0) scale(.7)
+
+    &--checkbox
+      display: block
+      position: static
+      transform: none
+      padding-bottom: .5rem
+
+  &__input
+    // border-bottom: 1px solid $text
+    flex: 1 0 auto
+    border: 1px solid rgba($accent2, 0.4)
+    border-radius: rem-calc(50)
+    padding: 1rem
+    width: 100%
+    -webkit-appearance: none
+    appearance: none
+
+    &:focus
+      outline: transparent
+      border: 2px solid red
+
+    &:active
+      outline: transparent
+
+    &:focus + .form-subscribe__label
+      // top: 
+      // transform: translateY(0) scale(.7)
+      opacity: .3
+    
+    &:focus + .form-subscribe__label--active
+      top: 0
+      transform: translateY(0) scale(.7)
+      opacity: .6
+
+    &--textarea
+      border-radius: rem-calc(25)
+
+    &--error
+      border-color: $danger
+      &:focus
+        border-color: $danger
+
+    &--error,
+    &--error + .form-subscribe__label
+      color: $danger
+
+  &__error-message
+    position: absolute
+    bottom: -1.5rem
+    left: 0
+    padding: .25rem .75rem
+    color: $danger
+    font-size: 13px
+
+    .form-subscribe__group-message &
+      bottom: .75rem
+
+  &__file
+    &-upload
+      @include hover-supported
+        .form-apply__file-label
+          color: $primary
+      position: relative
+      cursor: pointer
+      width: fit-content
+    &-input
+      position: absolute
+      opacity: 0
+      cursor: pointer
+      width: 100%
+      height: 100%
+    &-label
+      display: flex
+      align-items: center
+      .base-icon
+        margin: 0 .25rem 0 0
+        cursor: pointer
+        width: 1rem
+        height: 1rem
+    &-name
+      position: relative
+      text-decoration: underline
+      color: $accent1
+
+  &__submit-button
+    @include focus
+    position: relative
+    align-self: flex-end
+    transition: background .2s ease, opacity .2s ease, border .2s ease
+    border: 1px solid $bg1
+    border-radius: rem-calc(50)
+    background: $accent1
+    cursor: pointer
+    padding: 0
+    overflow: hidden
+    color: $white
+
+    &:active
+      outline: transparent
+
+    &:hover, &:focus-visible
+      border: 1px solid $accent1
+      box-shadow: 0px 1px 6px rgba($black, 0.102)
+      background: $bg1
+      color: $accent1
+      // opacity: .7
+
+    &--sending
+      background: $gray
+      pointer-events: none
+
+    &--success
+      transition: background .2s ease .4s
+      background: $success
+      pointer-events: none
+
+      &:hover
+        opacity: 1
+        background: $success
+
+  &__submit-label
+    display: block
+    position: relative
+    transition: transform .25s ease .25s
+    z-index: 9
+    padding: 1rem 2rem .75rem
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    font-weight: 700
+
+    &--hidden
+      transform: scale(0)
+      transition-delay: 0
+
+  &__submit-check
+    display: flex
+    position: absolute
+    top: 0
+    left: 0
+    align-items: center
+    justify-content: center
+    transform: translateY(.5rem) scale(0)
+    transition: transform .25s ease
+    z-index: 9
+    width: 100%
+    height: 100%
+
+    &--showing
+      transform: translateY(0) scale(1)
+      transition-delay: .4s
+
+  &__modal
+    position: fixed
+    top: 0
+    left: 0
+    transition: opacity .25s ease-in
+    opacity: 0
+    z-index: 99999
+    width: 100%
+    height: 100vh
+    pointer-events: none
+
+    &--open
+      opacity: 1
+      pointer-events: all
+
+    &-overlay
+      @extend %absolute
+      background: rgba($black, .15)
+
+    &-container
+      @extend %centered
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      background: $white
+      padding: 5rem
+      text-align: center
+
+    &-text
+      font-size: 18px
+
+    &-close
+      @include hover-supported
+        color: $primary
+      @include phone-lg
+        right: 1rem
+      position: absolute
+      top: 1rem
+      right: 2rem
+      border: none
+      background: transparent
+      cursor: pointer
+      padding: 0
+
+    &-title
+      color: $primary
+
+    // Place styles below here for slotted content
+    &-body
+      padding-top: 1rem
+
+    &-button
+      padding-top: 1rem

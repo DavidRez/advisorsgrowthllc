@@ -1,0 +1,58 @@
+.form-apply
+  form.form-apply__form(@submit.prevent='validate')
+    .form-apply__top
+      h2.form-apply__title Apply for Position
+      .form-apply__body Please fill out the form below and attached your resume.
+    .form-apply__group(ref='firstName')
+      input.form-apply__input(name='firstName', v-model='firstName', id='firstName' v-validate="'required'", :class="{ 'form-apply__input--error': errors.has('firstName') }", type='text' autocomplete='name', :aria-invalid="errors.has('firstName') ? true : false")
+      label.form-apply__label(:class="{ 'form-apply__label--active': firstName }" for='firstName') First Name *
+      .form-apply__error-message(v-show="errors.has('firstName')") Your first name is required.
+    
+    .form-apply__group(ref='lastName')
+      input.form-apply__input(name='lastName', v-model='lastName', id='lastName' v-validate="'required'", :class="{ 'form-apply__input--error': errors.has('lastName') }", type='text' autocomplete='name', :aria-invalid="errors.has('lastName') ? true : false")
+      label.form-apply__label(:class="{ 'form-apply__label--active': lastName }" for='lastName') Last Name *
+      .form-apply__error-message(v-show="errors.has('lastName')") Your last name is required.
+  
+    .form-apply__group(ref='email')
+      input.form-apply__input(name='clientEmail', v-model='clientEmail', id='email' v-validate="'required|email'", :class="{ 'form-apply__input--error': errors.has('clientEmail') }" type='email' autocomplete='email', :aria-invalid="errors.has('clientEmail') ? true : false")
+      label.form-apply__label(:class="{ 'form-apply__label--active': clientEmail }" for='email') Email *
+      .form-apply__error-message(v-show="errors.has('clientEmail')")  Please input a valid Email
+  
+    .form-apply__group(ref='phone')
+      input.form-apply__input(id='clientPhone', name='clientPhone', v-model='clientPhone', v-validate="'numeric'", :class="{ 'form-apply__input--error': errors.has('clientPhone') }" tabindex='0')
+      label.form-apply__label(for='clientPhone', :class="{ 'form-apply__label--active': clientPhone }") Your Phone Number
+      .form-apply__error-message(v-show="errors.has('clientPhone')")  Please input a valid number
+  
+    .form-apply__group(ref='subject')
+      input.form-apply__input(name='subject', v-model='subject' id='subject' rows='5')
+      label.form-apply__label(:class="{ 'form-apply__label--active': subject }" for='subject' value='subject')
+      .form-apply__error-message(v-show="errors.has('subject')")  Please fill out the subject
+
+    .form-apply__group.form-apply__group--upload
+      span {{ "Attach: " }}
+      .form-apply__file-upload(v-if='!letterObj')
+        input.form-apply__file-input(name='letter' type='file' id='letter' ref='letter' accept='image/jpeg,image/gif,image/png,application/pdf,image/x-eps' v-on:change='uploadLetter')
+        label.form-apply__file-label(for='letter') {{ letterLabel }}
+      .form-apply__file-label(v-else)
+        BaseIcon(name='times-circle-regular' @click.native='removeLetter()')
+        .form-apply__file-name {{ letterLabel }}
+      span {{ " | " }}
+      .form-apply__file-upload(v-if='!resumeObj')
+        input.form-apply__file-input(name='resume' type='file' id='resume' ref='resume' accept='image/jpeg,image/gif,image/png,application/pdf,image/x-eps' v-on:change='uploadResume')
+        label.form-apply__file-label(for='resume') {{ resumeLabel }}
+      .form-apply__file-label(v-else)
+        BaseIcon(name='times-circle-regular' @click.native='removeResume()')
+        .form-apply__file-name {{ resumeLabel }}
+  
+    .form-apply__group.form-apply__group--button(:class='{ "form-apply__group--button--centered": centered }' ref='button')
+      button.form-apply__submit-button(:class="{ 'form-apply__submit-button--success': formSuccess, 'form-apply__submit-button--sending': formSubmitted && !formSuccess }")
+        span.form-apply__submit-label(:class="{ 'form-apply__submit-label--hidden': formSuccess }") Submit
+        span.form-apply__submit-check(:class="{ 'form-apply__submit-check--showing': formSuccess }" aria-hidden='true') &#10003
+  
+  .form-apply__modal(:class="{ 'form-apply__modal--open': modalOpen }", role='dialog' aria-modal='true')
+    .form-apply__modal-overlay
+    .form-apply__modal-container(ref='contactFormModal')
+      button.form-apply__modal-close(@click='closeModal()' tabindex='0') close
+      .form-apply__modal-title Thank you! 
+      .form-apply__modal-text We will be in touch shortly!
+      slot
