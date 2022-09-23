@@ -50,7 +50,7 @@ export default {
         ],
         []
       )
-      const props = await setData('thought-leadership')
+      const props = await setData('ags-studies')
       return { blogs, props, totalPages }
     } catch (e) {
       console.error('AGS Studies: ' + e)
