@@ -2,6 +2,11 @@
   @extend %section-padding-full
   position: relative
 
+  .pages-thank-you &,
+  .pages-careers-thank-you &
+    background: rgba($accent4, .1)
+    text-align: center
+
   &__container
     @include container
     justify-content: center
@@ -14,6 +19,15 @@
     line-height: 1.1
     color: $accent1
     font-weight: 600
+
+    .pages-thank-you &,
+    .pages-careers-thank-you &
+      @extend %h3
+      @extend %title-margin-bottom
+      text-transform: unset
+      letter-spacing: unset
+      font-family: $font-primary
+      font-weight: 700
 
   &__body
     @extend %body

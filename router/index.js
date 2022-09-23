@@ -58,6 +58,18 @@ const router = [
     path: '/who-we-serve',
     navigation: false,
     mobile: false
+  },
+  {
+    name: 'Thank You',
+    path: '/thank-you',
+    navigation: false,
+    mobile: false
+  },
+  {
+    name: 'Careers Thank You',
+    path: '/careers-thank-you',
+    navigation: false,
+    mobile: false
   }
 ]
 
