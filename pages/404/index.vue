@@ -23,9 +23,7 @@ export default {
     this.handleWindowResize()
     window.addEventListener('resize', this.debounceFunc)
     this.$nextTick(() => {
-      if (!this.$store.state.siteLoaded) {
-        this.$store.dispatch('VIEW_SITE', true)
-      }
+      this.$store.dispatch('VIEW_SITE', true)
       this.handleAnimation()
     })
   },
