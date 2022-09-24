@@ -14,6 +14,14 @@ export default {
   watch: {
     $route: 'onRouteChange'
   },
+  mounted () {
+    this.$nextTick(() => {
+      if (document.querySelector('.pages-404') && document.querySelector('.base-loader')) {
+        this.$store.dispatch('VIEW_SITE', true)
+        document.querySelector('.base-loader').style.display = 'none'
+      }
+    })
+  },
   methods: {
     onRouteChange () {
       const target = document.querySelector('#page-wrapper')

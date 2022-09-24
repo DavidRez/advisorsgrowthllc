@@ -19,7 +19,6 @@ export default {
     windowWidth: 0
   }),
   mounted () {
-    this.$store.dispatch('VIEW_SITE', true)
     this.handleAnimation()
   },
   methods: {
