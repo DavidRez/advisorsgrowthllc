@@ -1,0 +1,36 @@
+.pages-404
+  @extend %section-padding-full
+  display: flex
+  position: relative
+  align-items: center
+  margin-top: rem-calc(75)
+  min-height: 80vh
+
+  &__container
+    @include container
+    justify-content: center
+
+  &__title
+    @extend %title-margin-bottom
+    @include col (9)
+    color: $accent1
+    font-weight: 600
+    text-align: center
+
+  &__col
+    @include col (9)
+    text-align: center
+
+    p
+      &:not(:last-child)
+        margin-bottom: 1rem
+
+    a
+      @include hover-supported
+        color: $primary
+      transition: color .2s ease
+      text-decoration: underline
+      color: $accent1
+      &:focus-visible
+        @include focus
+        color: $primary
