@@ -18,6 +18,14 @@ export default {
     // this.handleAnimation()
   },
   methods: {
+    scrollToForm () {
+      this.$gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+          y: '#form'
+        }
+      })
+    },
     handleAnimation () {
       this.$_fadeIn(this.$refs.name, 0, -24, 'center', 0, 1.4)
       this.$_fadeIn(this.$refs.position, 0, 24, 'center', 0.25, 1.4)
