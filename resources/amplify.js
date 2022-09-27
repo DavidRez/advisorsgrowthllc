@@ -1,7 +1,7 @@
-import amplify from 'aws-amplify'
+import { Amplify } from 'aws-amplify'
 import { config } from './aws-config'
 
-amplify.configure({
+Amplify.configure({
   Auth: {
     mandatorySignIn: true,
     region: config.cognito.REGION,
