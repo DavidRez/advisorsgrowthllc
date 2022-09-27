@@ -10,7 +10,7 @@ section.custom-team-member
         .custom-team-member__bio(v-html='props.bio' ref='bio')
       .custom-team-member__buttons
         BlockArrowLabelButton(:page='"/team"' :title='"back to team"' ref='back')
-        .custom-team-member__social-media(v-if='props.social_links')
+        .custom-team-member__social-media(v-if='props.social_links' ref='links')
           a.custom-team-member__social-media-link(v-for='(social, i) in props.social_links'
             :key='`social-link-${i}`' 
             :aria-label='`${social.account} opens new window`'
