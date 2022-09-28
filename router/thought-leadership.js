@@ -11,10 +11,10 @@ const thoughtLeadership = [
     name: 'Aria White Pages',
     path: '/thought-leadership/aria-white-pages'
   },
-  // {
-  //   name: 'Article Archives',
-  //   path: '/thought-leadership/article-archives'
-  // },
+  {
+    name: 'Article Archives',
+    path: '/thought-leadership/article-archives'
+  },
   {
     name: 'Videos',
     path: '/thought-leadership/videos'
