@@ -6,7 +6,8 @@
     picture.hero-home__picture(ref='image')
       source(:srcset='imgWebp' type='image/webp')
       img.hero-home__image(:src='imgSrc' alt='hero image' aria-hidden='true')
-  .hero-home__stripe(ref='stripe')
+  .hero-home__stripe-container
+    .hero-home__stripe(ref='stripe')
   .hero-home__container
     .hero-home__content
       h1.hero-home__title(v-if='props.title' v-html='props.title' ref='title')

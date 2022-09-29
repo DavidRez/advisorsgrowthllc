@@ -24,7 +24,7 @@ export default {
     // const browser = navigator.userAgent
     // if (browser.includes('Safari')) {
     //   window.onscroll = function () {
-    //     window.scrollTo(0, window.scrollY)
+    //     window.scrollLeft = 0
     //   }
     // }
   },

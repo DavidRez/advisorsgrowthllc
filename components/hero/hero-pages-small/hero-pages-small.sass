@@ -13,41 +13,52 @@
   ._careers &,
   .pages-careers &
     @include tablet
-      height: 40vw
+      height: 20vw
+    @include nexus
+      height: 30vw
     @include phone-land-lg
       height: 50vh
 
+  &__stripe-container
+    // @include laptop-lg
+    //   top: 15%
+    position: absolute
+    top: 0
+    right: 0
+    width: 20%
+    height: 115%
+    overflow: hidden
+
   &__stripe
     @include laptop-lg
-      right: -30%
-      bottom: 90%
+      // right: -30%
+      // bottom: 90%
       height: rem-calc(32)
     @include desktop
-      right: -30%
-      bottom: 100%
+      // right: -30%
+      // bottom: 100%
       height: rem-calc(45)
     @include laptop
-      right: -30%
-      bottom: 95%
+      // right: -30%
+      // bottom: 95%
       height: rem-calc(25)
     @include tablet-lg
       height: rem-calc(20)
-    @include tablet
-      bottom: 65%
+    // @include tablet
+    //   bottom: 65%
     @include nexus
-      right: -25%
-      bottom: 25%
+      // right: -25%
+      // bottom: 25%
       height: rem-calc(30)
     @include phone-lg
-      bottom: 15%
-      height: rem-calc(35)
+      // bottom: 15%
+      height: rem-calc(25)
     @include phone
-      right: -20%
-      bottom: 15%
-      height: rem-calc(30)
+      // right: -20%
+      // bottom: 15%
     position: absolute
-    right: -30%
-    bottom: 75%
+    bottom: 100%
+    left: 0%
     transform: rotate(-55deg)
     z-index: 1
     border-radius: rem-calc(60)
@@ -57,9 +68,17 @@
 
     ._careers &,
     .pages-careers &
+      @include tablet
+        bottom: 85%
+      @include nexus
+        bottom: 50%
+      @include phone-land-lg
+        bottom: 75%
       @include phone-lg
-        bottom: 25%
-        height: rem-calc(35)
+        bottom: 55%
+        height: rem-calc(25)
+      @include phone
+        bottom: 50%
 
   &__background
     @extend %absolute
