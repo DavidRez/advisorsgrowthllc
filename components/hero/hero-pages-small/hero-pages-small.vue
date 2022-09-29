@@ -21,12 +21,12 @@ export default {
   mounted () {
     this.loadImage()
     window.addEventListener('resize', this.debounceFunc)
-    const browser = navigator.userAgent
-    if (browser.includes('Safari')) {
-      window.onscroll = function () {
-        window.scrollTo(0, window.scrollY)
-      }
-    }
+    // const browser = navigator.userAgent
+    // if (browser.includes('Safari')) {
+    //   window.onscroll = function () {
+    //     window.scrollTo(0, window.scrollY)
+    //   }
+    // }
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.debounceFunc)
