@@ -3,7 +3,8 @@ section.custom-career-post
     .custom-career-post__column(ref='main')
       .custom-career-post__header
         h2.custom-career-post__position {{ props.custom_career_post.position }}
-        button.custom-career-post__button(@click='scrollToForm') Apply
+        //- button.custom-career-post__button(@click='scrollToForm') Apply
+        a.custom-career-post__button(href='#form') Apply
       .custom-career-post__description(v-for='(description, i) in props.custom_career_post.descriptions'
         :key='`description-${i}`')
         h3.custom-career-post__description-title(v-html='description.title')
