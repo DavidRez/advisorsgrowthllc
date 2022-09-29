@@ -8,8 +8,8 @@ const thoughtLeadership = [
     path: '/thought-leadership/ags-studies'
   },
   {
-    name: 'Aria White Pages',
-    path: '/thought-leadership/aria-white-pages'
+    name: 'Aria White Papers',
+    path: '/thought-leadership/aria-white-papers'
   },
   {
     name: 'Article Archives',
