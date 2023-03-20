@@ -28,24 +28,26 @@
   &__stripe
     @include laptop-lg
       bottom: 65%
-      height: rem-calc(100)
+      height: rem-calc(60)
     @include laptop
       // right: -30%
       bottom: 70%
-      height: rem-calc(60)
+      height: rem-calc(42)
     @include tablet-lg
       bottom: 75%
       left: -10%
-      height: rem-calc(50)
+      height: rem-calc(40)
     @include tablet-md
       bottom: 80%
-      height: rem-calc(40)
+      height: rem-calc(33)
     @include tablet
       bottom: 60%
     @include phone-land-lg
       bottom: 50%
+      height: rem-calc(20)
     @include phone-lg
       bottom: 35%
+      height: rem-calc(20)
     @include phone
       bottom: 30%
     position: absolute
@@ -55,7 +57,7 @@
     z-index: 1
     border-radius: rem-calc(60)
     background: $primary
-    width: 50vw
+    width: 45vw
     height: rem-calc(70)
 
   &__background
@@ -68,7 +70,7 @@
       //   display: none
       opacity: .1
       z-index: -1
-  
+
     &-image
       @extend %absolute
       @include phone-land-lg
