@@ -4,7 +4,7 @@ section.custom-ria-webinar(:class='[ `custom-ria-webinar--padding-${props.paddin
       h2.custom-ria-webinar__header(v-if='props.header' v-html='props.header' ref='header')
       .custom-ria-webinar__webinars(v-if='webinars' ref='webinars')
         a.custom-ria-webinar__webinar(v-for='(webinar, i) in webinars' :key='`webinar-${i}`' :href='webinar.custom_post.link.href' :aria-label='`webinar.custom_post.link.aria for ${webinar.custom_post.title}`' target='_blank')
-          .custom-ria-webinar__webinar-info 
-            span(v-if='webinar.date') {{ convertDate(webinar.date) }}
+          .custom-ria-webinar__webinar-info
+            //-span(v-if='webinar.date') {{ convertDate(webinar.date) }}
             span(v-if='webinar.custom_post.time') {{ webinar.custom_post.time }}
           h3.custom-ria-webinar__webinar-title(v-if='webinar.custom_post.title') {{ webinar.custom_post.title }}
