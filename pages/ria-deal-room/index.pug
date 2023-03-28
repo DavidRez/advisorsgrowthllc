@@ -5,6 +5,6 @@
     BlockContent(v-else-if='section.acf_fc_layout === "block_content"', :props='section')
     BlockLinks(v-else-if='section.acf_fc_layout === "block_links"', :props='section')
     BlockSeparator(v-else-if='section.acf_fc_layout === "separator"', :props='section')
-    //-BlockStackedLinks(v-else-if='section.acf_fc_layout === "custom_ria_report"' :links='recent' :props='section')
+    BlockStackedLinks(v-else-if='section.acf_fc_layout === "custom_ria_report"' :links='recent' :props='section')
     BlockStackedLinks(v-else-if='section.acf_fc_layout === "custom_ria_reports_previous"' :links='previous' :props='section')
     CustomRiaWebinar(v-else-if='section.acf_fc_layout === "block_webinar_list"', :props='section' :webinars='webinars')

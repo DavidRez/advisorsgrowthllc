@@ -48,18 +48,25 @@ export default {
 
       const reportsResponse = await axios.get(`${api}/wp/v2/posts?categories=${category.id}&per_page=100`)
 
-      // let recentId = props.page_sections.find((section) => {
-      //   return section.acf_fc_layout === 'custom_ria_report'
-      // })
-
-      // recentId = recentId.report.ID
+      const recentId = props.page_sections.find((section) => {
+        return section.acf_fc_layout === 'custom_ria_report'
+      })
 
       const reportsArray = reportsResponse.data
+      const recent = []
       const previous = []
 
       reportsArray.forEach((item, i) => {
         const curr = { label: item.title.rendered, href: item.acf.custom_post.link.file.url.replace('api.advisorgrowthllc.com', 'dld7fz6mejerl.cloudfront.net'), external: true }
-        previous.push(curr)
+        if (typeof recentId !== 'undefined') {
+          if (item.id === recentId.report.ID) {
+            recent.push(curr)
+          } else {
+            previous.push(curr)
+          }
+        } else {
+          previous.push(curr)
+        }
       })
 
       // Get Webinars
@@ -74,7 +81,7 @@ export default {
         []
       )
 
-      return { webinars, props, previous }
+      return { webinars, props, previous, recent }
     } catch (e) {
       console.error('RIA DEAL ROOM API: ' + e)
     }
