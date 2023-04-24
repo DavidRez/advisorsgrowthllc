@@ -5,14 +5,14 @@ section.custom-team-member
         .custom-team-member__headshot(ref='image')
           BaseImage.custom-team-member__headshot-image(:src='replaceSrc(props.full_image.url)' :alt='props.full_image.title')
       .custom-team-member__column-lg
-        h1.custom-team-member__name(v-html='props.title' ref='name')
+        h1.custom-team-member__name(v-html='props.name' ref='name')
         .custom-team-member__position(v-html='props.position' ref='position')
         .custom-team-member__bio(v-html='props.bio' ref='bio')
       .custom-team-member__buttons
         BlockArrowLabelButton(:page='"/team"' :title='"back to team"' ref='back')
         .custom-team-member__social-media(v-if='props.social_links' ref='links')
           a.custom-team-member__social-media-link(v-for='(social, i) in props.social_links'
-            :key='`social-link-${i}`' 
+            :key='`social-link-${i}`'
             :aria-label='`${social.account} opens new window`'
             :href='social.href'
             target='_blank'
