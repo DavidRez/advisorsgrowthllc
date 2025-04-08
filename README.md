@@ -1,6 +1,6 @@
 ## About Project
 
-This site was for a branding agency's client. The agency provided the desktop design. The mobile version and animations were up to the developer.
+Built for a branding agency’s client in collaboration with another engineer. Desktop design was provided; we handled the mobile layout and animations.
 
 ### Built With
 
